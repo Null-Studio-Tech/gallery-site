@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions, fade } from "astro:transitions";
+import logoImage from "../assets/images/logo.svg";
 
 interface Props {
 	title: string;
@@ -20,6 +21,25 @@ const { title } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body class="bg-white">
+		<div class="header w-full flex fixed z-10 justify-between pt-7 px-16 text-white">
+			<div class="logo6">
+				<img src={logoImage.src} alt="">
+			</div>
+			<div class="menu flex">
+				<div class="mr-9">
+					work
+				</div>
+				<div class="mr-9">
+					Personal
+				</div>
+				<div class="mr-9">
+					Contact
+				</div>
+				<div>
+					CN
+				</div>
+			</div>
+		</div>
 		<slot />
 		<style is:global>
 			@import "../css/global.css";
