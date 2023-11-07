@@ -1,10 +1,10 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import Video from "../components/client/Video.vue";
+import HomeLayout from "../layouts/HomeLayout.astro";
 ---
 
-<Layout title="Null Studio Gallery">
+<HomeLayout title="Null Studio Gallery">
   <main class="w-screen h-screen overflow-hidden">
-    <Video client:load/>
+    <Video client:load />
   </main>
-</Layout>
+</HomeLayout>
