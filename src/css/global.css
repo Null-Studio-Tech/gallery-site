@@ -29,6 +29,7 @@
 
 .bg-highlight-small {
   background-image: url('../assets/images/highLightMotion_white_s.png');
+  background-repeat: no-repeat;
 }
 
 .bg-dark-active-normal {

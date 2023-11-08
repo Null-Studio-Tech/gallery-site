@@ -14,6 +14,7 @@ const videoEle =  ref<HTMLMediaElement | null>(null);
 
 // 初始化播放器
 const initPlayer = () => {
+  console.log(videoEle)
   if (videoEle.value === null) return;
   if (Hls.isSupported()) {
     hls = new Hls();
@@ -44,7 +45,7 @@ onBeforeUnmount(() => { });
 <template>
   <video
     id="player"
-    ref="video"
+    ref="videoEle"
     muted
     className="z-0 h-full w-full object-cover object-center"
     autoplay

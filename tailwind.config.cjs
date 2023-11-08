@@ -23,8 +23,8 @@ module.exports = {
 				}
 			},
 			animation: {
-				'highlight-normal': 'highlight-normal .5s steps(18)',
-				'highlight-small': 'highlight-small .5s steps(18)'
+				'highlight-normal': 'highlight-normal .5s steps(17)',
+				'highlight-small': 'highlight-small .5s steps(17)'
 			}
 		},
 	},
