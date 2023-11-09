@@ -1,0 +1,83 @@
+---
+import navData from "../data/nav.json";
+import logoBlackImage from "../assets/images/logo-black.svg";
+import logoWhiteImage from "../assets/images/logo-white.svg";
+import whiteMenuBtnImg from "../assets/images/menu-btn-white.png";
+import blackMenuBtnImg from "../assets/images/menu-btn-black.png";
+
+interface Props {
+  theme: "light" | "dark";
+}
+
+const { theme = "light" } = Astro.props;
+
+const routes = navData.nav.map((nav) => ({ name: nav.en, path: nav.path }));
+---
+
+<div
+  class="header w-full fixed z-10 justify-between items-center pt-7 px-16 text-white mobile:flex hidden"
+>
+  <a class="logo flex items-center" href="/">
+    <img
+      src={theme === "dark" ? logoBlackImage.src : logoWhiteImage.src}
+      alt="logo"
+    />
+  </a>
+  <div id="mobile-menu-open-btn" class="text-white w-4 h-3">
+    <img
+      src={theme === "dark" ? blackMenuBtnImg.src : whiteMenuBtnImg.src}
+      alt="menu button"
+    />
+  </div>
+</div>
+
+<div
+  id="mobiel-menu-body"
+  style="display:none;"
+  class="fixed inset-0 flex flex-col bg-white px-4 z-20"
+>
+  <div
+    class="header w-full fixed z-10 justify-between items-center pt-7 px-12 text-white mobile:flex hidden"
+  >
+    <a class="logo flex items-center" href="/">
+      <img src={logoBlackImage.src} alt="logo" />
+    </a>
+    <div
+      id="mobile-menu-close-btn"
+      class="text-white w-4 h-3 flex justify-center items-center"
+    >
+      <span class="font-[Roboto] text-black text-2xl font-light">X</span>
+    </div>
+  </div>
+
+  <div class="flex-1 w-full flex flex-col justify-center gap-10">
+    {
+      routes.map((r) => (
+        <a href={r.path}>
+          <span class="font-[Roboto] text-black text-3xl font-light">
+            {r.name}
+          </span>
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  const menuBody = document.getElementById("mobiel-menu-body") as HTMLElement;
+  document.getElementById("mobile-menu-open-btn")?.addEventListener(
+    "click",
+    () => {
+      menuBody.style.display = "";
+    },
+    false,
+  );
+
+  document.getElementById("mobile-menu-close-btn")?.addEventListener(
+    "click",
+    () => {
+      menuBody.style.display = "none";
+    },
+    false,
+  );
+</script>

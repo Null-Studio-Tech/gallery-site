@@ -1,0 +1,41 @@
+---
+import navData from "../data/nav.json";
+import logoBlackImage from "../assets/images/logo-black.svg";
+import logoWhiteImage from "../assets/images/logo-white.svg";
+
+interface Props {
+  theme: "light" | "dark";
+}
+
+const { theme } = Astro.props;
+
+const routes = navData.nav.map((nav) => ({ name: nav.en, path: nav.path }));
+---
+
+<div
+  class="header w-full flex fixed z-10 justify-between pt-7 px-16 text-white mobile:hidden"
+>
+  <a class="logo flex items-center" href="/">
+    <img
+      src={theme === "dark" ? logoWhiteImage.src : logoBlackImage.src}
+      alt="logo"
+    />
+  </a>
+  <div class="h-[4.5rem] flex justify-around items-center text-[1rem]">
+    {
+      routes.map((item) => (
+        <a
+          class="group relative min-w-[80px] w-fit min-h-[52px] h-fit ml-9"
+          href={item.path}
+        >
+          <div class="absolute inset-0 flex justify-center items-center text-white font=[Roboto] text-base font-light">
+            {item.name}
+          </div>
+          <div class="hidden group-hover:flex absolute inset-0 justify-center items-center">
+            <div class="w-[80px] h-[52px] transform animate-highlight-small bg-highlight-small animate-mode-forwards" />
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</div>

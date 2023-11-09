@@ -1,11 +1,12 @@
 ---
-import Video from "../components/client/Video.vue";
+// import Video from "../components/client/Video.vue";
 import HomeLayout from "../layouts/HomeLayout.astro";
-const src = '/hls/test.m3u8'
+import BackgroundVideo from "../components/BackgroundVideo.astro";
+const src = "/hls/test.m3u8";
 ---
 
 <HomeLayout title="Null Studio Gallery">
   <main class="w-screen h-screen overflow-hidden">
-    <Video src={src}  client:load/>
+    <BackgroundVideo src={src} />
   </main>
 </HomeLayout>

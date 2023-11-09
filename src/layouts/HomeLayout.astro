@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import LaptopHeader from "../components/LaptopHeader.astro";
+import MobileHeader from "../components/MobileHeader.astro";
 
 interface Props {
   title: string;
@@ -9,5 +11,7 @@ const { title } = Astro.props;
 ---
 
 <BaseLayout title={title}>
+  <LaptopHeader theme="dark" />
+  <MobileHeader theme="light" />
   <slot />
 </BaseLayout>
