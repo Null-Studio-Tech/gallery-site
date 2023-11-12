@@ -1,0 +1,25 @@
+---
+import thumbnailLarge from "../assets/images/thumbnail_large.svg";
+import instagramLogo from "../assets/images/instagram-logo.svg";
+import groupImg from "../assets/images/group.svg";
+
+---
+<div class="footer flex w-full justify-between pt-[12.5rem] mobile:pt-[6.25rem] mobile:flex-col pb-32 mobile:pb-[5.5rem]">
+  <div class="flex flex-col mobile:mb-12 flex-[2]">
+    <div class="text-xl mobile:text-base mb-7 mobile:mb-4">©2023 Gaoding</div>
+    <div>Art of Science, Science of Art</div>
+    <div class="font-[Roboto-italic]">by Industrial Light & Magic</div>
+  </div>
+  <div class="flex flex-col mobile:mb-12 flex-1">
+    <div class="text-xl mobile:text-base mb-7 mobile:mb-4">Contact</div>
+    <div>chen_gao_ding@163.com</div>
+  </div>
+  <div class="flex flex-col flex-1">
+    <div class="text-xl mobile:text-base mb-7 mobile:mb-4">Social</div>
+    <div class="flex">
+      <img src={groupImg.src}/>
+      <img class="mx-3" src={instagramLogo.src}/>
+      <img src={thumbnailLarge.src}/>
+    </div>
+  </div>
+</div>

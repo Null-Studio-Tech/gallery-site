@@ -1,8 +1,29 @@
 ---
-import HomeLayout from "../layouts/HomeLayout.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import personalData from "../data/personal.json";
+const list = personalData.en
 ---
 
-<HomeLayout title="Null Studio Gallery">
-  <main class="w-screen h-screen overflow-hidden">
-  </main>
-</HomeLayout>
+<PageLayout title="Null Studio Gallery" active="/personal">
+  <div class="pt-[8.75rem] mobile:pt-[6.25rem]">
+    {
+      list.map((item) => (
+      <div
+        class="flex justify-between mb-9 mobile:mb-0 last:mb-0 mobile:flex-col-reverse mobile:justify-end">
+        <a
+          class="group relative min-w-[80px] w-fit min-h-[52px] mobile:min-h-[48px] mobile:mt-2 h-fit flex-1 pr-6"
+          href="/detail">
+          <div class="text-xl">{item.title}</div>
+          <div class="max-w-[100%] whitespace-pre-wrap mobile:hidden">{item.description}</div>
+          <div class="hidden group-hover:flex absolute inset-0 items-center mobile:!hidden">
+            <div class="w-[80px] h-[52px] transform animate-mode-forwards animate-highlight-small bg-dark-active-small" />
+          </div>
+        </a>
+        <a href="/detail">
+          <img src={item.cover} alt={item.cover} />
+        </a>
+      </div>
+      ))
+    }
+  </div>
+</PageLayout>

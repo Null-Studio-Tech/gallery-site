@@ -3,6 +3,17 @@
   font-style: normal;
   src: url('../assets/fonts/RobotoCondensed-Light.ttf')
 }
+@font-face {
+  font-family: Roboto-italic;
+  font-style: normal;
+  src: url('../assets/fonts/RobotoCondensed-ThinItalic.ttf')
+}
+@font-face {
+  font-family: SourceHanSansCN-ExtraLight;
+  font-style: normal;
+  src: url('../assets/fonts/SourceHanSansCN-ExtraLight.ttf')
+}
+
 
 * {
   font-family: 'Roboto';
@@ -40,6 +51,7 @@
 .bg-dark-active-small {
   background-image: url('../assets/images/highLightMotion_black_s.png');
   background-position: -1360px;
+  background-repeat: no-repeat;
 }
 
 .bg-dark-highlight-normal {

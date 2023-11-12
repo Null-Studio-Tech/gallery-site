@@ -26,7 +26,6 @@ const { src, controls } = Astro.props;
   ) as HTMLVideoElement;
 
   const source = video.dataset["src"] || "";
-
   if (Hls.isSupported()) {
     const hls = new Hls();
     hls.loadSource(source);

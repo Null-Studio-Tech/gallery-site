@@ -5,10 +5,10 @@ import logoWhiteImage from "../assets/images/logo-white.svg";
 
 interface Props {
   theme: "light" | "dark";
+  active?: string;
 }
-
-const { theme } = Astro.props;
-
+const { theme, active } = Astro.props;
+const defaultAcitve = active;
 const routes = navData.nav.map((nav) => ({ name: nav.en, path: nav.path }));
 ---
 
@@ -28,11 +28,13 @@ const routes = navData.nav.map((nav) => ({ name: nav.en, path: nav.path }));
           class="group relative min-w-[80px] w-fit min-h-[52px] h-fit ml-9"
           href={item.path}
         >
-          <div class="absolute inset-0 flex justify-center items-center text-white font=[Roboto] text-base font-light">
+          <div class:list={["absolute inset-0 flex justify-center items-center font=[Roboto] text-base font-light", theme === 'dark' ? 'text-white' : 'text-black']}>
             {item.name}
           </div>
-          <div class="hidden group-hover:flex absolute inset-0 justify-center items-center">
-            <div class="w-[80px] h-[52px] transform animate-highlight-small bg-highlight-small animate-mode-forwards" />
+          <div class:list={["absolute inset-0 justify-center items-center", defaultAcitve === item.path ? "flex" : "hidden group-hover:flex"]}>
+            <div class:list={["w-[80px] h-[52px] transform animate-mode-forwards", {
+              "animate-highlight-small": defaultAcitve !== item.path
+            } , theme === 'dark' ? "bg-highlight-small" : "bg-dark-active-small"]} />
           </div>
         </a>
       ))
