@@ -15,7 +15,7 @@ const routes = navData.nav.map((nav) => ({ name: nav.en, path: nav.path }));
 ---
 
 <div
-  class="header w-full fixed z-10 justify-between items-center pt-4 px-6 text-white mobile:flex hidden"
+  class="header w-full fixed z-10 justify-between items-center pt-4 px-4 text-white mobile:flex hidden"
 >
   <a class="logo flex items-center" href="/">
     <img
@@ -37,7 +37,7 @@ const routes = navData.nav.map((nav) => ({ name: nav.en, path: nav.path }));
   class="fixed inset-0 flex flex-col bg-white px-4 z-20"
 >
   <div
-    class="header w-full fixed z-10 justify-between items-center pt-7 px-12 text-white mobile:flex hidden"
+    class="header w-full fixed left-0 z-10 justify-between items-center pt-4 px-4 text-white mobile:flex hidden"
   >
     <a class="logo flex items-center" href="/">
       <img src={logoBlackImage.src} alt="logo" />
@@ -68,7 +68,8 @@ const routes = navData.nav.map((nav) => ({ name: nav.en, path: nav.path }));
   document.getElementById("mobile-menu-open-btn")?.addEventListener(
     "click",
     () => {
-      menuBody.style.display = "";
+      menuBody.style.display = "flex";
+      document.body.style.overflow = "hidden";
     },
     false,
   );
@@ -77,6 +78,7 @@ const routes = navData.nav.map((nav) => ({ name: nav.en, path: nav.path }));
     "click",
     () => {
       menuBody.style.display = "none";
+      document.body.style.overflow = "";
     },
     false,
   );
