@@ -1,0 +1,46 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import projectData from "../data/project.json";
+
+const list = projectData.en;
+const about = projectData.about.en;
+---
+
+<PageLayout title="Null Studio Gallery" active="/work">
+  <div class="pt-[4.375rem] mobile:pt-[7rem]">
+    <div class="about relative">
+      <div class="text-[3.5rem] font-[SourceHanSansCN-ExtraLight] leading-[3.75rem] font-light mobile:text-[1.625rem] mobile:leading-[2rem]" set:html={about}>
+      </div>
+      <div class="mobile:hidden play-button"></div>
+    </div>
+    <div class="mt-[10.625rem] mobile:mt-[2.5rem] text-white leading-none">
+      {
+        list.map((item) => (
+        <div class="mb-4 relative">
+          <a href="/detail">
+            <img width="100%" src={item.cover} alt={item.cover} />
+          </a>
+          <div class="absolute bottom-[4.5rem] left-10 text-[1rem] mobile:hidden">
+            {item.title}
+          </div>
+          <div class="absolute bottom-10 left-10 text-[1.5rem] mobile:static mobile:text-black mobile:text-[1.25rem] mobile:mt-3">
+            {item.description}
+          </div>
+        </div>
+        ))
+      }
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+.play-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background: url(../assets/images/play-black.svg) no-repeat center/100% auto;
+  width: 3.625rem;
+  height: 3.5rem;
+}
+</style>

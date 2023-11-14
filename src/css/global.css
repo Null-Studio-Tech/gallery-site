@@ -1,0 +1,63 @@
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  src: url('../assets/fonts/RobotoCondensed-Light.ttf')
+}
+@font-face {
+  font-family: Roboto-italic;
+  font-style: normal;
+  src: url('../assets/fonts/RobotoCondensed-ThinItalic.ttf')
+}
+@font-face {
+  font-family: SourceHanSansCN-ExtraLight;
+  font-style: normal;
+  src: url('../assets/fonts/SourceHanSansCN-ExtraLight.ttf')
+}
+
+
+* {
+  font-family: 'Roboto';
+}
+
+.animate-mode-forwards {
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.bg-active-normal {
+  background-image: url('../assets/images/highLightMotion_white_m.png');
+  background-position: -3400px;
+}
+
+.bg-active-small {
+  background-image: url('../assets/images/highLightMotion_white_s.png');
+  background-position: -1360px;
+}
+
+.bg-highlight-normal {
+  background-image: url('../assets/images/highLightMotion_white_m.png');
+}
+
+.bg-highlight-small {
+  background-image: url('../assets/images/highLightMotion_white_s.png');
+  background-repeat: no-repeat;
+}
+
+.bg-dark-active-normal {
+  background-image: url('../assets/images/highLightMotion_black_m.png');
+  background-position: -3400px;
+}
+
+.bg-dark-active-small {
+  background-image: url('../assets/images/highLightMotion_black_s.png');
+  background-position: -1360px;
+  background-repeat: no-repeat;
+}
+
+.bg-dark-highlight-normal {
+  background-image: url('../assets/images/highLightMotion_black_m.png')
+}
+
+.bg-dark-highlight-small {
+  background-image: url('../assets/images/highLightMotion_black_s.png');
+}
