@@ -1,0 +1,14 @@
+---
+import BackgroundVideo from "./BaseVideo.astro";
+interface Props {
+  className: any,
+  content: any
+}
+
+const { className,content } = Astro.props;
+---
+
+<div class={className}>
+  {content}
+</div>
+

@@ -1,0 +1,57 @@
+---
+import BackgroundVideo from "./BaseVideo.astro";
+interface Props {
+  src: any;
+  cover?: '';
+  description?: string;
+  leftSlot?: string;
+  className?: string
+}
+
+const { src, description, leftSlot } = Astro.props;
+---
+
+<div class="flex mobile:flex-col">
+  <div class="left mobile:order-3" set:html={leftSlot}>
+  </div>
+  <div class="flex-1">
+    <div class="relative w-full  flex flex-col">
+      <BackgroundVideo src={src} />
+      <div id="play-button" class="w-full h-full  absolute top-0 left-0 z-10 flex justify-center items-center cursor-pointer">
+        <div class="play-button w-[5.5rem] h-[5.625rem] mobile:w-[2.75rem] mobile:h-[2.875rem]"></div>
+      </div>
+    </div>
+    <div class="w-[542px] leading-6 mobile:w-full text-[1rem] pt-16">
+      { description }
+    </div>
+  </div>
+</div>
+
+<script>
+  let isReady = false;
+  const video: HTMLVideoElement = document.getElementById(
+    "base-video",
+  ) as HTMLVideoElement;
+  const playButton: HTMLVideoElement = document.getElementById(
+    "play-button",
+  ) as HTMLVideoElement;
+  video.addEventListener("loadedmetadata", function () {
+    isReady = true;
+  });
+  playButton.addEventListener("click", function () {
+    if(isReady)  video.play();
+    playButton.style.display = 'none'
+    video.controls = true
+  });
+
+  video.addEventListener("pause", function () {
+    video.controls = false;
+    playButton.style.display = 'flex'
+  });
+
+</script>
+<style>
+.play-button {
+  background: url(../assets/images/video.svg) no-repeat center center/ 100% auto;
+}
+</style>

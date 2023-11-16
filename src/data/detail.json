@@ -1,0 +1,115 @@
+{
+  "en": [
+    {
+      "widget": "TitleText",
+      "content": "Trash May Rule The World",
+      "className": "text-[3.5rem] leading-none mb-11 mobile:text-[2.5rem]",
+      "style": ""
+    },
+    {
+      "widget": "VideoContainer",
+      "title": "",
+      "description": "The animation is inspired by my anxiety about environmental pollution, plastic products and chemical waste are rapidly occupying the world, I tried to present this false beauty in the short film, and hope everyone can take care of the environment.",
+      "src": "/video/music.mp4",
+      "cover": "",
+      "leftSlot": "<div class='w-[220px] mobile:pt-12 mobile:w-3/4 mobile:justify-between  flex flex-col mobile:flex-row justify-end h-full text-xs leading-4'><div class='font-semibold'>Main Tools</div><div><div>Cinema 4D</div><div>Marvelous design</div><div>Octane</div><div>Substance Painter</div><div>After Effects</div></div></div>"
+    },
+    {
+      "widget": "SwiperImage",
+      "title": "",
+      "description": "",
+      "position": "top",
+      "src": [
+        "/images/Mask group (1).png",
+        "/images/Mask group (2).png",
+        "/images/Mask group (3).png",
+        "/images/Mask group (4).png",
+        "/images/Mask group (5).png"
+      ]
+    },
+    {
+      "widget": "SwiperImage",
+      "title": "",
+      "description": "Throughout the entire animation short, I experimented with various types of dynamics simulations including rigid bodies, soft bodies, and cloth.",
+      "position": "left",
+      "src": [
+        "/images/Mask group (6).png",
+        "/images/Mask group (7).png",
+        "/images/Mask group (4).png",
+        "/images/Mask group (3).png"
+      ]
+    },
+    {
+      "widget": "ImgContainer",
+      "title": "",
+      "description": "Throughout the entire animation short, I experimented with various types of dynamics simulations including rigid bodies, soft bodies, and cloth.",
+      "position": "left",
+      "src": [
+        "/images/Mask group (10).png"
+      ]
+    },
+    {
+      "widget": "ImgContainer",
+      "title": "",
+      "description": "",
+      "position": "right",
+      "src": [
+        "/images/Mask group (11).png"
+      ]
+    },
+    {
+      "widget": "ImgContainer",
+      "title": "",
+      "description": "",
+      "position": "top",
+      "src": [
+        "/images/trashColorCorrection_01191 1.png"
+      ]
+    },
+    {
+      "widget": "ImgContainer",
+      "title": "",
+      "description": "",
+      "position": "top",
+      "src": [
+        "/images/trashColorCorrection_01105 1.png"
+      ]
+    },
+    {
+      "widget": "TitleText",
+      "content": "Some making of",
+      "className": "text-[1.5rem] leading-none mb-24 mt-24 text-center",
+      "style": ""
+    },
+    {
+      "widget": "ImgContainer",
+      "title": "Some making of",
+      "description": "",
+      "position": "top",
+      "src": [
+        "/images/lungsclay0128.png",
+        "/images/foodcanMSClay0120.png",
+        "/images/Mask group (10).png",
+        "/images/Mask group (11).png"
+      ]
+    },
+    {
+      "widget": "ImgContainer",
+      "title": "",
+      "description": "Try different kind of fractal pattern which is quite funny.",
+      "position": "left",
+      "src": [
+        "/images/vectron14_0157.png"
+      ]
+    },
+    {
+      "widget": "ImgContainer",
+      "title": "",
+      "description": "",
+      "position": "right",
+      "src": [
+        "/images/vectron04.png"
+      ]
+    }
+  ]
+}

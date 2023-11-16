@@ -3,20 +3,47 @@
   font-style: normal;
   src: url('../assets/fonts/RobotoCondensed-Light.ttf')
 }
+
 @font-face {
   font-family: Roboto-italic;
   font-style: normal;
   src: url('../assets/fonts/RobotoCondensed-ThinItalic.ttf')
 }
+
 @font-face {
   font-family: SourceHanSansCN-ExtraLight;
   font-style: normal;
-  src: url('../assets/fonts/SourceHanSansCN-ExtraLight.ttf')
+  src: url('../assets/fonts/SourceHanSansCN-ExtraLight.otf')
 }
 
 
 * {
   font-family: 'Roboto';
+}
+
+
+/* 隐藏浏览器默认的播放按钮 */
+video::-webkit-media-controls-start-playback-button {
+  display: none;
+}
+
+/* 自定义播放按钮样式 */
+video::before {
+  content: "111111111";
+  /* 使用FontAwesome图标库中的播放图标 */
+  font-family: "FontAwesome";
+  font-size: 48px;
+  color: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+/* 当视频处于播放状态时隐藏自定义播放按钮 */
+video.playing::before {
+  display: none;
 }
 
 .animate-mode-forwards {
@@ -26,7 +53,9 @@
 
 .bg-active-normal {
   background-image: url('../assets/images/highLightMotion_white_m.png');
-  background-position: -3400px;
+  background-position: -1700px;
+  background-size: 1800px auto;
+  background-repeat: no-repeat;
 }
 
 .bg-active-small {
@@ -45,7 +74,9 @@
 
 .bg-dark-active-normal {
   background-image: url('../assets/images/highLightMotion_black_m.png');
-  background-position: -3400px;
+  background-position: -1700px;
+  background-size: 1800px auto;
+  background-repeat: no-repeat;
 }
 
 .bg-dark-active-small {

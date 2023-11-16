@@ -14,8 +14,8 @@ module.exports = {
 			},
 			keyframes: {
 				'highlight-normal': {
-					'from': { 'background-position': '0px' },
-					'to': { 'background-position': '-3400px' }
+					'from': { 'background-position': '0%' },
+					'to': { 'background-position': '-1700px' }
 				},
 				'highlight-small': {
 					'from': { 'background-position': '0px' },

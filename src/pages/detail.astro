@@ -1,7 +1,48 @@
 ---
+import SwiperImage from "../components/SwiperImage.astro";
+import VideoContainer from "../components/VideoContainer.astro";
+import ImgContainer from "../components/ImgContainer.astro";
+import TitleText from "../components/TitleText.astro";
 import PageLayout from "../layouts/PageLayout.astro";
+import detailData from "../data/detail.json";
+const list = detailData.en
+const templates = list.map(item =>{
+  if(item.widget === 'TitleText') {
+    return {
+      ...item,
+      widget: TitleText
+    }
+  }
+  if(item.widget === 'SwiperImage') {
+    return {
+      ...item,
+      widget: SwiperImage
+    }
+  }
+  if(item.widget === 'ImgContainer') {
+    return {
+      ...item,
+      widget: ImgContainer
+    }
+  }
+  if(item.widget === 'VideoContainer') {
+    return {
+      ...item,
+      widget: VideoContainer,
+      src: item.src || ['']
+    }
+  }
+  return item;
+})
 ---
 
-<PageLayout title="Null Studio Gallery">
-  <main>11111</main>
+<PageLayout title="Null Studio Gallery" active="personal">
+  <div class="pt-[8.75rem]">
+    {
+      templates.map((Item) => (
+        <Item.widget content={Item.content} leftSlot={Item.leftSlot} description={Item.description} className={Item.className} src={Item.src}>
+        </Item.widget>
+      ))
+    }
+  </div>
 </PageLayout>

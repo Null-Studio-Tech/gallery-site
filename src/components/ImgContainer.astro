@@ -1,0 +1,36 @@
+---
+interface Props {
+  src: any;
+}
+
+const { src } = Astro.props;
+
+const images = [];
+images.push(...src)
+---
+
+<div class="image-container flex">
+  <div class="grid flex-1 mobile:!grid-cols-1 mobile:!gap-8">
+    {
+      images.map(item=>(
+        <div class="image-wrap">
+          <img src={item}/>
+        </div>
+      ))
+    }
+</div>
+
+</div>
+
+<style>
+.image-container {
+}
+.grid {
+  grid-template-columns: repeat(auto-fit,minmax(48%,1fr));
+  grid-gap: 0.5rem;
+}
+.image-wrap img{
+  width: 100%;
+  height: auto;
+}
+</style>
