@@ -6,6 +6,7 @@ import TitleText from "../components/TitleText.astro";
 import PageLayout from "../layouts/PageLayout.astro";
 import detailData from "../data/detail.json";
 const list = detailData.en
+const BASE_URL = import.meta.env.BASE_URL;
 const templates = list.map(item =>{
   if(item.widget === 'TitleText') {
     return {

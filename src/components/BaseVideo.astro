@@ -17,6 +17,7 @@ const { src, controls, autoplay, type } = Astro.props;
   muted
   autoplay={autoplay}
   controls={controls}
+  custom-cache="false"
   loop
 >
 </video>
@@ -45,9 +46,9 @@ const { src, controls, autoplay, type } = Astro.props;
     hls.on(Hls.Events.MANIFEST_PARSED, () => {
       video.play();
     });
-    hls.on(Hls.Events.ERROR, () => {
+    hls.on(Hls.Events.ERROR, (e,error) => {
       // 监听出错事件
-      console.log("加载失败");
+      console.log("加载失败",e,error);
     });
   }
 
