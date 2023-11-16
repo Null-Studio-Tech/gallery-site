@@ -1,0 +1,48 @@
+---
+interface Props {
+  src: string;
+  controls?: boolean;
+}
+
+const { src, controls } = Astro.props;
+---
+
+<video
+  id="background-video"
+  class="z-0 h-full w-full object-cover object-center"
+  data-src={src}
+  muted
+  autoplay
+  controls={controls}
+  loop
+>
+</video>
+
+<script>
+  import Hls from "hls.js";
+
+  const video: HTMLVideoElement = document.getElementById(
+    "background-video",
+  ) as HTMLVideoElement;
+
+  const source = video.dataset["src"] || "";
+  if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource(source);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      video.play();
+    });
+    hls.on(Hls.Events.ERROR, () => {
+      // 监听出错事件
+      console.log("加载失败");
+    });
+  }
+
+  if (video.canPlayType("application/vnd.apple.mpegurl")) {
+    video.src = source;
+    video.addEventListener("loadedmetadata", function () {
+      video.play();
+    });
+  }
+</script>

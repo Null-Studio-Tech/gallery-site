@@ -3,11 +3,13 @@
   font-style: normal;
   src: url('../assets/fonts/RobotoCondensed-Light.ttf')
 }
+
 @font-face {
   font-family: Roboto-italic;
   font-style: normal;
   src: url('../assets/fonts/RobotoCondensed-ThinItalic.ttf')
 }
+
 @font-face {
   font-family: SourceHanSansCN-ExtraLight;
   font-style: normal;
@@ -27,7 +29,8 @@ video::-webkit-media-controls-start-playback-button {
 
 /* 自定义播放按钮样式 */
 video::before {
-  content: "111111111"; /* 使用FontAwesome图标库中的播放图标 */
+  content: "111111111";
+  /* 使用FontAwesome图标库中的播放图标 */
   font-family: "FontAwesome";
   font-size: 48px;
   color: #FFF;
