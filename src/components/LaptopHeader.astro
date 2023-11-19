@@ -14,10 +14,11 @@ const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <div
-  class="header w-full flex fixed z-10 justify-between pt-7 px-16 text-white mobile:hidden"
+  class:list={["header w-full flex fixed z-10 justify-between pt-7 pb-5 px-16 mobile:hidden max-w-[calc(2000px+8rem)] left-1/2 -translate-x-1/2", {"bg-white": theme === "light"}]}
 >
-  <a class="logo flex items-center" href={`${BASE_URL}`}>
+  <a class="logo w-[91px] flex items-center" href={`${BASE_URL}`}>
     <img
+      class="w-full"
       src={theme === "dark" ? logoWhiteImage.src : logoBlackImage.src}
       alt="logo"
     />
@@ -31,7 +32,7 @@ const BASE_URL = import.meta.env.BASE_URL;
         >
           <div
             class:list={[
-              "absolute inset-0 flex justify-center items-center font=[Roboto] text-base font-light",
+              "absolute inset-0 flex justify-center items-center font=[Roboto] text-xl font-light",
               theme === "dark" ? "text-white" : "text-black",
             ]}
           >
@@ -45,7 +46,7 @@ const BASE_URL = import.meta.env.BASE_URL;
           >
             <div
               class:list={[
-                "w-[80px] h-[52px] transform animate-mode-forwards",
+                "w-[40px] h-[27px] transform animate-mode-forwards",
                 {
                   "animate-highlight-small": defaultAcitve !== item.path,
                 },

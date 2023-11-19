@@ -3,6 +3,11 @@
   font-style: normal;
   src: url('../assets/fonts/RobotoCondensed-Light.ttf')
 }
+@font-face {
+  font-family: Roboto-ExtraLight;
+  font-style: normal;
+  src: url('../assets/fonts/RobotoCondensed-ExtraLight.ttf')
+}
 
 @font-face {
   font-family: Roboto-italic;
@@ -60,7 +65,9 @@ video.playing::before {
 
 .bg-active-small {
   background-image: url('../assets/images/highLightMotion_white_s.png');
-  background-position: -1360px;
+  background-size: 720px auto;
+  background-position: -680px;
+  background-repeat: no-repeat;
 }
 
 .bg-highlight-normal {
@@ -81,7 +88,8 @@ video.playing::before {
 
 .bg-dark-active-small {
   background-image: url('../assets/images/highLightMotion_black_s.png');
-  background-position: -1360px;
+  background-size: 720px auto;
+  background-position: -680px;
   background-repeat: no-repeat;
 }
 

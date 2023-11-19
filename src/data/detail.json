@@ -20,11 +20,11 @@
       "description": "",
       "position": "top",
       "src": [
-        "/gallery-site/images/Mask group (1).png",
-        "/gallery-site/images/Mask group (2).png",
-        "/gallery-site/images/Mask group (3).png",
-        "/gallery-site/images/Mask group (4).png",
-        "/gallery-site/images/Mask group (5).png"
+        "/images/detail/img01.jpg",
+        "/images/detail/img02.jpg",
+        "/images/detail/img03.jpg",
+        "/images/detail/img04.jpg",
+        "/images/detail/img05.jpg"
       ]
     },
     {
@@ -33,10 +33,11 @@
       "description": "Throughout the entire animation short, I experimented with various types of dynamics simulations including rigid bodies, soft bodies, and cloth.",
       "position": "left",
       "src": [
-        "/gallery-site/images/Mask group (6).png",
-        "/gallery-site/images/Mask group (7).png",
-        "/gallery-site/images/Mask group (4).png",
-        "/gallery-site/images/Mask group (3).png"
+        "/images/detail/img06.jpg",
+        "/images/detail/img07.jpg",
+        "/images/detail/img08.jpg",
+        "/images/detail/img09.jpg",
+        "/images/detail/img10.jpg"
       ]
     },
     {
@@ -45,7 +46,7 @@
       "description": "Throughout the entire animation short, I experimented with various types of dynamics simulations including rigid bodies, soft bodies, and cloth.",
       "position": "left",
       "src": [
-        "/gallery-site/images/Mask group (10).png"
+        "/images/detail/img7.jpg"
       ]
     },
     {
@@ -63,7 +64,7 @@
       "description": "",
       "position": "top",
       "src": [
-        "/gallery-site/images/trashColorCorrection_01191 1.png"
+        "/images/detail/img7.jpg"
       ]
     },
     {
@@ -72,7 +73,7 @@
       "description": "",
       "position": "top",
       "src": [
-        "/gallery-site/images/trashColorCorrection_01105 1.png"
+        "/images/detail/img7.jpg"
       ]
     },
     {
@@ -87,10 +88,10 @@
       "description": "",
       "position": "top",
       "src": [
-        "/gallery-site/images/lungsclay0128.png",
-        "/gallery-site/images/foodcanMSClay0120.png",
-        "/gallery-site/images/Mask group (10).png",
-        "/gallery-site/images/Mask group (11).png"
+        "/images/detail/img07.jpg",
+        "/images/detail/img08.jpg",
+        "/images/detail/img09.jpg",
+        "/images/detail/img10.jpg"
       ]
     },
     {
@@ -99,7 +100,7 @@
       "description": "Try different kind of fractal pattern which is quite funny.",
       "position": "left",
       "src": [
-        "/gallery-site/images/vectron14_0157.png"
+        "/images/detail/img011.jpg"
       ]
     },
     {
@@ -108,7 +109,7 @@
       "description": "",
       "position": "right",
       "src": [
-        "/gallery-site/images/vectron04.png"
+        "/images/detail/img011.jpg"
       ]
     }
   ]

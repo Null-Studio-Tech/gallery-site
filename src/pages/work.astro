@@ -1,23 +1,23 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import projectData from "../data/project.json";
+import projectData from "../data/work.json";
 const BASE_URL = import.meta.env.BASE_URL;
 const list = projectData.en;
 const about = projectData.about.en;
 ---
 
-<PageLayout title="Null Studio Gallery" active="/work">
+<PageLayout title="Null Studio Gallery" active="work">
   <div class="pt-[4.375rem] mobile:pt-[7rem]">
     <div class="about relative">
-      <div class="text-[3.5rem] font-[SourceHanSansCN-ExtraLight] leading-[3.75rem] font-light mobile:text-[1.625rem] mobile:leading-[2rem]" set:html={about}>
+      <div class="text-[3.5rem] font-[Roboto-ExtraLight] leading-[3.75rem] font-light mobile:text-[1.625rem] mobile:leading-[2rem]" set:html={about}>
       </div>
-      <a href={`${BASE_URL}/`} class="mobile:hidden play-button"></a>
+      <a href={`${BASE_URL}`} class="mobile:hidden play-button"></a>
     </div>
     <div class="mt-[10.625rem] mobile:mt-[2.5rem] text-white leading-none">
       {
         list.map((item) => (
         <div class="mb-4 relative">
-          <a href={`${BASE_URL}/detail`}>
+          <a href={`${BASE_URL}detail`}>
             <img width="100%" src={item.cover} alt={item.cover} />
           </a>
           <div class="absolute mobile:static group  bottom-10 left-10 ">
@@ -31,7 +31,7 @@ const about = projectData.about.en;
               <div class="w-[96px] h-[58px] transform animate-mode-forwards animate-highlight-normal bg-active-normal" ></div>
             </div>
           </div>
-          <a href={`${BASE_URL}/detail`} class="absolute bottom-10 right-10 right-button">
+          <a href={`${BASE_URL}detail`} class="absolute bottom-10 right-10 right-button">
 
           </a>
         </div>

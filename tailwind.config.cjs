@@ -19,7 +19,7 @@ module.exports = {
 				},
 				'highlight-small': {
 					'from': { 'background-position': '0px' },
-					'to': { 'background-position': '-1360px' }
+					'to': { 'background-position': '-680px' }
 				}
 			},
 			animation: {
