@@ -1,8 +1,8 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import thumbnailLarge from "../assets/images/thumbnail_large.svg";
-import instagramLogo from "../assets/images/instagram-logo.svg";
-import groupImg from "../assets/images/group.svg";
+import thumbnailLarge from "../assets/images/thumbnail_large.png";
+import instagramLogo from "../assets/images/instagram-logo.png";
+import groupImg from "../assets/images/behance@3x.png";
 
 ---
 
@@ -16,9 +16,9 @@ import groupImg from "../assets/images/group.svg";
     <div class="flex flex-col flex-1">
       <div class="text-[2rem] mb-5 mobile:mb-4">Social</div>
       <div class="flex">
-        <img src={groupImg.src}/>
-        <img class="mx-3" src={instagramLogo.src}/>
-        <img src={thumbnailLarge.src}/>
+        <img class="h-5" src={groupImg.src}/>
+        <img class="h-5 mx-3" src={instagramLogo.src}/>
+        <img class="h-5" src={thumbnailLarge.src}/>
       </div>
     </div>
     <div class="flex-[2]"></div>

@@ -7,6 +7,7 @@ const list = personalData.en
 
 <PageLayout title="Null Studio Gallery" active="personal">
   <div class="pt-[8.75rem] mobile:pt-[6.25rem]">
+    <div class="hidden mobile:block text-[40px] leading-none mb-7">Personal Works</div>
     {
       list.map((item) => (
       <div
@@ -14,7 +15,7 @@ const list = personalData.en
         <a
           class="group relative min-w-[96px] w-fit min-h-[58px] mobile:min-h-[48px] mobile:mt-2 h-fit flex-1 pr-6"
           href={`${BASE_URL}detail`}>
-          <div class="text-xl">{item.title}</div>
+          <div class="text-xl font-[Roboto-ExtraLight]">{item.title}</div>
           <div class="max-w-[100%] whitespace-pre-wrap mobile:hidden">{item.description}</div>
           <div class="hidden cursor-pointer group-hover:flex absolute inset-0 items-center mobile:!hidden">
             <div class="w-[96px] h-[58px] transform animate-mode-forwards animate-highlight-normal bg-dark-active-normal" ></div>
