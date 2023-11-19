@@ -3,22 +3,22 @@
     {
       "zh": "Work",
       "en": "Work",
-      "path": "/work"
+      "path": "work"
     },
     {
       "zh": "Personal",
       "en": "Personal",
-      "path": "/personal"
+      "path": "personal"
     },
     {
       "zh": "Contact",
       "en": "Contact",
-      "path": "/contact"
+      "path": "contact"
     },
     {
       "zh": "CN",
       "en": "CN",
-      "path": "/CN"
+      "path": "CN"
     }
   ]
 }

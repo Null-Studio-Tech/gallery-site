@@ -4,5 +4,6 @@
     "astro",
     "astrojs",
     "tailwindcss"
-  ]
+  ],
+  "liveServer.settings.root": "./dist"
 }
