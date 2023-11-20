@@ -3,20 +3,24 @@ interface Props {
   src: string;
   controls?: boolean;
   autoplay?: string | undefined;
-  type?: 'mp4' | 'm3u8'
+  type?: 'mp4' | 'm3u8',
+  poster?: string
 }
 
-const { src, controls, autoplay, type } = Astro.props;
+const { src, controls, autoplay, type, poster } = Astro.props;
 ---
 
 <video
   id="base-video"
   class="z-0 h-full w-full object-cover object-center"
   data-src={src}
+  src={src}
   data-type={type}
   muted
+  poster={poster}
   autoplay={autoplay}
   controls={controls}
+  custom-cache="false"
   loop
 >
 </video>
@@ -30,14 +34,6 @@ const { src, controls, autoplay, type } = Astro.props;
 
   const source = video.dataset["src"] || "";
   const type = video.dataset["type"] || "mp4";
-
-  if(type === 'mp4' || video.canPlayType("application/vnd.apple.mpegurl")) {
-    video.src = source;
-    video.addEventListener("loadedmetadata", function () {
-      if(video.autoplay)video.play();
-    });
-  }
-
   if (Hls.isSupported() && type==='m3u8') {
     const hls = new Hls();
     hls.loadSource(source);
@@ -45,9 +41,13 @@ const { src, controls, autoplay, type } = Astro.props;
     hls.on(Hls.Events.MANIFEST_PARSED, () => {
       video.play();
     });
-    hls.on(Hls.Events.ERROR, () => {
+    hls.on(Hls.Events.ERROR, (e,error) => {
       // 监听出错事件
-      console.log("加载失败");
+      console.log("加载失败",e,error);
+    });
+  } else {
+    video.addEventListener("loadedmetadata", function () {
+      if(video.autoplay)video.play();
     });
   }
 

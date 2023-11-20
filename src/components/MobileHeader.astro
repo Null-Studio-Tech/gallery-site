@@ -4,6 +4,7 @@ import logoBlackImage from "../assets/images/logo-black.svg";
 import logoWhiteImage from "../assets/images/logo-white.svg";
 import whiteMenuBtnImg from "../assets/images/menu-btn-white.png";
 import blackMenuBtnImg from "../assets/images/menu-btn-black.png";
+import close from "../assets/images/close.svg";
 
 interface Props {
   theme: "light" | "dark";
@@ -20,14 +21,15 @@ const routes = navData.nav.map((nav) => ({
 <div
   class="header w-full fixed z-10 justify-between items-center pt-4 px-4 text-white mobile:flex hidden"
 >
-  <a class="logo flex items-center" href={`${BASE_URL}`}>
+  <a class="logo w-[81px] flex items-center" href={`${BASE_URL}`}>
     <img
       src={theme === "dark" ? logoBlackImage.src : logoWhiteImage.src}
       alt="logo"
     />
   </a>
-  <div id="mobile-menu-open-btn" class="text-white w-4 h-3">
+  <div id="mobile-menu-open-btn" class="text-white w-6 h-6 leading-6">
     <img
+      class="w-full h-full object-contain"
       src={theme === "dark" ? blackMenuBtnImg.src : whiteMenuBtnImg.src}
       alt="menu button"
     />
@@ -47,9 +49,10 @@ const routes = navData.nav.map((nav) => ({
     </a>
     <div
       id="mobile-menu-close-btn"
-      class="text-white w-4 h-3 flex justify-center items-center"
+      class="text-white w-6 h-6 flex justify-center items-center"
     >
-      <span class="font-[Roboto] text-black text-2xl font-light">X</span>
+      <img
+        class="w-full h-full object-contain" src={close.src} alt=""/>
     </div>
   </div>
 
