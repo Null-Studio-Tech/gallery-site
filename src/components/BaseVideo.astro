@@ -14,9 +14,14 @@ const { src, controls, autoplay, type, poster } = Astro.props;
   id="base-video"
   class="z-0 h-full w-full object-cover object-center"
   data-src={src}
+  playsinline="true"
+  webkit-playsinline="true"
   src={src}
   data-type={type}
   muted
+  preload="preload"
+  x-webkit-airplay="allow"
+  x5-playsinline
   poster={poster}
   autoplay={autoplay}
   controls={controls}

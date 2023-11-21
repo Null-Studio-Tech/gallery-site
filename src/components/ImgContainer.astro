@@ -1,15 +1,16 @@
 ---
 interface Props {
   src: any;
+  className?: string
 }
 
-const { src } = Astro.props;
+const { src, className } = Astro.props;
 
 const images = [];
 images.push(...src)
 ---
 
-<div class="image-container flex">
+<div class:list={["image-container flex", className]}>
   <div class="grid flex-1 mobile:!grid-cols-1 mobile:!gap-8">
     {
       images.map(item=>(

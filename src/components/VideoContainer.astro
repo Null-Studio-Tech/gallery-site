@@ -4,17 +4,26 @@ interface Props {
   src: any;
   cover?: '';
   description?: string;
-  leftSlot?: string;
   className?: string
 }
 
-const { src, description, leftSlot } = Astro.props;
+const { src, description, className } = Astro.props;
 ---
 
-<div class="flex mobile:flex-col">
-  <div class="left mobile:order-3" set:html={leftSlot}>
+<div class:list={["grid grid-cols-12 gap-2 mobile:flex  mobile:flex-col", className]}>
+  <div class="col-span-2 mobile:order-3">
+    <div class='mobile:pt-12 mobile:w-3/4 mobile:justify-between flex flex-col mobile:flex-row justify-end h-full text-xs leading-4'>
+      <div class='font-semibold'>Main Tools</div>
+      <div>
+        <div>Cinema 4D</div>
+        <div>Marvelous design</div>
+        <div>Octane</div>
+        <div>Substance Painter</div>
+        <div>After Effects</div>
+      </div>
+    </div>
   </div>
-  <div class="flex-1">
+  <div class="col-span-10">
     <div class="relative w-full  flex flex-col">
       <BackgroundVideo src={src} />
       <div id="play-button" class="w-full h-full  absolute top-0 left-0 z-10 flex justify-center items-center cursor-pointer">
@@ -54,4 +63,5 @@ const { src, description, leftSlot } = Astro.props;
 .play-button {
   background: url(../assets/images/video.svg) no-repeat center center/ 100% auto;
 }
+
 </style>

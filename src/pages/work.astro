@@ -17,7 +17,7 @@ const about = projectData.about.en;
       {
         list.map((item) => (
         <div class="mb-4 mobile:mb-[1.625rem] relative">
-          <a href={`${BASE_URL}detail`}>
+          <a class="image-wrap" href={`${BASE_URL}detail`}>
             <img width="100%" src={item.cover} alt={item.cover} />
           </a>
           <div class="absolute mobile:static group   bottom-10 left-10 ">
@@ -55,5 +55,19 @@ const about = projectData.about.en;
   background: url(../assets/images/right.svg) no-repeat right/2.8125rem auto;
   width: 2.8125rem;
   height: 2.375rem;
+}
+.image-wrap {
+  width: 100%;
+  padding-bottom: 75%;
+  position: relative;
+  display: block;
+}
+.image-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
