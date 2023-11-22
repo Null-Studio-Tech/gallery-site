@@ -38,7 +38,7 @@ const templates = list.map(item =>{
 ---
 
 <PageLayout title="Null Studio Gallery" active="personal">
-  <div class="pt-[8.75rem] grid grid-cols-12 gap-2">
+  <div class="pt-[8.75rem] grid grid-cols-12 gap-x-2">
     {
       templates.map((Item) => (
         <Item.widget content={Item.content} description={Item.description} className={Item.className} src={Item.src}>
