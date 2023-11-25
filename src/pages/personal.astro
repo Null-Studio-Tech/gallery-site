@@ -6,14 +6,14 @@ const list = personalData.en
 ---
 
 <PageLayout title="Null Studio Gallery" active="personal">
-  <div class="pt-[8.75rem] mobile:pt-[6.25rem]">
+  <div class="pt-[15rem] mobile:pt-[6.25rem]">
     <div class="hidden mobile:block text-[40px] leading-none mb-7">Personal Works</div>
     {
       list.map((item) => (
       <div
-        class="flex justify-between mb-9 mobile:mb-0 last:mb-0 mobile:flex-col-reverse mobile:justify-end">
+        class="grid gap-2 grid-cols-12 mb-9 mobile:mb-0 last:mb-0 mobile:flex-col-reverse mobile:flex mobile:justify-end">
         <a
-          class="group relative min-w-[96px] w-fit min-h-[58px] mobile:min-h-[48px] mobile:mt-2 h-fit flex-1 pr-6"
+          class="group col-span-5 relative min-w-[96px] w-fit min-h-[58px] mobile:min-h-[48px] mobile:mt-2 h-fit flex-1 pr-6"
           href={`${BASE_URL}detail`}>
           <div class="text-xl font-[Roboto-ExtraLight]">{item.title}</div>
           <div class="max-w-[100%] whitespace-pre-wrap mobile:hidden">{item.description}</div>
@@ -21,7 +21,7 @@ const list = personalData.en
             <div class="w-[96px] h-[58px] transform animate-mode-forwards animate-highlight-normal bg-dark-active-normal" ></div>
           </div>
         </a>
-        <a href={`${BASE_URL}detail`}>
+        <a href={`${BASE_URL}detail`} class="col-span-7">
           <img src={item.cover} alt={item.cover} />
         </a>
       </div>

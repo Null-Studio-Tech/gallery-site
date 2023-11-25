@@ -1,152 +1,154 @@
 {
-  "en": [
-    {
-      "widget": "TextWidget",
-      "content": "Trash May Rule The World",
-      "className": "text-[3.5rem] leading-none mb-11 mobile:text-[2.5rem] text-center col-span-12",
-      "style": ""
-    },
-    {
-      "widget": "VideoContainer mb-36",
-      "title": "",
-      "className": "col-span-12",
-      "description": "The animation is inspired by my anxiety about environmental pollution, plastic products and chemical waste are rapidly occupying the world, I tried to present this false beauty in the short film, and hope everyone can take care of the environment.",
-      "src": "/video/music.mp4",
-      "cover": ""
-    },
-    {
-      "widget": "SwiperImage",
-      "className": "col-span-12 mb-36",
-      "title": "",
-      "description": "",
-      "position": "top",
-      "src": [
-        "/images/detail/img09.jpg",
-        "/images/detail/img02.jpg",
-        "/images/detail/img08.jpg",
-        "/images/detail/img06.jpg",
-        "/images/detail/img07.jpg"
-      ]
-    },
-    {
-      "widget": "SwiperImage",
-      "title": "",
-      "className": "col-span-12 mb-36",
-      "description": "Throughout the entire animation short, I experimented with various types of dynamics simulations including rigid bodies, soft bodies, and cloth.",
-      "position": "left",
-      "src": [
-        "/images/detail/img09.jpg",
-        "/images/detail/img02.jpg",
-        "/images/detail/img08.jpg",
-        "/images/detail/img06.jpg"
-      ]
-    },
-    {
-      "widget": "SwiperImage",
-      "title": "",
-      "className": "col-span-8 mb-36",
-      "description": "Throughout the entire animation short, I experimented with various types of dynamics simulations including rigid bodies, soft bodies, and cloth.",
-      "position": "left",
-      "src": [
-        "/images/detail/img09.jpg",
-        "/images/detail/img02.jpg",
-        "/images/detail/img08.jpg",
-        "/images/detail/img06.jpg"
-      ]
-    },
-    {
-      "widget": "TextWidget",
-      "className": "col-span-4 p-7",
-      "content": "整个动画制作过程中，尝试了多种类型的动力学模拟，包括刚体、柔体、布料模拟等等。"
-    },
-    {
-      "widget": "TextWidget",
-      "className": "col-span-4 p-7",
-      "content": "整个动画制作过程中，尝试了多种类型的动力学模拟，包括刚体、柔体、布料模拟等等。"
-    },
-    {
-      "widget": "SwiperImage",
-      "title": "",
-      "className": "col-span-8 mb-36",
-      "description": "Throughout the entire animation short, I experimented with various types of dynamics simulations including rigid bodies, soft bodies, and cloth.",
-      "position": "left",
-      "src": [
-        "/images/detail/img09.jpg",
-        "/images/detail/img02.jpg",
-        "/images/detail/img08.jpg",
-        "/images/detail/img06.jpg"
-      ]
-    },
-    {
-      "widget": "ImgContainer",
-      "title": "",
-      "className": "col-span-12",
-      "description": "",
-      "position": "top",
-      "src": [
-        "/images/detail/img07.jpg"
-      ]
-    },
-    {
-      "widget": "TextWidget",
-      "content": "Some making of",
-      "className": "text-[1.5rem] leading-none mb-24 mt-24 text-center col-span-12",
-      "style": ""
-    },
-    {
-      "widget": "ImgContainer",
-      "title": "Some making of",
-      "className": "col-span-12  mb-36",
-      "description": "",
-      "position": "top",
-      "src": [
-        "/images/detail/img07.jpg",
-        "/images/detail/img08.jpg",
-        "/images/detail/img09.jpg",
-        "/images/detail/img06.jpg"
-      ]
-    },
-    {
-      "widget": "ImgContainer",
-      "title": "",
-      "className": "col-span-8  mb-36",
-      "position": "left",
-      "src": [
-        "/images/detail/img02.jpg"
-      ]
-    },
-    {
-      "widget": "TextWidget",
-      "className": "col-span-4 p-7",
-      "content": "整个动画制作过程中，尝试了多种类型的动力学模拟，包括刚体、柔体、布料模拟等等。"
-    },
-    {
-      "widget": "TextWidget",
-      "className": "col-span-6"
-    },
-    {
-      "widget": "ImgContainer",
-      "title": "",
-      "className": "col-span-6  mb-36",
-      "description": "",
-      "position": "right",
-      "src": [
-        "/images/detail/img03.jpg"
-      ]
-    },
-    {
-      "widget": "TextWidget",
-      "className": "col-span-4 p-7",
-      "content": "整个动画制作过程中，尝试了多种类型的动力学模拟，包括刚体、柔体、布料模拟等等。"
-    },
-    {
-      "widget": "ImgContainer",
-      "title": "",
-      "className": "col-span-8",
-      "position": "left",
-      "src": [
-        "/images/detail/img02.jpg"
-      ]
-    }
-  ]
+  "en": {
+    "detailId1": [
+      {
+        "widget": "TextWidget",
+        "content": "Trash May Rule The World",
+        "className": "text-[3.5rem] leading-none mb-11 mobile:text-[2.5rem] text-center col-span-12",
+        "style": ""
+      },
+      {
+        "widget": "VideoContainer mb-36",
+        "title": "",
+        "className": "col-span-12",
+        "description": "The animation is inspired by my anxiety about environmental pollution, plastic products and chemical waste are rapidly occupying the world, I tried to present this false beauty in the short film, and hope everyone can take care of the environment.",
+        "src": "/video/music.mp4",
+        "cover": ""
+      },
+      {
+        "widget": "SwiperImage",
+        "className": "col-span-12 mb-36",
+        "title": "",
+        "description": "",
+        "position": "top",
+        "src": [
+          "/images/detail/img09.jpg",
+          "/images/detail/img02.jpg",
+          "/images/detail/img08.jpg",
+          "/images/detail/img06.jpg",
+          "/images/detail/img07.jpg"
+        ]
+      },
+      {
+        "widget": "SwiperImage",
+        "title": "",
+        "className": "col-span-12 mb-36",
+        "description": "Throughout the entire animation short, I experimented with various types of dynamics simulations including rigid bodies, soft bodies, and cloth.",
+        "position": "left",
+        "src": [
+          "/images/detail/img09.jpg",
+          "/images/detail/img02.jpg",
+          "/images/detail/img08.jpg",
+          "/images/detail/img06.jpg"
+        ]
+      },
+      {
+        "widget": "SwiperImage",
+        "title": "",
+        "className": "col-span-8 mb-36",
+        "description": "Throughout the entire animation short, I experimented with various types of dynamics simulations including rigid bodies, soft bodies, and cloth.",
+        "position": "left",
+        "src": [
+          "/images/detail/img09.jpg",
+          "/images/detail/img02.jpg",
+          "/images/detail/img08.jpg",
+          "/images/detail/img06.jpg"
+        ]
+      },
+      {
+        "widget": "TextWidget",
+        "className": "col-span-4 p-7",
+        "content": "整个动画制作过程中，尝试了多种类型的动力学模拟，包括刚体、柔体、布料模拟等等。"
+      },
+      {
+        "widget": "TextWidget",
+        "className": "col-span-4 p-7",
+        "content": "整个动画制作过程中，尝试了多种类型的动力学模拟，包括刚体、柔体、布料模拟等等。"
+      },
+      {
+        "widget": "SwiperImage",
+        "title": "",
+        "className": "col-span-8 mb-36",
+        "description": "Throughout the entire animation short, I experimented with various types of dynamics simulations including rigid bodies, soft bodies, and cloth.",
+        "position": "left",
+        "src": [
+          "/images/detail/img09.jpg",
+          "/images/detail/img02.jpg",
+          "/images/detail/img08.jpg",
+          "/images/detail/img06.jpg"
+        ]
+      },
+      {
+        "widget": "ImgContainer",
+        "title": "",
+        "className": "col-span-12",
+        "description": "",
+        "position": "top",
+        "src": [
+          "/images/detail/img07.jpg"
+        ]
+      },
+      {
+        "widget": "TextWidget",
+        "content": "Some making of",
+        "className": "text-[1.5rem] leading-none mb-24 mt-24 text-center col-span-12",
+        "style": ""
+      },
+      {
+        "widget": "ImgContainer",
+        "title": "Some making of",
+        "className": "col-span-12  mb-36",
+        "description": "",
+        "position": "top",
+        "src": [
+          "/images/detail/img07.jpg",
+          "/images/detail/img08.jpg",
+          "/images/detail/img09.jpg",
+          "/images/detail/img06.jpg"
+        ]
+      },
+      {
+        "widget": "ImgContainer",
+        "title": "",
+        "className": "col-span-8  mb-36",
+        "position": "left",
+        "src": [
+          "/images/detail/img02.jpg"
+        ]
+      },
+      {
+        "widget": "TextWidget",
+        "className": "col-span-4 p-7",
+        "content": "整个动画制作过程中，尝试了多种类型的动力学模拟，包括刚体、柔体、布料模拟等等。"
+      },
+      {
+        "widget": "TextWidget",
+        "className": "col-span-6"
+      },
+      {
+        "widget": "ImgContainer",
+        "title": "",
+        "className": "col-span-6  mb-36",
+        "description": "",
+        "position": "right",
+        "src": [
+          "/images/detail/img03.jpg"
+        ]
+      },
+      {
+        "widget": "TextWidget",
+        "className": "col-span-4 p-7",
+        "content": "整个动画制作过程中，尝试了多种类型的动力学模拟，包括刚体、柔体、布料模拟等等。"
+      },
+      {
+        "widget": "ImgContainer",
+        "title": "",
+        "className": "col-span-8",
+        "position": "left",
+        "src": [
+          "/images/detail/img02.jpg"
+        ]
+      }
+    ]
+  }
 }
