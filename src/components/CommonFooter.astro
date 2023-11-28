@@ -2,13 +2,22 @@
 import thumbnailLarge from "../assets/images/thumbnail_large.png";
 import instagramLogo from "../assets/images/instagram-logo.png";
 import groupImg from "../assets/images/behance@3x.png";
-
 ---
-<div class="footer flex w-full justify-between pt-[12.5rem] mobile:pt-[6.25rem] mobile:flex-col pb-32 mobile:pb-[5.5rem]">
+
+<div
+  class="footer flex w-full justify-between pt-[12.5rem] mobile:pt-[6.25rem] mobile:flex-col pb-32 mobile:pb-[5.5rem]"
+>
   <div class="flex flex-col mobile:mb-12 flex-[2]">
     <div class="text-xl mobile:text-base mb-7 mobile:mb-3">©2023 Gaoding</div>
     <div>Art of Science, Science of Art</div>
     <div class="font-[Roboto-italic]">by Industrial Light & Magic</div>
+    <div class="mt-5">
+      <a
+        class="text-sm text-black"
+        href="https://beian.miit.gov.cn/"
+        target="_blank">京ICP备2023033337号-1</a
+      >
+    </div>
   </div>
   <div class="flex flex-col mobile:mb-12 flex-1">
     <div class="text-xl mobile:text-base mb-7 mobile:mb-3">Contact</div>
@@ -17,9 +26,9 @@ import groupImg from "../assets/images/behance@3x.png";
   <div class="flex flex-col flex-1">
     <div class="text-xl mobile:text-base mb-7 mobile:mb-3">Social</div>
     <div class="flex h-5">
-      <img class="h-full" src={groupImg.src}/>
-      <img class="mx-3 h-full" src={instagramLogo.src}/>
-      <img class="h-full" src={thumbnailLarge.src}/>
+      <img class="h-full" src={groupImg.src} />
+      <img class="mx-3 h-full" src={instagramLogo.src} />
+      <img class="h-full" src={thumbnailLarge.src} />
     </div>
   </div>
 </div>
