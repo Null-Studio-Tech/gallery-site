@@ -76,6 +76,8 @@ video.playing::before {
 
 .bg-highlight-small {
   background-image: url('../assets/images/highLightMotion_white_s.png');
+  background-size: 720px auto;
+  background-position: -680px;
   background-repeat: no-repeat;
 }
 

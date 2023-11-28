@@ -2,20 +2,22 @@
 import HomeLayout from "../layouts/HomeLayout.astro";
 import BaseVideo from "../components/BaseVideo.astro";
 const BASE_URL = import.meta.env.BASE_URL;
-const src = `${BASE_URL}hls/test.m3u8`;
+const src = `${BASE_URL}hls/index.m3u8`;
 const poster = `${BASE_URL}images/cover.png`;
 ---
 
 <HomeLayout title="Null Studio Gallery">
   <main class="w-screen h-screen bg-black overflow-hidden">
     <BaseVideo autoplay="autoplay" poster={poster} type="m3u8" src={src} />
+    <div class="relative max-w-[calc(2000px+8rem)] h-0">
+      <a
+        href={`${BASE_URL}work`}
+        class="next-button absolute mobile:hidden right-16 w-[3.625rem] bottom-[50vh] translate-y-1/2 z-30 cursor-pointer h-[3.625rem]"
+      ></a>
+    </div>
     <a
       href={`${BASE_URL}work`}
-      class="next-button fixed mobile:hidden right-16 w-[3.625rem] bottom-1/2 translate-y-1/2 z-30 cursor-pointer h-[3.5rem]"
-    ></a>
-    <a
-      href={`${BASE_URL}work`}
-      class="next-button-mobile hidden mobile:block fixed w-[3.625rem] z-30 cursor-pointer h-[3.5rem] right-1/2 translate-x-1/2 bottom-16"
+      class="next-button-mobile hidden mobile:block fixed w-[3.625rem] z-30 cursor-pointer h-[3.625rem] right-1/2 translate-x-1/2 bottom-16"
     ></a>
   </main>
 </HomeLayout>
@@ -23,9 +25,11 @@ const poster = `${BASE_URL}images/cover.png`;
   .next-button {
     background-image: url(../assets/images/next.png);
     background-size: 100% auto;
+    background-repeat: no-repeat;
   }
   .next-button-mobile {
     background-image: url(../assets/images/next-mobile.svg);
     background-size: 100% auto;
+    background-repeat: no-repeat;
   }
 </style>

@@ -1,0 +1,14 @@
+---
+import BaseVideo from "./BaseVideo.astro";
+interface Props {
+  className: any,
+  content: any
+}
+
+const { className,content } = Astro.props;
+---
+
+<div class:list={["px-7", className]}>
+  {content}
+</div>
+

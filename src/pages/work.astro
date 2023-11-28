@@ -7,7 +7,7 @@ const about = projectData.about.en;
 ---
 
 <PageLayout title="Null Studio Gallery" active="work">
-  <div class="pt-[4.375rem] mobile:pt-[7rem]">
+  <div class="pt-[10.625rem] mobile:pt-[7rem]">
     <div class="about relative">
       <div class="text-[3.5rem] font-[Roboto-ExtraLight] leading-[3.75rem] font-light mobile:text-[1.625rem] mobile:leading-[2rem]" set:html={about}>
       </div>
@@ -17,10 +17,10 @@ const about = projectData.about.en;
       {
         list.map((item) => (
         <div class="mb-4 mobile:mb-[1.625rem] relative">
-          <a href={`${BASE_URL}detail`}>
+          <a class="image-wrap pb-[56.25%] mobile:pb-[75%]" href={`${BASE_URL}detail`}>
             <img width="100%" src={item.cover} alt={item.cover} />
           </a>
-          <div class="absolute mobile:static group   bottom-10 left-10 ">
+          <div class="absolute mobile:static group  bottom-10 left-10 ">
             <div class="text-[1rem] mobile:hidden mb-2.5">
               {item.title}
             </div>
@@ -55,5 +55,18 @@ const about = projectData.about.en;
   background: url(../assets/images/right.svg) no-repeat right/2.8125rem auto;
   width: 2.8125rem;
   height: 2.375rem;
+}
+.image-wrap {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+.image-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
