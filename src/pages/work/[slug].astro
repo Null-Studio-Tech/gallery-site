@@ -1,0 +1,28 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, getEntry } from "astro:content";
+import PageLayout from "../../layouts/PageLayout.astro";
+import { Debug } from "astro:components";
+
+export const getStaticPaths = (async () => {
+  const workList = await getCollection("work");
+  return workList.map((work) => ({
+    params: { slug: work.id },
+  }));
+}) satisfies GetStaticPaths;
+
+const { slug } = Astro.params;
+const page = await getEntry("work", slug);
+---
+
+<PageLayout title="Null Studio Gallery">
+  <div class="pt-[8.75rem] grid grid-cols-12 gap-x-2">
+    <!-- {
+      templates.map((Item) => (
+        <Item.widget content={Item.content} description={Item.description} className={Item.className} src={Item.src}>
+        </Item.widget>
+      ))
+    } -->
+  </div>
+  <Debug {page} />
+</PageLayout>

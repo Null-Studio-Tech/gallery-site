@@ -1,4 +1,5 @@
-{
+
+const Routes = {
   "nav": [
     {
       "zh": "Work",
@@ -15,5 +16,10 @@
       "en": "Contact",
       "path": "contact"
     }
-  ]
+  ] as const
 }
+
+
+export type PageRoutes = (typeof Routes.nav)[number]["path"];
+
+export default Routes; 

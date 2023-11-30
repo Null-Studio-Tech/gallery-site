@@ -3,10 +3,11 @@ import BaseLayout from "./BaseLayout.astro";
 import LaptopHeader from "../components/LaptopHeader.astro";
 import MobileHeader from "../components/MobileHeader.astro";
 import CommonFooter from "../components/CommonFooter.astro";
+import type { PageRoutes } from "../data/nav";
 
 interface Props {
   title: string;
-  active?: string;
+  active?: PageRoutes;
   class?: string | "";
 }
 

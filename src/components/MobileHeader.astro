@@ -1,5 +1,5 @@
 ---
-import navData from "../data/nav.json";
+import navData from "../data/nav";
 import logoBlackImage from "../assets/images/logo-black.svg";
 import logoWhiteImage from "../assets/images/logo-white.svg";
 import whiteMenuBtnImg from "../assets/images/menu-btn-white.png";
@@ -51,8 +51,7 @@ const routes = navData.nav.map((nav) => ({
       id="mobile-menu-close-btn"
       class="text-white w-6 h-6 flex justify-center items-center"
     >
-      <img
-        class="w-full h-full object-contain" src={close.src} alt=""/>
+      <img class="w-full h-full object-contain" src={close.src} alt="" />
     </div>
   </div>
 

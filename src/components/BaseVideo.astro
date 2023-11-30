@@ -3,8 +3,8 @@ interface Props {
   src: string;
   controls?: boolean;
   autoplay?: string | undefined;
-  type?: 'mp4' | 'm3u8',
-  poster?: string
+  type?: "mp4" | "m3u8";
+  poster?: string;
 }
 
 const { src, controls, autoplay, type, poster } = Astro.props;
@@ -32,6 +32,7 @@ const { src, controls, autoplay, type, poster } = Astro.props;
 
 <script>
   import Hls from "hls.js";
+  import { prefetch } from "astro:prefetch";
 
   const video: HTMLVideoElement = document.getElementById(
     "base-video",
@@ -39,21 +40,24 @@ const { src, controls, autoplay, type, poster } = Astro.props;
 
   const source = video.dataset["src"] || "";
   const type = video.dataset["type"] || "mp4";
-  if (Hls.isSupported() && type==='m3u8') {
+
+  // 预加载
+  prefetch(source, { with: "fetch" });
+
+  if (Hls.isSupported() && type === "m3u8") {
     const hls = new Hls();
     hls.loadSource(source);
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED, () => {
       video.play();
     });
-    hls.on(Hls.Events.ERROR, (e,error) => {
+    hls.on(Hls.Events.ERROR, (e, error) => {
       // 监听出错事件
-      console.log("加载失败",e,error);
+      console.log("加载失败", e, error);
     });
   } else {
     video.addEventListener("loadedmetadata", function () {
-      if(video.autoplay)video.play();
+      if (video.autoplay) video.play();
     });
   }
-
 </script>
