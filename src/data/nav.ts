@@ -2,17 +2,17 @@
 const Routes = {
   "nav": [
     {
-      "zh": "Work",
+      "zh-CN": "工作项目",
       "en": "Work",
       "path": "work"
     },
     {
-      "zh": "Personal",
+      "zh-CN": "个人作品",
       "en": "Personal",
       "path": "personal"
     },
     {
-      "zh": "Contact",
+      "zh-CN": "联系方式",
       "en": "Contact",
       "path": "contact"
     }

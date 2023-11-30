@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import PageLayout from "../../layouts/PageLayout.astro";
+import PageLayout from "../../../layouts/PageLayout.astro";
+import { Debug } from "astro:components";
 
 const BASE_URL = import.meta.env.BASE_URL;
 
-const pageCollections = await getCollection(
-  "personal",
-  ({ id }) => !/^zh-CN/.test(id),
+const pageCollections = await getCollection("personal", ({ id }) =>
+  /^zh-CN/.test(id),
 );
 const persionalList = pageCollections.map((p) => ({
   ...p.data.meta,

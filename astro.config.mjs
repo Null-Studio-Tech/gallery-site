@@ -9,5 +9,11 @@ export default defineConfig({
     defaultStrategy: 'viewport'
   },
   base: '',
+  experimental: {
+    i18n: {
+      defaultLocale: 'en',
+      locales: ['en', 'zh-CN']
+    }
+  },
   integrations: [tailwind(), vue()]
 });
