@@ -1,0 +1,31 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+interface Props {
+  theme: "light" | "dark";
+}
+
+const { theme } = Astro.props;
+const locale = Astro.currentLocale as Locales;
+const [, lang, ...path] = Astro.url.pathname.split("/");
+const switchPath = getRelativeLocaleUrl(
+  locale === "en" ? "zh-CN" : "en",
+  path.join("/"),
+  { normalizeLocale: false },
+);
+const label = locale === "en" ? "zh-CN" : "EN";
+---
+
+<a
+  class="group relative w-fit min-h-[52px] h-fit ml-9 first:ml-0 flex items-center justify-end"
+  href={switchPath}
+>
+  <div
+    class:list={[
+      "flex justify-center items-center font=[Roboto] text-lg font-light",
+      theme === "dark" ? "text-white" : "text-black",
+    ]}
+  >
+    {label}
+  </div>
+</a>

@@ -1,18 +1,30 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection, getEntry } from "astro:content";
-import PageLayout from "../../layouts/PageLayout.astro";
+import PageLayout from "../../../layouts/PageLayout.astro";
 import { Debug } from "astro:components";
 
 export const getStaticPaths = (async () => {
-  const workList = await getCollection("work");
-  return workList.map((work) => ({
-    params: { slug: work.id },
-  }));
+  const pageCollections = await getCollection("personal");
+  return pageCollections
+    .map((p) => {
+      const [lang, ...slug] = p.id.split("/");
+      return {
+        params: {
+          slug: slug.join("/"),
+        },
+        props: {
+          id: p.id,
+          lang: lang,
+          collection: p.collection,
+        },
+      };
+    })
+    .filter((v) => v.props.lang === "en");
 }) satisfies GetStaticPaths;
 
-const { slug } = Astro.params;
-const page = await getEntry("work", slug);
+const props = Astro.props;
+const page = await getEntry("personal", props.id);
 ---
 
 <PageLayout title="Null Studio Gallery">
@@ -24,5 +36,6 @@ const page = await getEntry("work", slug);
       ))
     } -->
   </div>
+  <Debug {props} />
   <Debug {page} />
 </PageLayout>

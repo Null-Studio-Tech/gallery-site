@@ -1,20 +1,23 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import navData, { type PageRoutes } from "../data/nav";
-import logoBlackImage from "../assets/images/logo-black.svg";
-import logoWhiteImage from "../assets/images/logo-white.svg";
+import logoBlackImage from "@/assets/images/logo-black.svg";
+import logoWhiteImage from "@/assets/images/logo-white.svg";
+import LangSwitch from "./LangSwitch.astro";
 
 interface Props {
   theme: "light" | "dark";
   active?: PageRoutes;
 }
 const locale = Astro.currentLocale as Locales;
+const BASE_URL = import.meta.env.BASE_URL;
+const HOME_URL = getRelativeLocaleUrl(locale, "/", { normalizeLocale: false });
 const { theme, active } = Astro.props;
 const defaultAcitve = active;
 const routes = navData.nav.map((nav) => ({
   name: nav[locale],
-  path: nav.path,
+  path: getRelativeLocaleUrl(locale, nav.path, { normalizeLocale: false }),
 }));
-const BASE_URL = import.meta.env.BASE_URL;
 ---
 
 <div
@@ -23,7 +26,7 @@ const BASE_URL = import.meta.env.BASE_URL;
     { "bg-white": theme === "light" },
   ]}
 >
-  <a class="logo w-[91px] flex items-center" href={`${BASE_URL}`}>
+  <a class="logo w-[91px] flex items-center" href={HOME_URL}>
     <img
       class="w-full"
       src={theme === "dark" ? logoWhiteImage.src : logoBlackImage.src}
@@ -35,7 +38,7 @@ const BASE_URL = import.meta.env.BASE_URL;
       routes.map((item) => (
         <a
           class="group relative w-fit min-h-[52px] h-fit ml-9 first:ml-0 flex items-center justify-end"
-          href={`${BASE_URL}${item.path}`}
+          href={item.path}
         >
           <div
             class:list={[
@@ -66,5 +69,6 @@ const BASE_URL = import.meta.env.BASE_URL;
         </a>
       ))
     }
+    <LangSwitch theme={theme} />
   </div>
 </div>
