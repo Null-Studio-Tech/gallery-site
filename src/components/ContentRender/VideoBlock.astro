@@ -1,0 +1,81 @@
+---
+import BackgroundVideo from "../BaseVideo.astro";
+import type { CollectionEntry } from "astro:content";
+
+// 数组取number,获得联合类型
+type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
+
+interface Props {
+  options: Extract<ContentTypes, { type: "VideoBlock" }>;
+}
+
+const { options } = Astro.props;
+---
+
+<div
+  class:list={[
+    "grid grid-cols-12 gap-2 mobile:flex  mobile:flex-col",
+    options.className || "",
+  ]}
+>
+  <div class="col-span-2 mobile:order-3">
+    <div
+      class="mobile:pt-12 mobile:w-3/4 mobile:justify-between flex flex-col mobile:flex-row justify-end h-full text-xs leading-4"
+    >
+      <div class="font-semibold">Main Tools</div>
+      <div>
+        <div>Cinema 4D</div>
+        <div>Marvelous design</div>
+        <div>Octane</div>
+        <div>Substance Painter</div>
+        <div>After Effects</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-span-10">
+    <div class="relative w-full flex flex-col">
+      <BackgroundVideo src={options.src} />
+      <div
+        id="play-button"
+        class="w-full h-full absolute top-0 left-0 z-10 flex justify-center items-center cursor-pointer"
+      >
+        <div
+          class="play-button w-[5.5rem] h-[5.625rem] mobile:w-[2.75rem] mobile:h-[2.875rem]"
+        >
+        </div>
+      </div>
+    </div>
+    <div class="w-[542px] leading-6 mobile:w-full text-[1rem] pt-16">
+      {options.description}
+    </div>
+  </div>
+</div>
+
+<script>
+  let isReady = false;
+  const video: HTMLVideoElement = document.getElementById(
+    "base-video",
+  ) as HTMLVideoElement;
+  const playButton: HTMLVideoElement = document.getElementById(
+    "play-button",
+  ) as HTMLVideoElement;
+  video.addEventListener("loadedmetadata", function () {
+    isReady = true;
+  });
+  playButton.addEventListener("click", function () {
+    if (isReady) video.play();
+    playButton.style.display = "none";
+    video.controls = true;
+  });
+
+  video.addEventListener("pause", function () {
+    video.controls = false;
+    playButton.style.display = "flex";
+  });
+</script>
+<style>
+  .play-button {
+    background: url(../../assets/images/video.svg) no-repeat center center/ 100%
+      auto;
+  }
+</style>

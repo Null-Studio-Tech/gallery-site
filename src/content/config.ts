@@ -44,21 +44,19 @@ const SwipeBlock = z.object({
   className: z.string().optional()
 })
 
+export const detailSchema = z.object({
+  meta: Meta,
+  contents: z.array(z.union([TextBlock, VideoBlock, PictureBlock, SwipeBlock]))
+})
 
 const work = defineCollection({
   type: 'data',
-  schema: z.object({
-    meta: Meta,
-    contents: z.array(z.union([TextBlock, VideoBlock, PictureBlock, SwipeBlock]))
-  })
+  schema: detailSchema
 })
 
 const personal = defineCollection({
   type: 'data',
-  schema: z.object({
-    meta: Meta,
-    contents: z.array(z.union([TextBlock, VideoBlock, PictureBlock, SwipeBlock]))
-  })
+  schema: detailSchema
 })
 
 export const collections = { work, personal }

@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, getEntry } from "astro:content";
 import PageLayout from "../../../layouts/PageLayout.astro";
 import { Debug } from "astro:components";
+import ContentRender from "@/components/ContentRender/ContentRender.astro";
 
 export const getStaticPaths = (async () => {
   const pageCollections = await getCollection("personal");
@@ -28,14 +29,7 @@ const page = await getEntry("personal", props.id);
 ---
 
 <PageLayout title="Null Studio Gallery">
-  <div class="pt-[8.75rem] grid grid-cols-12 gap-x-2">
-    <!-- {
-      templates.map((Item) => (
-        <Item.widget content={Item.content} description={Item.description} className={Item.className} src={Item.src}>
-        </Item.widget>
-      ))
-    } -->
-  </div>
   <Debug {props} />
   <Debug {page} />
+  <ContentRender contents={page.data.contents} />
 </PageLayout>

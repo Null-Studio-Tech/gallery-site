@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+// 数组取number,获得联合类型
+type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
+
+interface Props {
+  options: Extract<ContentTypes, { type: "TextBlock" }>;
+}
+const { options } = Astro.props;
+---
+
+<div class:list={["px-7", options.className || ""]}>
+  {options.content}
+</div>

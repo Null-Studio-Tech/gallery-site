@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+// 数组取number,获得联合类型
+type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
+
+interface Props {
+  options: Extract<ContentTypes, { type: "PictureBlock" }>;
+}
+
+const { options } = Astro.props;
+
+const images = [];
+images.push(...options.srcset);
+---
+
+<div class:list={["image-container flex", options.className || ""]}>
+  <div class="grid flex-1 mobile:!grid-cols-1 mobile:!gap-8">
+    {
+      images.map((item) => (
+        <div class="image-wrap">
+          <img src={item} />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .image-container {
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+    grid-gap: 0.5rem;
+  }
+  .image-wrap img {
+    width: 100%;
+    height: auto;
+  }
+</style>

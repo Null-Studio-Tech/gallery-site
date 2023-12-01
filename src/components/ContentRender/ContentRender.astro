@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PictureBlock from "./PictureBlock.astro";
+import SwipeBlock from "./SwipeBlock.astro";
+import TextBlock from "./TextBlock.astro";
+import VideoBlock from "./VideoBlock.astro";
+import EmptyBlock from "./EmptyBlock.astro";
+
+interface Props {
+  contents: CollectionEntry<"work">["data"]["contents"];
+}
+
+const { contents } = Astro.props;
+---
+
+<div class="pt-[8.75rem] grid grid-cols-12 gap-x-2">
+  {
+    contents.map((c) => {
+      if (c.type === "PictureBlock") return <PictureBlock options={c} />;
+
+      if (c.type === "SwipeBlock") return <SwipeBlock options={c} />;
+
+      if (c.type === "VideoBlock") return <VideoBlock options={c} />;
+
+      if (c.type === "TextBlock") return <TextBlock options={c} />;
+
+      return <EmptyBlock options={c} />;
+    })
+  }
+</div>
