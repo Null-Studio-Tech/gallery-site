@@ -10,6 +10,6 @@ interface Props {
 const { options } = Astro.props;
 ---
 
-<div class:list={["px-7", options.className || ""]}>
+<div class:list={["px-7 mobile:col-span-12", options.className || ""]}>
   {options.content}
 </div>

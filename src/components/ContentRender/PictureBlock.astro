@@ -14,7 +14,7 @@ const images = [];
 images.push(...options.srcset);
 ---
 
-<div class:list={["image-container flex", options.className || ""]}>
+<div class:list={["image-container flex mobile:col-span-12", options.className || ""]}>
   <div class="grid flex-1 mobile:!grid-cols-1 mobile:!gap-8">
     {
       images.map((item) => (

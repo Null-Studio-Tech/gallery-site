@@ -25,18 +25,18 @@ const persionalList = pageCollections
 
 <PageLayout title="Null Studio Gallery" active="personal">
   <div class="pt-[15rem] mobile:pt-[6.25rem]">
-    <div class="hidden mobile:block text-[40px] leading-none mb-7">
+    <div class="hidden mobile:block text-[40px] Roboto-ExtraLight leading-none mb-7">
       Personal Works
     </div>
     {
       persionalList.map((item) => (
         <div class="grid gap-2 grid-cols-12 mb-9 mobile:mb-0 last:mb-0 mobile:flex-col-reverse mobile:flex mobile:justify-end">
           <a
-            class="group col-span-5 relative min-w-[96px] w-fit min-h-[58px] mobile:min-h-[48px] mobile:mt-2 h-fit flex-1 pr-6"
+            class="group col-span-5 relative min-w-[96px] w-fit min-h-[58px] mobile:min-h-[42px] mobile:mt-0.5 h-fit flex-1 pr-6"
             href={item.url}
           >
             <div class="text-xl font-[Roboto-ExtraLight]">{item.title}</div>
-            <div class="max-w-[100%] whitespace-pre-wrap mobile:hidden">
+            <div class="max-w-[100%] whitespace-pre-wrap mobile:hidden  text-[#666666]">
               {item.description}
             </div>
             <div class="hidden cursor-pointer group-hover:flex absolute inset-0 items-center mobile:!hidden">
