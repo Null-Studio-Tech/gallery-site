@@ -6,12 +6,17 @@
   },
   "contents": [
     {
-      "type": "TextBlock",
-      "content": "PICO 2022 Chinese New Year Motion Design"
+      "type": "VideoBlock",
+      "title": "",
+      "className": "col-span-12 mb-36",
+      "description": "The animation is inspired by my anxiety about environmental pollution, plastic products and chemical waste are rapidly occupying the world, I tried to present this false beauty in the short film, and hope everyone can take care of the environment.",
+      "src": "/video/music.mp4",
+      "cover": ""
     },
     {
       "type": "SwipeBlock",
       "picturePosition": "left",
+      "className": "col-span-8",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",

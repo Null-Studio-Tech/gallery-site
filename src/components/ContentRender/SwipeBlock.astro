@@ -10,6 +10,7 @@ interface Props {
 
 const { options } = Astro.props;
 const images = [];
+console.log(options)
 if (options.srcset.length > 1) {
   images.push(options.srcset[options.srcset.length - 1]);
   images.push(...options.srcset);
@@ -21,7 +22,7 @@ const style = {
 };
 ---
 
-<div class:list={["focus", options.className || ""]}>
+<div class:list={["focus mobile:col-span-12", options.className || ""]}>
   <ul class="picture" style={style}>
     {
       images.map((item) => (
@@ -36,7 +37,7 @@ const style = {
   </div>
   <div
     class:list={[
-      "next-button absolute mobile:hidden right-8 w-[3.625rem] bottom-8 z-30 cursor-pointer h-[3.5rem]",
+      "next-button absolute mobile:hidden right-8 w-[3.625rem] hover:opacity-60 bottom-8 z-30 cursor-pointer h-[3.625rem]",
       { hidden: options.srcset.length <= 1 },
     ]}
   >

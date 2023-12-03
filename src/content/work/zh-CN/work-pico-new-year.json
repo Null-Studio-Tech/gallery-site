@@ -7,11 +7,13 @@
   "contents": [
     {
       "type": "TextBlock",
+      "className": "col-span-4 p-7",
       "content": "PICO 2022 Chinese New Year Motion Design"
     },
     {
       "type": "SwipeBlock",
       "picturePosition": "left",
+      "className": "col-span-4",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",

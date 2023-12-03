@@ -7,6 +7,7 @@ interface Props {
   poster?: string;
 }
 
+console.log( Astro.props)
 const { src, controls, autoplay, type, poster } = Astro.props;
 ---
 
@@ -29,18 +30,26 @@ const { src, controls, autoplay, type, poster } = Astro.props;
   loop
 >
 </video>
+<div id="video-press" class:list={["w-[20rem] h-0.5 bg-[#222222] pr-[20rem]  fixed z-10 overflow-hidden border-box top-1/2 left-1/2 -translate-x-1/2 transition-all", {
+  hidden: type === 'mp4'
+}]}>
+  <div class="h-full bg-white">
+  </div>
+</div>
 
 <script>
   import Hls from "hls.js";
   import { prefetch } from "astro:prefetch";
-
+  let index = 0;
   const video: HTMLVideoElement = document.getElementById(
     "base-video",
   ) as HTMLVideoElement;
-
+  const press: HTMLElement = document.getElementById(
+    "video-press",
+  ) as HTMLElement;
+  console.log(prefetch);
   const source = video.dataset["src"] || "";
   const type = video.dataset["type"] || "mp4";
-
   // 预加载
   prefetch(source, { with: "fetch" });
 
@@ -48,8 +57,29 @@ const { src, controls, autoplay, type, poster } = Astro.props;
     const hls = new Hls();
     hls.loadSource(source);
     hls.attachMedia(video);
-    hls.on(Hls.Events.MANIFEST_PARSED, () => {
-      video.play();
+    console.log(Hls.Events);
+
+    // hls.on(Hls.Events.MANIFEST_PARSED, () => {
+    //   console.log('MANIFEST_PARSED')
+    //   // video.play();
+    // });
+    hls.on(Hls.Events.MEDIA_ATTACHED, () => {
+      console.log("MEDIA_ATTACHED")
+      // video.play();
+    });
+    hls.on(Hls.Events.FRAG_BUFFERED, (e,a) => {
+      index += 1;
+      if(index === 1) {
+        press.style.paddingRight ="8rem"
+      }
+      if(index === 2) {
+        press.style.paddingRight = "2rem"
+      }
+      if(index === 3) {
+        press.style.paddingRight = "0%"
+        press.style.display = "none"
+        video.play();
+      }
     });
     hls.on(Hls.Events.ERROR, (e, error) => {
       // 监听出错事件

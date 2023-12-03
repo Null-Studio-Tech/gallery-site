@@ -29,12 +29,12 @@ const workList = pageCollections
     <div class="about relative">
       {
         PageMeta.about[locale].map((paragraph) => (
-          <div class="text-[3.5rem] font-[Roboto-ExtraLight] leading-[3.75rem] font-light mobile:text-[1.625rem] mobile:leading-[2rem]">
+          <div class="text-[3.5rem] font-[Roboto-ExtraLight] leading-[3.625rem] font-light mobile:text-[1.625rem] mobile:leading-[2rem]">
             {paragraph}
           </div>
         ))
       }
-      <a href={`${BASE_URL}`} class="mobile:hidden play-button"></a>
+      <a href={`${BASE_URL}`} class="mobile:hidden play-button hover:opacity-60"></a>
     </div>
     <div class="mt-[10.625rem] mobile:mt-[2.5rem] text-white leading-none">
       {
@@ -45,7 +45,7 @@ const workList = pageCollections
             </a>
             <div class="absolute mobile:static group  bottom-10 left-10 ">
               <div class="text-[1rem] mobile:hidden mb-2.5">{item.title}</div>
-              <div class="text-[1.5rem] font-[Roboto-ExtraLight] mobile:text-black mobile:text-[1.25rem] mobile:mt-3">
+              <div class="text-[1.5rem] font-[Roboto-ExtraLight] mobile:text-black mobile:text-[1.25rem] mobile:mt-2 leading-7">
                 {item.description}
               </div>
               <div class="hidden group-hover:flex absolute inset-0 items-center cursor-pointer mobile:!hidden">
@@ -54,7 +54,7 @@ const workList = pageCollections
             </div>
             <a
               href={item.url}
-              class="absolute bottom-9 right-10 right-button mobile:hidden"
+              class="absolute bottom-9 right-10 right-button hover:opacity-60 mobile:hidden"
             />
           </div>
         ))
