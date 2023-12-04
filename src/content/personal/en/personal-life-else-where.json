@@ -4,5 +4,10 @@
     "description": "hope everyone can take care of the environment",
     "cover": "/images/personal/cover3.jpg"
   },
-  "contents": []
+  "contents": [
+    {
+      "type": "TextBlock",
+      "content": "This is a test"
+    }
+  ]
 }

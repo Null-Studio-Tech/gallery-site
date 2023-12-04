@@ -3,7 +3,16 @@
   "cSpell.words": [
     "astro",
     "astrojs",
+    "srcset",
     "tailwindcss"
   ],
-  "liveServer.settings.root": "./dist"
+  "liveServer.settings.root": "./dist",
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/src/content/**/*.json"
+      ],
+      "url": "/schema/DetailJsonSchema.json"
+    }
+  ]
 }

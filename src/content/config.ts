@@ -1,4 +1,11 @@
 import { z, defineCollection } from 'astro:content';
+import fs from 'node:fs';
+import path from 'node:path';
+import * as url from 'url';
+
+import { zodToJsonSchema } from 'zod-to-json-schema';
+
+
 
 // 作品描述信息
 const Meta = z.object({
@@ -60,3 +67,9 @@ const personal = defineCollection({
 })
 
 export const collections = { work, personal }
+
+
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+const jsonSchema = zodToJsonSchema(detailSchema);
+const detailSchemaFile = path.join(__dirname, '..', '..', 'schema', 'DetailJsonSchema.json');
+fs.writeFileSync(detailSchemaFile, JSON.stringify(jsonSchema, null, 2), 'utf8');
