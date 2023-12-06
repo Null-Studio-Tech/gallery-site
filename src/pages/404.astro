@@ -1,19 +1,20 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const BASE_URL = import.meta.env.BASE_URL;
 ---
 
-<PageLayout title="Null Studio Gallery" class="flex">
-  <main
-    class="w-full flex-1 min-h-[200px] flex justify-center items-center text-2xl"
-  >
-  <div class="empty-bg"></div>
-  </main>
-</PageLayout>
+<BaseLayout title="Null Studio Gallery" />
+<div class="w-screen h-screen flex justify-center items-center">
+  <a href={BASE_URL}>
+    <div class="empty-bg"></div>
+  </a>
+</div>
 
 <style>
-.empty-bg {
-  width: 146px;
-  height: 142px;
-  background: url("../assets/images/404.svg") no-repeat center/100% auto;
-}
+  .empty-bg {
+    width: 146px;
+    height: 142px;
+    background: url("../assets/images/404.svg") no-repeat center/100% auto;
+  }
 </style>

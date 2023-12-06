@@ -1,0 +1,19 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+---
+
+<PageLayout title="Null Studio Gallery" class="flex">
+  <main
+    class="w-full flex-1 min-h-[200px] flex justify-center items-center text-2xl"
+  >
+    <div class="empty-bg"></div>
+  </main>
+</PageLayout>
+
+<style>
+  .empty-bg {
+    width: 146px;
+    height: 142px;
+    background: url("../../assets/images/404.svg") no-repeat center/100% auto;
+  }
+</style>
