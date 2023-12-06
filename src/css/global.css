@@ -3,10 +3,17 @@
   font-style: normal;
   src: url('../assets/fonts/RobotoCondensed-Light.ttf')
 }
+
 @font-face {
   font-family: Roboto-ExtraLight;
   font-style: normal;
   src: url('../assets/fonts/RobotoCondensed-ExtraLight.ttf')
+}
+
+@font-face {
+  font-family: RobotoCondensed-Regular;
+  font-style: normal;
+  src: url('../assets/fonts/RobotoCondensed-Regular.ttf')
 }
 
 @font-face {
@@ -19,6 +26,12 @@
   font-family: SourceHanSansCN-ExtraLight;
   font-style: normal;
   src: url('../assets/fonts/SourceHanSansCN-ExtraLight.otf')
+}
+
+@font-face {
+  font-family: SourceHanSansCN-Light;
+  font-style: normal;
+  src: url('../assets/fonts/SourceHanSansCN-Light.otf')
 }
 
 

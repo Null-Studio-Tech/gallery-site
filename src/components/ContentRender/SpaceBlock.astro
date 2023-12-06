@@ -13,4 +13,4 @@ interface Props {
 const { options } = Astro.props;
 ---
 
-<div class="col-span-12" style={{ height: options.size }}></div>
+<div class="mb-36 mobile:mb-8" class:list={[options.className || ""]}></div>

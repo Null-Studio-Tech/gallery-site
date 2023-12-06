@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/PageLayout.astro";
 import PageMeta from "@/data/work";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import CoverImage from "../../../components/CoverImage.astro";
 
 const BASE_URL = import.meta.env.BASE_URL;
 const locale = Astro.currentLocale as Locales;
@@ -40,10 +41,10 @@ const workList = pageCollections
       {
         workList.map((item) => (
           <div class="mb-4 mobile:mb-[1.625rem] relative">
-            <a class="image-wrap pb-[56.25%] mobile:pb-[75%]" href={item.url}>
-              <img width="100%" src={item.cover} alt={item.cover} />
+            <a href={item.url}>
+              <CoverImage src={item.cover}/>
             </a>
-            <div class="absolute mobile:static group  bottom-10 left-10 ">
+            <a href={item.url} class="absolute mobile:static group  bottom-10 left-10 ">
               <div class="text-[1rem] mobile:hidden mb-2.5">{item.title}</div>
               <div class="text-[1.5rem] font-[Roboto-ExtraLight] mobile:text-black mobile:text-[1.25rem] mobile:mt-2 leading-7">
                 {item.description}
@@ -51,7 +52,7 @@ const workList = pageCollections
               <div class="hidden group-hover:flex absolute inset-0 items-center cursor-pointer mobile:!hidden">
                 <div class="w-[96px] h-[58px] transform animate-mode-forwards animate-highlight-normal bg-active-normal" />
               </div>
-            </div>
+            </a>
             <a
               href={item.url}
               class="absolute bottom-9 right-10 right-button hover:opacity-60 mobile:hidden"
@@ -80,18 +81,5 @@ const workList = pageCollections
       auto;
     width: 2.8125rem;
     height: 2.375rem;
-  }
-  .image-wrap {
-    width: 100%;
-    position: relative;
-    display: block;
-  }
-  .image-wrap img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 </style>

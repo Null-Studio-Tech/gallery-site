@@ -5,7 +5,7 @@ import logoBlackImage from "../assets/images/logo-black.svg";
 import logoWhiteImage from "../assets/images/logo-white.svg";
 import whiteMenuBtnImg from "../assets/images/menu-btn-white.png";
 import blackMenuBtnImg from "../assets/images/menu-btn-black.png";
-import close from "../assets/images/close.svg";
+import close from "../assets/images/close.png";
 import LangSwitch from "./LangSwitch.astro";
 
 interface Props {
@@ -39,7 +39,7 @@ const routes = navData.nav.map((nav) => ({
     class="text-white w-6 h-6 leading-6 overflow-hidden"
   >
     <img
-      class="min-w-[2rem] w-[2rem] h-[2rem] -ml-[0.25rem] -mt-[0.25rem] object-contain"
+      class="w-6 h-6 object-contain"
       src={theme === "dark" ? blackMenuBtnImg.src : whiteMenuBtnImg.src}
       alt="menu button"
     />

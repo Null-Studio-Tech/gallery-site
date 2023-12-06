@@ -17,7 +17,7 @@ interface Props {
 const { contents, meta } = Astro.props;
 ---
 
-<div class="pt-[8.75rem] grid grid-cols-12 gap-x-2">
+<div class="pt-[8.75rem]">
   {
     contents.map((c) => {
       if (c.type === "PictureBlock")

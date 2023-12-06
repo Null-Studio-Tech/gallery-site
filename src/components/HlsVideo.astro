@@ -79,6 +79,7 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
             }
             if (index === 2) {
               progress.style.paddingRight = "2rem";
+              progress.style.transition = "none";
             }
             if (index === 3) {
               progress.style.paddingRight = "0%";

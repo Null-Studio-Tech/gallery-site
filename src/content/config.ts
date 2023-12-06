@@ -38,7 +38,8 @@ const PictureBlock = z.object({
   description: z.string().optional(),
   srcset: z.string().array(),
   picturePosition: z.enum(["left", "right", "top", "bottom"]),
-  className: z.string().optional()
+  className: z.string().optional(),
+  cols: z.string().optional()
 })
 
 // 轮播块

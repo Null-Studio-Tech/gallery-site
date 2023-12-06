@@ -104,6 +104,9 @@
               },
               "className": {
                 "type": "string"
+              },
+              "cols": {
+                "type": "string"
               }
             },
             "required": [

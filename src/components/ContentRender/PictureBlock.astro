@@ -16,36 +16,33 @@ const { options } = Astro.props;
 
 const images = [];
 images.push(...options.srcset);
+
 ---
 
 <div
-  class="image-container flex mobile:col-span-12"
-  class:list={[options.className || ""]}
->
-  <div class="grid flex-1 mobile:!grid-cols-1 mobile:!gap-8">
-    {
-      images.map((item) => (
-        <div class="image-wrap">
-          <Image
-            src={item}
-            alt={`image:${options.description}`}
-            width="1600"
-            height="900"
-          />
-        </div>
-      ))
-    }
-  </div>
-  {options.description && <div class="">{options.description}</div>}
+  class="grid gap-2 mobile:!grid-cols-1 grid-cols-12 mobile:gap-8"
+  class:list={[options.className,{
+    "pr-1": options.description
+  }]}
+  >
+  {options.picturePosition === 'right' && <div class="mobile:pb-6" class:list={[ `col-span-${12 - Number(options.cols)}`, {
+    "mobile:hidden": !options.description
+  }]}>{options.description}</div>}
+  {
+    images.map((item) => (
+    <Image
+      src={item}
+      class:list={[ `col-span-${options.cols || 12}`]}
+      alt={`image:${options.description}`}
+      width="1600"
+      height="900"
+    />
+    ))
+  }
+  {options.description && options.picturePosition === 'left' && <div class="pl-7 mobile:p-0 mobile:pt-6" class:list={[ `col-span-${12 - Number(options.cols)}`]}>{options.description}</div>}
 </div>
 
 <style scoped>
-  .image-container {
-  }
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
-    grid-gap: 0.5rem;
-  }
   .image-wrap img {
     width: 100%;
     height: auto;

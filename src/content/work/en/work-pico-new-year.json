@@ -6,17 +6,26 @@
   },
   "contents": [
     {
+      "type": "TextBlock",
+      "className": "!justify-start font-light text-[56px]",
+      "content": "Trash May Rule The World"
+    },
+    {
+      "type": "SpaceBlock",
+      "className": "!mb-11"
+    },
+    {
       "type": "VideoBlock",
       "title": "",
-      "className": "col-span-12 mb-36",
       "description": "The animation is inspired by my anxiety about environmental pollution, plastic products and chemical waste are rapidly occupying the world, I tried to present this false beauty in the short film, and hope everyone can take care of the environment.",
-      "src": "/video/music.mp4",
-      "cover": ""
+      "src": "/video/music.mp4"
+    },
+    {
+      "type": "SpaceBlock"
     },
     {
       "type": "SwipeBlock",
       "picturePosition": "left",
-      "className": "col-span-8",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",
@@ -26,9 +35,94 @@
       ]
     },
     {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "left",
+      "srcset": [
+        "/images/detail/img09.jpg",
+        "/images/detail/img02.jpg",
+        "/images/detail/img08.jpg",
+        "/images/detail/img06.jpg",
+        "/images/detail/img07.jpg"
+      ],
+      "description": "整个动画制作过程中，尝试了多种类型的动力学模拟，包括刚体、柔体、布料模拟等等。"
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "6",
+      "srcset": [
+        "/images/detail/img03.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "left",
+      "srcset": [
+        "/images/detail/img09.jpg",
+        "/images/detail/img02.jpg",
+        "/images/detail/img08.jpg",
+        "/images/detail/img06.jpg",
+        "/images/detail/img07.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "12",
+      "srcset": [
+        "/images/detail/img05.jpg"
+      ]
+    },
+    {
       "type": "TextBlock",
-      "className": "col-span-4 p-7",
-      "content": "整个动画制作过程中，尝试了多种类型的动力学模拟，包括刚体、柔体、布料模拟等等。"
+      "className": "font-light mt-24 mb-24 text-[1.5rem] mobile:mb-8 mobile:mt-18 mobile:!justify-start",
+      "content": "Some making of"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "6",
+      "srcset": [
+        "/images/detail/img06.jpg",
+        "/images/detail/img07.jpg",
+        "/images/detail/img08.jpg",
+        "/images/detail/img09.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "6",
+      "srcset": [
+        "/images/detail/img03.jpg"
+      ],
+      "description": "Try different kind of fractal pattern which is quite funny."
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "8",
+      "srcset": [
+        "/images/detail/img10.jpg"
+      ]
     }
   ]
 }

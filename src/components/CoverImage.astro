@@ -1,0 +1,27 @@
+---
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+---
+
+<div class="image-wrap pb-[56.25%] mobile:pb-[75%]">
+  <img src={src} alt={src} />
+</div>
+
+<style>
+  .image-wrap {
+    width: 100%;
+    position: relative;
+    display: block;
+  }
+  .image-wrap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

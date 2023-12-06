@@ -21,28 +21,37 @@ if (options.srcset.length > 1) {
   images.push(first);
 }
 const style = {
+  "grid-template-columns": `repeat(${images.length}, minmax(0, 1fr))`,
   width: `${images.length}00%`,
 };
 ---
 
-<div class:list={["focus mobile:col-span-12", options.className || ""]}>
-  <ul class="picture" style={style}>
-    {
-      images.map((item) => (
-        <li>
-          <Image src={item} alt="image" width="1600" height="900" />
-        </li>
-      ))
-    }
-  </ul>
-  <div class="absolute bottom-8 left-8 text-[3rem] num text-white">
-    1/{options.srcset.length}
-  </div>
+<div class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col"
+  class:list={[options.className || ""]}
+>
   <div
-    class="next-button absolute mobile:hidden right-8 w-[3.625rem] hover:opacity-60 bottom-8 z-30 cursor-pointer h-[3.625rem]"
-    class:list={[{ hidden: options.srcset.length <= 1 }]}
-  >
+    class="col-span-12 mobile:col-span-12 focus"
+    class:list={[{
+    "col-span-8": options.description}]}>
+    <ul class="picture" style={style}>
+      {
+        images.map((item) => (
+          <li>
+            <Image src={item} alt="image" width="1600" height="900" />
+          </li>
+        ))
+      }
+    </ul>
+    <div class="absolute bottom-8 left-8 mobile:bottom-4 mobile:left-4 text-[3rem] mobile:text-[1.25rem] num text-white">
+      1/{options.srcset.length}
+    </div>
+    <div
+      class="next-button absolute right-8 w-[3.625rem] hover:opacity-60 bottom-8 z-30 cursor-pointer h-[3.625rem] mobile:w-6 mobile:h-6 mobile:bottom-4 mobile:right-4"
+      class:list={[{ hidden: options.srcset.length <= 1 }]}
+    >
+    </div>
   </div>
+  {options.description && <div class="col-span-4 px-7 mobile:p-0 mobile:pt-6">{options.description}</div>}
 </div>
 <script>
   window.addEventListener("load", function () {
@@ -120,10 +129,11 @@ const style = {
     position: relative;
     top: 0;
     left: -100%;
-    display: flex;
+    display: grid;
+    column-gap: 8px;
   }
   .picture li {
-    flex: 1;
+    grid-column: span 1 / span 1;
     list-style: none;
   }
   .picture img {
