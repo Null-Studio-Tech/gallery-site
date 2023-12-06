@@ -24,9 +24,9 @@ const TextBlock = z.object({
 // 视频块
 const VideoBlock = z.object({
   type: z.literal("VideoBlock"),
+  src: z.string(),
   title: z.string().optional(),
   description: z.string().optional(),
-  src: z.string(),
   poster: z.string().optional(),
   className: z.string().optional()
 })
@@ -51,9 +51,16 @@ const SwipeBlock = z.object({
   className: z.string().optional()
 })
 
+// 占位块
+const SpaceBlock = z.object({
+  type: z.literal("SpaceBlock"),
+  size: z.string().default('64px'),
+  className: z.string().optional()
+})
+
 export const detailSchema = z.object({
   meta: Meta,
-  contents: z.array(z.union([TextBlock, VideoBlock, PictureBlock, SwipeBlock]))
+  contents: z.array(z.union([TextBlock, VideoBlock, PictureBlock, SwipeBlock, SpaceBlock]))
 })
 
 const work = defineCollection({

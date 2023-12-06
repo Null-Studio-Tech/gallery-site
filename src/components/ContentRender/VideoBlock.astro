@@ -3,13 +3,15 @@ import type { CollectionEntry } from "astro:content";
 
 // 数组取number,获得联合类型
 type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
+// 原信息类型
+type MetaTypes = CollectionEntry<"work">["data"]["meta"];
 
 interface Props {
   options: Extract<ContentTypes, { type: "VideoBlock" }>;
+  meta?: MetaTypes;
 }
 
 const { options } = Astro.props;
-console.log(options)
 ---
 
 <div
@@ -78,9 +80,9 @@ console.log(options)
       video.addEventListener("pause", function () {
         video.controls = false;
         playButton.style.display = "flex";
-    });
-  }
-})
+      });
+    }
+  });
 </script>
 <style>
   .play-svg {

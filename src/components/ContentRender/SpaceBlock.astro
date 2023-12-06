@@ -7,15 +7,10 @@ type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
 type MetaTypes = CollectionEntry<"work">["data"]["meta"];
 
 interface Props {
-  options: Extract<ContentTypes, { type: "TextBlock" }>;
+  options: Extract<ContentTypes, { type: "SpaceBlock" }>;
   meta?: MetaTypes;
 }
 const { options } = Astro.props;
 ---
 
-<div
-  class="px-7 col-span-12 flex justify-center text-xl font-bold"
-  class:list={[options.className || ""]}
->
-  {options.content}
-</div>
+<div class="col-span-12" style={{ height: options.size }}></div>

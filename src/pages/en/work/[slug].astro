@@ -30,7 +30,7 @@ const props = Astro.props;
 const page = await getEntry("work", props.id);
 ---
 
-<PageLayout title="Null Studio Gallery">
+<PageLayout title="Null Studio Gallery" active="work">
   <Debug {props} />
   <Debug {page} />
   <ContentRender contents={page.data.contents} />

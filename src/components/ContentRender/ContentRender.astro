@@ -5,26 +5,36 @@ import SwipeBlock from "./SwipeBlock.astro";
 import TextBlock from "./TextBlock.astro";
 import VideoBlock from "./VideoBlock.astro";
 import EmptyBlock from "./EmptyBlock.astro";
+import SpaceBlock from "./SpaceBlock.astro";
 
 interface Props {
+  // 内容集合类型
   contents: CollectionEntry<"work">["data"]["contents"];
+  // 原信息类型
+  meta?: CollectionEntry<"work">["data"]["meta"];
 }
 
-const { contents } = Astro.props;
+const { contents, meta } = Astro.props;
 ---
 
 <div class="pt-[8.75rem] grid grid-cols-12 gap-x-2">
   {
     contents.map((c) => {
-      if (c.type === "PictureBlock") return <PictureBlock options={c} />;
+      if (c.type === "PictureBlock")
+        return <PictureBlock meta={meta} options={c} />;
 
-      if (c.type === "SwipeBlock") return <SwipeBlock options={c} />;
+      if (c.type === "SwipeBlock")
+        return <SwipeBlock meta={meta} options={c} />;
 
-      if (c.type === "VideoBlock") return <VideoBlock options={c} />;
+      if (c.type === "VideoBlock")
+        return <VideoBlock meta={meta} options={c} />;
 
-      if (c.type === "TextBlock") return <TextBlock options={c} />;
+      if (c.type === "TextBlock") return <TextBlock meta={meta} options={c} />;
 
-      return <EmptyBlock options={c} />;
+      if (c.type === "SpaceBlock")
+        return <SpaceBlock meta={meta} options={c} />;
+
+      return <EmptyBlock meta={meta} options={c} />;
     })
   }
 </div>

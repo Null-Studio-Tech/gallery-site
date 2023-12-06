@@ -1,16 +1,19 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 // 数组取number,获得联合类型
 type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
+// 原信息类型
+type MetaTypes = CollectionEntry<"work">["data"]["meta"];
 
 interface Props {
   options: Extract<ContentTypes, { type: "SwipeBlock" }>;
+  meta?: MetaTypes;
 }
 
 const { options } = Astro.props;
 const images = [];
-console.log(options)
 if (options.srcset.length > 1) {
   images.push(options.srcset[options.srcset.length - 1]);
   images.push(...options.srcset);
@@ -27,7 +30,7 @@ const style = {
     {
       images.map((item) => (
         <li>
-          <img src={item} />
+          <Image src={item} alt="image" width="1600" height="900" />
         </li>
       ))
     }
@@ -36,10 +39,8 @@ const style = {
     1/{options.srcset.length}
   </div>
   <div
-    class:list={[
-      "next-button absolute mobile:hidden right-8 w-[3.625rem] hover:opacity-60 bottom-8 z-30 cursor-pointer h-[3.625rem]",
-      { hidden: options.srcset.length <= 1 },
-    ]}
+    class="next-button absolute mobile:hidden right-8 w-[3.625rem] hover:opacity-60 bottom-8 z-30 cursor-pointer h-[3.625rem]"
+    class:list={[{ hidden: options.srcset.length <= 1 }]}
   >
   </div>
 </div>

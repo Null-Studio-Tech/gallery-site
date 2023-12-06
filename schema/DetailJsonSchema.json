@@ -52,13 +52,13 @@
                 "type": "string",
                 "const": "VideoBlock"
               },
+              "src": {
+                "type": "string"
+              },
               "title": {
                 "type": "string"
               },
               "description": {
-                "type": "string"
-              },
-              "src": {
                 "type": "string"
               },
               "poster": {
@@ -149,6 +149,26 @@
               "type",
               "srcset",
               "picturePosition"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "const": "SpaceBlock"
+              },
+              "size": {
+                "type": "string",
+                "default": "64px"
+              },
+              "className": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type"
             ],
             "additionalProperties": false
           }

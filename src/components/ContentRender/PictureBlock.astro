@@ -1,11 +1,15 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 
 // 数组取number,获得联合类型
 type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
+// 原信息类型
+type MetaTypes = CollectionEntry<"work">["data"]["meta"];
 
 interface Props {
   options: Extract<ContentTypes, { type: "PictureBlock" }>;
+  meta?: MetaTypes;
 }
 
 const { options } = Astro.props;
@@ -14,19 +18,28 @@ const images = [];
 images.push(...options.srcset);
 ---
 
-<div class:list={["image-container flex mobile:col-span-12", options.className || ""]}>
+<div
+  class="image-container flex mobile:col-span-12"
+  class:list={[options.className || ""]}
+>
   <div class="grid flex-1 mobile:!grid-cols-1 mobile:!gap-8">
     {
       images.map((item) => (
         <div class="image-wrap">
-          <img src={item} />
+          <Image
+            src={item}
+            alt={`image:${options.description}`}
+            width="1600"
+            height="900"
+          />
         </div>
       ))
     }
   </div>
+  {options.description && <div class="">{options.description}</div>}
 </div>
 
-<style>
+<style scoped>
   .image-container {
   }
   .grid {
