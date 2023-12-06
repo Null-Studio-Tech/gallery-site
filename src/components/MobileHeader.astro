@@ -1,33 +1,43 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import navData from "../data/nav";
 import logoBlackImage from "../assets/images/logo-black.svg";
 import logoWhiteImage from "../assets/images/logo-white.svg";
 import whiteMenuBtnImg from "../assets/images/menu-btn-white.png";
 import blackMenuBtnImg from "../assets/images/menu-btn-black.png";
 import close from "../assets/images/close.svg";
+import LangSwitch from "./LangSwitch.astro";
 
 interface Props {
   theme: "light" | "dark";
 }
 
 const { theme = "light" } = Astro.props;
-const BASE_URL = import.meta.env.BASE_URL;
+const locale = Astro.currentLocale as Locales;
+// const BASE_URL = import.meta.env.BASE_URL;
+const HOME_URL = getRelativeLocaleUrl(locale, "/", { normalizeLocale: false });
 const routes = navData.nav.map((nav) => ({
-  name: nav.en,
-  path: `${BASE_URL}${nav.path}`,
+  name: nav[locale],
+  path: getRelativeLocaleUrl(locale, nav.path, { normalizeLocale: false }),
 }));
 ---
 
 <div
-  class:list={["header w-full fixed z-10 justify-between items-center py-4 px-4 text-white mobile:flex hidden", { "bg-white": theme === "dark" }]}
+  class:list={[
+    "header w-full fixed z-10 justify-between items-center py-4 px-4 text-white mobile:flex hidden",
+    { "bg-white": theme === "dark" },
+  ]}
 >
-  <a class="logo w-[81px] flex items-center" href={`${BASE_URL}`}>
+  <a class="logo w-[81px] flex items-center" href={HOME_URL}>
     <img
       src={theme === "dark" ? logoBlackImage.src : logoWhiteImage.src}
       alt="logo"
     />
   </a>
-  <div id="mobile-menu-open-btn" class="text-white w-6 h-6 leading-6 overflow-hidden">
+  <div
+    id="mobile-menu-open-btn"
+    class="text-white w-6 h-6 leading-6 overflow-hidden"
+  >
     <img
       class="min-w-[2rem] w-[2rem] h-[2rem] -ml-[0.25rem] -mt-[0.25rem] object-contain"
       src={theme === "dark" ? blackMenuBtnImg.src : whiteMenuBtnImg.src}
@@ -65,6 +75,7 @@ const routes = navData.nav.map((nav) => ({
         </a>
       ))
     }
+    <LangSwitch theme={theme} device="mobile" />
   </div>
 </div>
 

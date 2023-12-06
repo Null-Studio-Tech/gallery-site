@@ -3,9 +3,10 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 
 interface Props {
   theme: "light" | "dark";
+  device?: "laptop" | "mobile";
 }
 
-const { theme } = Astro.props;
+const { theme, device = "laptop" } = Astro.props;
 const locale = Astro.currentLocale as Locales;
 const [, lang, ...path] = Astro.url.pathname.split("/");
 const switchPath = getRelativeLocaleUrl(
@@ -16,16 +17,24 @@ const switchPath = getRelativeLocaleUrl(
 const label = locale === "en" ? "CN" : "EN";
 ---
 
-<a
-  class="group relative w-fit min-h-[52px] h-fit ml-9 first:ml-0 flex items-center justify-end"
-  href={switchPath}
->
-  <div
-    class:list={[
-      "flex justify-center items-center font=[Roboto] text-lg font-light",
-      theme === "dark" ? "text-white" : "text-black",
-    ]}
-  >
-    {label}
-  </div>
-</a>
+{
+  device === "laptop" ? (
+    <a
+      class="group relative w-fit min-h-[52px] h-fit ml-9 first:ml-0 flex items-center justify-end"
+      href={switchPath}
+    >
+      <div
+        class:list={[
+          "flex justify-center items-center font=[Roboto] text-lg font-light",
+          theme === "dark" ? "text-white" : "text-black",
+        ]}
+      >
+        {label}
+      </div>
+    </a>
+  ) : (
+    <a href={switchPath}>
+      <span class="font-[Roboto] text-black text-3xl font-light">{label}</span>
+    </a>
+  )
+}
