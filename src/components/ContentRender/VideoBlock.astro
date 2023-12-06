@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import WebVideo from "../WebVideo.astro";
 
 // 数组取number,获得联合类型
 type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
@@ -35,58 +36,9 @@ const { options } = Astro.props;
     </div>
   </div>
   <div class="col-span-10">
-    <div class="relative w-full flex flex-col video-black">
-      <video
-        class="z-0 video h-full w-full object-cover object-center"
-        playsinline="true"
-        webkit-playsinline="true"
-        src={options.src}
-        preload="preload"
-        x-webkit-airplay="allow"
-        x5-playsinline
-        custom-cache="false"
-        muted
-        loop
-      >
-      </video>
-      <div
-        class="play-button w-full h-full absolute top-0 left-0 z-10 flex justify-center items-center cursor-pointer hover:opacity-60"
-      >
-        <div
-          class="play-svg w-[5.625rem] h-[5.625rem] mobile:w-[2.75rem] mobile:h-[2.875rem]"
-        >
-        </div>
-      </div>
-    </div>
+    <WebVideo src={options.src} />
     <div class="w-[542px] leading-6 mobile:w-full text-[1rem] pt-16">
       {options.description}
     </div>
   </div>
 </div>
-
-<script>
-  window.addEventListener("load", function () {
-    const videoList = document.getElementsByClassName("video-black");
-    for (let i = 0; i < videoList.length; i++) {
-      const el = videoList[i] as HTMLElement;
-      const video = el.querySelector(".video") as HTMLVideoElement;
-      const playButton = el.querySelector(".play-button") as HTMLElement;
-      playButton.addEventListener("click", function () {
-        video.play();
-        playButton.style.display = "none";
-        video.controls = true;
-      });
-
-      video.addEventListener("pause", function () {
-        video.controls = false;
-        playButton.style.display = "flex";
-      });
-    }
-  });
-</script>
-<style>
-  .play-svg {
-    background: url(../../assets/images/video.svg) no-repeat center center/ 100%
-      auto;
-  }
-</style>

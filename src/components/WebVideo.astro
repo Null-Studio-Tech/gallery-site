@@ -1,0 +1,72 @@
+---
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+---
+
+<web-video class="relative w-full flex flex-col" data-src={src}>
+  <video
+    class="z-0 video h-full w-full object-cover object-center"
+    playsinline="true"
+    webkit-playsinline="true"
+    preload="preload"
+    x-webkit-airplay="allow"
+    x5-playsinline
+    custom-cache="false"
+    muted
+    loop
+  >
+  </video>
+  <div
+    class="play-button w-full h-full absolute top-0 left-0 z-10 flex justify-center items-center cursor-pointer hover:opacity-60"
+  >
+    <div
+      class="play-svg w-[5.625rem] h-[5.625rem] mobile:w-[2.75rem] mobile:h-[2.875rem]"
+    >
+    </div>
+  </div>
+</web-video>
+
+<script>
+  import { prefetch } from "astro:prefetch";
+
+  class WebVideo extends HTMLElement {
+    constructor() {
+      super();
+
+      const source = this.dataset["src"] || "";
+      // 预加载
+      if (source) prefetch(source, { with: "fetch" });
+
+      const video = this.querySelector<HTMLMediaElement>("video");
+      const playButton = this.querySelector<HTMLDivElement>(".play-button");
+
+      if (!video) return;
+      if (!playButton) return;
+
+      video.src = source;
+
+      playButton.addEventListener("click", function () {
+        video.play();
+        playButton.style.display = "none";
+        video.controls = true;
+      });
+
+      video.addEventListener("pause", function () {
+        video.controls = false;
+        playButton.style.display = "flex";
+      });
+    }
+  }
+
+  customElements.define("web-video", WebVideo);
+</script>
+
+<style>
+  .play-svg {
+    background: url(../assets/images/video.svg) no-repeat center center/ 100%
+      auto;
+  }
+</style>

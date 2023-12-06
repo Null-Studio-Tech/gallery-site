@@ -1,6 +1,6 @@
 ---
 import HomeLayout from "@/layouts/HomeLayout.astro";
-import BaseVideo from "@/components/BaseVideo.astro";
+import HlsVideo from "@/components/HlsVideo.astro";
 
 const BASE_URL = import.meta.env.BASE_URL;
 const locale = Astro.currentLocale;
@@ -10,7 +10,7 @@ const src = `${BASE_URL}hls/index.m3u8`;
 
 <HomeLayout title="Null Studio Gallery">
   <main class="w-screen h-screen bg-black overflow-hidden">
-    <BaseVideo autoplay="autoplay" type="m3u8" src={src} />
+    <HlsVideo autoplay="autoplay" type="m3u8" src={src} />
     <div class="relative max-w-[calc(1600px+8rem)] h-0">
       <a
         href={`${BASE_URL}${locale}/work`}
