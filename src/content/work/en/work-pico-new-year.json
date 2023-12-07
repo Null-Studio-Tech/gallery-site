@@ -40,6 +40,7 @@
     {
       "type": "SwipeBlock",
       "picturePosition": "left",
+      "cols": "8",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",
@@ -66,6 +67,7 @@
     {
       "type": "SwipeBlock",
       "picturePosition": "left",
+      "cols": "8",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",

@@ -25,7 +25,7 @@ images.push(...options.srcset);
     "pr-1": options.description
   }]}
   >
-  {options.picturePosition === 'right' && <div class="mobile:pb-6" class:list={[ `col-span-${12 - Number(options.cols)}`, {
+  {options.picturePosition === 'right' && <div class="mobile:pb-6" class:list={[ `col-span-${12 - Number(options.cols || 8)}`, {
     "mobile:hidden": !options.description
   }]}>{options.description}</div>}
   {
@@ -39,7 +39,7 @@ images.push(...options.srcset);
     />
     ))
   }
-  {options.description && options.picturePosition === 'left' && <div class="pl-7 mobile:p-0 mobile:pt-6" class:list={[ `col-span-${12 - Number(options.cols)}`]}>{options.description}</div>}
+  {options.description && options.picturePosition !== 'right' && <div class="pl-7 mobile:p-0 mobile:pt-6" class:list={[ `col-span-${12 - Number(options.cols || 8)}`]}>{options.description}</div>}
 </div>
 
 <style scoped>

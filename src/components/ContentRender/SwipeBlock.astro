@@ -29,10 +29,13 @@ const style = {
 <div class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col"
   class:list={[options.className || ""]}
 >
+  {options.picturePosition === 'right' && <div class="mobile:pb-6" class:list={[ `col-span-${12 - Number(options.cols || 8)}`, {
+    "mobile:hidden": !options.description
+  }]}>{options.description}</div>}
   <div
     class="col-span-12 mobile:col-span-12 focus"
-    class:list={[{
-    "col-span-8": options.description}]}>
+    class:list={[ `col-span-${options.cols || 12}`]}>
+
     <ul class="picture" style={style}>
       {
         images.map((item) => (
@@ -51,7 +54,7 @@ const style = {
     >
     </div>
   </div>
-  {options.description && <div class="col-span-4 px-7 mobile:p-0 mobile:pt-6">{options.description}</div>}
+  {options.description && options.picturePosition !== 'right' && <div class="pl-7 mobile:p-0 mobile:pt-6" class:list={[ `col-span-${12 - Number(options.cols || 8)}`]}>{options.description}</div>}
 </div>
 <script>
   window.addEventListener("load", function () {
@@ -69,11 +72,11 @@ const style = {
         if (index >= ul.children.length - 2) {
           index = 0;
           ul.style.transition = "none";
-          ul.style.transform = `translateX(${-index * w}px)`;
+          ul.style.transform = `translateX(${-index*100/ul.children.length}%)`;
         } else if (index < 0) {
           index = ul.children.length - 3;
           ul.style.transition = "none";
-          ul.style.transform = `translateX(${-index * w}px)`;
+          ul.style.transform = `translateX(-${index*100/ul.children.length}%)`;
         }
         text.innerText = `${index + 1}/${ul.children.length - 2}`;
       });
@@ -84,7 +87,7 @@ const style = {
           index = 0;
         }
         ul.style.transition = "all .3s";
-        ul.style.transform = `translateX(${-index * w}px)`;
+        ul.style.transform = `translateX(${-index*100/ul.children.length}%)`;
       });
       //手指滑动轮播图
       let startX = 0;
@@ -130,6 +133,7 @@ const style = {
     top: 0;
     left: -100%;
     display: grid;
+    margin-left: 4px;
     column-gap: 8px;
   }
   .picture li {
