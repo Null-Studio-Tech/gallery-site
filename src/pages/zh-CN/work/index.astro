@@ -30,7 +30,7 @@ const workList = pageCollections
     <div class="about relative">
       {
         PageMeta.about[locale].map((paragraph) => (
-          <div class="text-[3.5rem] font-[Roboto-ExtraLight] leading-[3.625rem] font-light mobile:text-[1.625rem] mobile:leading-[2rem]">
+          <div class="text-[3.5rem] font-[SourceHanSansCN-Light] leading-[3.625rem] font-light mobile:text-[1.625rem] mobile:leading-[2rem]">
             {paragraph}
           </div>
         ))
@@ -46,7 +46,7 @@ const workList = pageCollections
             </a>
             <a href={item.url} class="absolute mobile:static group  bottom-10 left-10 ">
               <div class="text-[1rem] mobile:hidden mb-2.5">{item.title}</div>
-              <div class="text-[1.5rem] font-[Roboto-ExtraLight] mobile:text-black mobile:text-[1.25rem] mobile:mt-2 leading-7">
+              <div class="text-[1.5rem] font-[SourceHanSansCN-Light] mobile:text-black mobile:text-[1.25rem] mobile:mt-2 leading-7">
                 {item.description}
               </div>
               <div class="hidden group-hover:flex absolute inset-0 items-center cursor-pointer mobile:!hidden">
