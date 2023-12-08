@@ -9,6 +9,7 @@ const { src } = Astro.props;
 <web-video class="relative w-full flex flex-col" data-src={src}>
   <video
     class="z-0 video h-full w-full object-cover object-center"
+    src={src}
     playsinline="true"
     webkit-playsinline="true"
     preload="preload"

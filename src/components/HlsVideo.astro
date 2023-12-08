@@ -12,7 +12,6 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
 
 <hls-video>
   <video
-    id="base-video"
     class="z-0 h-full w-full object-cover object-center"
     data-src={src}
     data-type={type}

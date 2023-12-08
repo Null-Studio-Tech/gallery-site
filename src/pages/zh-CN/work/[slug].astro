@@ -6,6 +6,7 @@ import { Debug } from "astro:components";
 import ContentRender from "@/components/ContentRender/ContentRender.astro";
 
 const BASE_URL = import.meta.env.BASE_URL;
+const isDev = import.meta.env.DEV;
 
 export const getStaticPaths = (async () => {
   const pageCollections = await getCollection("work");
@@ -31,7 +32,13 @@ const page = await getEntry("work", props.id);
 ---
 
 <PageLayout title="Null Studio Gallery">
-  <Debug {props} />
-  <Debug {page} />
+  {
+    isDev && (
+      <>
+        <Debug {props} />
+        <Debug {page} />
+      </>
+    )
+  }
   <ContentRender contents={page.data.contents} />
 </PageLayout>
