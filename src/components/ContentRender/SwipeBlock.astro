@@ -13,17 +13,9 @@ interface Props {
 }
 
 const { options } = Astro.props;
-const images = [];
-if (options.srcset.length > 1) {
-  images.push(options.srcset[options.srcset.length - 1]);
-  images.push(...options.srcset);
-  const [first = ""] = options.srcset;
-  images.push(first);
-}
-const style = {
-  "grid-template-columns": `repeat(${images.length}, minmax(0, 1fr))`,
-  width: `${images.length}00%`,
-};
+const images = options.srcset;
+const id = options.id
+
 ---
 
 <div class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col"
@@ -33,117 +25,56 @@ const style = {
     "mobile:hidden": !options.description
   }]}>{options.description}</div>}
   <div
-    class="col-span-12 mobile:col-span-12 focus"
+    class="col-span-12 mobile:col-span-12"
     class:list={[ `col-span-${options.cols || 12}`]}>
-
-    <ul class="picture" style={style}>
-      {
-        images.map((item) => (
-          <li>
-            <Image src={item} alt="image" width="1600" height="900" />
-          </li>
-        ))
-      }
-    </ul>
-    <div class="absolute bottom-8 left-8 mobile:bottom-4 mobile:left-4 text-[3rem] mobile:text-[1.25rem] num text-white">
-      1/{options.srcset.length}
-    </div>
-    <div
-      class="next-button absolute right-8 w-[3.625rem] hover:opacity-60 bottom-8 z-30 cursor-pointer h-[3.625rem] mobile:w-6 mobile:h-6 mobile:bottom-4 mobile:right-4"
-      class:list={[{ hidden: options.srcset.length <= 1 }]}
-    >
+    <div class="swiper swiper-container"  id={`swiper-container-${options.id}`} data-id={id}>
+      <ul class="swiper-wrapper" >
+        {
+          images.map((item) => (
+            <li class="swiper-slide">
+              <Image src={item} alt="image" width="1600" height="900" />
+            </li>
+          ))
+        }
+      </ul>
+      <div
+        id={`next-button-${options.id}`}
+        class="next-button absolute right-8 w-[3.625rem] hover:opacity-60 bottom-8 z-30 cursor-pointer h-[3.625rem] mobile:w-6 mobile:h-6 mobile:bottom-4 mobile:right-4"
+        class:list={[{ hidden: options.srcset.length <= 1 }]}
+      >
+      </div>
+      <div class="absolute z-10 bottom-8 left-8 mobile:bottom-4 mobile:left-4 text-[3rem] mobile:text-[1.25rem]  text-white">
+        <span class="num">1</span>/{options.srcset.length}
+      </div>
     </div>
   </div>
   {options.description && options.picturePosition !== 'right' && <div class="pl-7 mobile:p-0 mobile:pt-6" class:list={[ `col-span-${12 - Number(options.cols || 8)}`]}>{options.description}</div>}
 </div>
 <script>
-  window.addEventListener("load", function () {
-    const focus = document.getElementsByClassName("focus");
-    for (let i = 0; i < focus.length; i++) {
-      const el = focus[i] as HTMLElement;
-      const w = el.offsetWidth;
-      const ul = el.querySelector(".picture") as HTMLElement;
-      const text = el.querySelector(".num") as HTMLElement;
-      const button = el.querySelector(".next-button") as HTMLElement;
+import Swiper from 'swiper';
+import 'swiper/css';
+window.addEventListener("load", function () {
+  const container = document.getElementsByClassName("swiper-container");
+  for (let i = 0; i < container.length; i++) {
+    const el = container[i] as HTMLElement;
+    const id = el.dataset['id'];
+    const swiper = new Swiper(id ? `#swiper-container-${id}` : '.swiper-container', {
+      loop: true
+    });
+    const button = el.querySelector(".next-button") as HTMLElement;
+    const text = el.querySelector(".num") as HTMLElement;
+    button.addEventListener("click", function () {
+      swiper.slideNext();
+    });
+    swiper.on('slideChange', function () {
+      text.innerText = `${swiper.realIndex + 1}`;
+    });
+  };
 
-      let index = 0;
-      //无缝滚动，且去掉过渡效果
-      ul.addEventListener("transitionend", function () {
-        if (index >= ul.children.length - 2) {
-          index = 0;
-          ul.style.transition = "none";
-          ul.style.transform = `translateX(${-index*100/ul.children.length}%)`;
-        } else if (index < 0) {
-          index = ul.children.length - 3;
-          ul.style.transition = "none";
-          ul.style.transform = `translateX(-${index*100/ul.children.length}%)`;
-        }
-        text.innerText = `${index + 1}/${ul.children.length - 2}`;
-      });
-      button.addEventListener("click", function () {
-        if (index < ul.children.length - 2) {
-          index++;
-        } else {
-          index = 0;
-        }
-        ul.style.transition = "all .3s";
-        ul.style.transform = `translateX(${-index*100/ul.children.length}%)`;
-      });
-      //手指滑动轮播图
-      let startX = 0;
-      let moveX = 0;
-      let flag = false;
-      ul.addEventListener("touchstart", function (e) {
-        startX = e.targetTouches[0].pageX;
-      });
-      ul.addEventListener("touchmove", function (e) {
-        moveX = e.targetTouches[0].pageX - startX;
-        //手指拖动的时候不需要动画效果，所以取消过渡效果
-        ul.style.transition = "none";
-        ul.style.transform = `translateX(${-index * w + moveX}px)`;
-        flag = true;
-        e.preventDefault();
-      });
-      ul.addEventListener("touchend", function () {
-        //回弹效果，滑动距离大于70px才会切换下一张
-        if (!flag) {
-          return;
-        }
-        if (Math.abs(moveX) > 70) {
-          if (moveX > 0) {
-            index--;
-          } else {
-            index++;
-          }
-        }
-        ul.style.transition = "all .3s";
-        ul.style.transform = `translateX(${-index * w}px)`;
-      });
-    }
-  });
+});
+
 </script>
 <style>
-  .focus {
-    position: relative;
-    width: 100%;
-    overflow-x: hidden;
-  }
-  .picture {
-    position: relative;
-    top: 0;
-    left: -100%;
-    display: grid;
-    margin-left: 4px;
-    column-gap: 8px;
-  }
-  .picture li {
-    grid-column: span 1 / span 1;
-    list-style: none;
-  }
-  .picture img {
-    width: 100%;
-    height: auto;
-  }
   .next-button {
     background-image: url(../../assets/images/next.png);
     background-size: 100% auto;
