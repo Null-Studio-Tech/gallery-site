@@ -28,7 +28,6 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
   </video>
   <div
     class="progress w-[20rem] h-0.5 bg-[#222222] pr-[20rem] fixed z-10 overflow-hidden border-box top-1/2 left-1/2 -translate-x-1/2 transition-all"
-    class:list={[{ hidden: type === "mp4" }]}
   >
     <div class="h-full bg-white"></div>
   </div>
@@ -43,7 +42,6 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
   class HlsVideo extends HTMLElement {
     constructor() {
       super();
-
       const video = this.querySelector("#hls-video") as HTMLVideoElement;
       const progress = this.querySelector(".progress") as HTMLDivElement;
       // if (!video) return;
@@ -51,7 +49,7 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
         controls: false,
         autoplay: false,
         preload: 'auto',
-        buffered: 3,
+        bufferedPercent: 5000,
         muted: true, // 默认情况下将会消除任何音频。
         loop: true,
         sources: [
@@ -62,17 +60,15 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
         ]
       },);
       let index = 0;
-      player.on("progress",function(data:any){
+
+      player.on("progress",function(){
         index += 1;
         if (index === 1) {
-          progress.style.paddingRight = "8rem";
-        }
-        if (index === 2) {
           progress.style.paddingRight = "2rem";
           progress.style.transition = "none";
         }
-        if (index === 3) {
-          progress.style.paddingRight = "0%";
+        if (index === 2) {
+          progress.style.paddingRight = "8rem";
           progress.style.display = "none";
           video.play();
         }
@@ -131,10 +127,13 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
 
   customElements.define("hls-video", HlsVideo);
 </script>
-<style>
+<style is:global>
 #hls-video video{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.vjs-loading-spinner {
+ display: none!important;
 }
 </style>
