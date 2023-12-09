@@ -26,6 +26,7 @@
     {
       "type": "SwipeBlock",
       "picturePosition": "left",
+      "id": "0",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",
@@ -41,6 +42,7 @@
       "type": "SwipeBlock",
       "picturePosition": "left",
       "cols": "8",
+      "id": "1",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",
@@ -68,6 +70,7 @@
       "type": "SwipeBlock",
       "picturePosition": "left",
       "cols": "8",
+      "id": "2",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",

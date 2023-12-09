@@ -50,7 +50,8 @@ const SwipeBlock = z.object({
   srcset: z.string().array(),
   picturePosition: z.enum(["left", "right", "top", "bottom"]),
   className: z.string().optional(),
-  cols: z.string().optional()
+  cols: z.string().optional(),
+  id: z.string().optional()
 })
 
 // 占位块
