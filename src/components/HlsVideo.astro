@@ -31,6 +31,13 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
   >
     <div class="h-full bg-white"></div>
   </div>
+  <div
+  class="play-button absolute hidden top-1/2 left-1/2 -translate-x-1/2 z-20 cursor-pointer hover:opacity-60"
+>
+  <div
+    class="play-svg w-[5.625rem] h-[5.625rem] mobile:w-[2.75rem] mobile:h-[2.875rem]"
+  >
+  </div>
 </hls-video>
 
 <script>
@@ -44,6 +51,7 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
       super();
       const video = this.querySelector("#hls-video") as HTMLVideoElement;
       const progress = this.querySelector(".progress") as HTMLDivElement;
+      const playButton = this.querySelector(".play-button") as HTMLDivElement;
       // if (!video) return;
       const player = videojs('hls-video', {
         controls: false,
@@ -71,10 +79,29 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
           progress.style.transition = "none";
         }
       })
+      let isPlay = false;
       player.on("loadedmetadata",function(){
         progress.style.display = "none";
+        setTimeout(() => {
+          if(!isPlay)playButton.style.display = "block";
+        }, 100);
+        if(!video.autoplay)video.play();
+      });
+      player.on("canplaythrough",function() {
         video.play();
+      });
+      player.on('play', function () {
+        isPlay = true;
       })
+      playButton.addEventListener("click", function () {
+        // 监听视频播放开始
+        playButton.style.display = "none";
+        video.play();
+      });
+
+      document.addEventListener("WeixinJSBridgeReady", function () {
+        video.play();
+      });
     }
   }
 
@@ -88,5 +115,9 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
 }
 .vjs-loading-spinner {
  display: none!important;
+}
+.play-svg {
+  background: url(../assets/images/video.svg) no-repeat center center/ 100%
+    auto;
 }
 </style>

@@ -118,3 +118,11 @@ video.playing::before {
 .bg-dark-highlight-small {
   background-image: url('../assets/images/highLightMotion_black_s.png');
 }
+
+.contain-intrinsic-size {
+  contain-intrinsic-size: auto none;
+}
+
+.content-visibility {
+  content-visibility: hidden;
+}
