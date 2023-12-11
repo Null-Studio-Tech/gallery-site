@@ -12,95 +12,128 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
 
 <hls-video>
   <video
+    id="hls-video"
     class="z-0 h-full w-full object-cover object-center"
-    data-src={src}
-    data-type={type}
     playsinline="true"
     webkit-playsinline="true"
     src={src}
+    data-src={src}
     muted
     preload="preload"
     x-webkit-airplay="allow"
     x5-playsinline
-    poster={poster}
-    autoplay={autoplay}
-    controls={controls}
     custom-cache="false"
     loop
-  >
+  >: any
   </video>
   <div
     class="progress w-[20rem] h-0.5 bg-[#222222] pr-[20rem] fixed z-10 overflow-hidden border-box top-1/2 left-1/2 -translate-x-1/2 transition-all"
-    class:list={[{ hidden: type === "mp4" }]}
   >
     <div class="h-full bg-white"></div>
   </div>
 </hls-video>
 
 <script>
-  import Hls from "hls.js";
-  import { prefetch } from "astro:prefetch";
+
+  import videojs from "video.js";
+  import "video.js/dist/video-js.min.css";
+
 
   class HlsVideo extends HTMLElement {
     constructor() {
       super();
-
-      const video = this.querySelector<HTMLVideoElement>("video");
-      const progress = this.querySelector<HTMLDivElement>(".progress");
-      if (!video) return;
-
+      const video = this.querySelector("#hls-video") as HTMLVideoElement;
+      const progress = this.querySelector(".progress") as HTMLDivElement;
+      // if (!video) return;
+      const player = videojs('hls-video', {
+        controls: false,
+        autoplay: false,
+        preload: 'auto',
+        bufferedPercent: 5000,
+        muted: true, // 默认情况下将会消除任何音频。
+        loop: true,
+        sources: [
+          {
+            type: 'application/x-mpegURL',
+            src: video?.dataset['src']
+          }
+        ]
+      },);
       let index = 0;
 
-      const source = video.dataset["src"] || "";
-      const type = video.dataset["type"] || "mp4";
-
-      // 预加载
-      prefetch(source, { with: "fetch" });
-
-      if (Hls.isSupported() && type === "m3u8") {
-        const hls = new Hls();
-        hls.loadSource(source);
-        hls.attachMedia(video);
-
-        // hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        //   console.log('MANIFEST_PARSED')
-        //   // video.play();
-        // });
-        hls.on(Hls.Events.MEDIA_ATTACHED, () => {
-          console.log("MEDIA_ATTACHED");
-          // video.play();
-        });
-        if (progress) {
-          hls.on(Hls.Events.FRAG_BUFFERED, (e, a) => {
-            index += 1;
-            if (index === 1) {
-              progress.style.paddingRight = "8rem";
-            }
-            if (index === 2) {
-              progress.style.paddingRight = "2rem";
-              progress.style.transition = "none";
-            }
-            if (index === 3) {
-              progress.style.paddingRight = "0%";
-              progress.style.display = "none";
-              video.play();
-            }
-          });
-        } else {
+      player.on("progress",function(){
+        index += 1;
+        if (index === 1) {
+          progress.style.paddingRight = "2rem";
+          progress.style.transition = "none";
+        }
+        if (index === 2) {
+          progress.style.paddingRight = "8rem";
+          progress.style.display = "none";
           video.play();
         }
+      })
 
-        hls.on(Hls.Events.ERROR, (e, error) => {
-          // 监听出错事件
-          console.log("加载失败", e, error);
-        });
-      } else {
-        video.addEventListener("loadedmetadata", function () {
-          if (video.autoplay) video.play();
-        });
-      }
+      // const source = video.dataset["src"] || "";
+      // const type = video.dataset["type"] || "mp4";
+
+      // // 预加载
+      // prefetch(source, { with: "fetch" });
+
+      // if (Hls.isSupported() && type === "m3u8") {
+      //   const hls = new Hls();
+      //   hls.loadSource(source);
+      //   hls.attachMedia(video);
+
+      //   // hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      //   //   console.log('MANIFEST_PARSED')
+      //   //   // video.play();
+      //   // });
+      //   hls.on(Hls.Events.MEDIA_ATTACHED, () => {
+      //     console.log("MEDIA_ATTACHED");
+      //     // video.play();
+      //   });
+      //   if (progress) {
+      //     hls.on(Hls.Events.FRAG_BUFFERED, (e, a) => {
+      //       index += 1;
+      //       if (index === 1) {
+      //         progress.style.paddingRight = "8rem";
+      //       }
+      //       if (index === 2) {
+      //         progress.style.paddingRight = "2rem";
+      //         progress.style.transition = "none";
+      //       }
+      //       if (index === 3) {
+      //         progress.style.paddingRight = "0%";
+      //         progress.style.display = "none";
+      //         video.play();
+      //       }
+      //     });
+      //   } else {
+      //     video.play();
+      //   }
+
+      //   hls.on(Hls.Events.ERROR, (e, error) => {
+      //     // 监听出错事件
+      //     console.log("加载失败", e, error);
+      //   });
+      // } else {
+      //   video.addEventListener("loadedmetadata", function () {
+      //     if (video.autoplay) video.play();
+      //   });
+      // }
     }
   }
 
   customElements.define("hls-video", HlsVideo);
 </script>
+<style is:global>
+#hls-video video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vjs-loading-spinner {
+ display: none!important;
+}
+</style>
