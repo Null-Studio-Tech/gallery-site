@@ -18,7 +18,7 @@ const id = options.id
 
 ---
 
-<div class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col"
+<div class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col content-visibility contain-intrinsic-size"
   class:list={[options.className || ""]}
 >
   {options.picturePosition === 'right' && <div class="mobile:pb-6" class:list={[ `col-span-${12 - Number(options.cols || 8)}`, {

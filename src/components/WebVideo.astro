@@ -48,7 +48,11 @@ const { src } = Astro.props;
       if (!playButton) return;
 
       video.src = source;
-
+      // 预加载封面
+      video.addEventListener("loadedmetadata", function () {
+        video.currentTime = 0;
+        video.pause();
+      })
       playButton.addEventListener("click", function () {
         video.play();
         playButton.style.display = "none";
