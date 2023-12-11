@@ -124,5 +124,5 @@ video.playing::before {
 }
 
 .content-visibility {
-  content-visibility: hidden;
+  content-visibility: auto;
 }
