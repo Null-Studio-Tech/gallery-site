@@ -14,19 +14,25 @@ interface Props {
 
 const { options } = Astro.props;
 ---
-<div class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col"
+
+<div
+  class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col"
   class:list={[options.className || ""]}
 >
   <div class="col-span-2"></div>
   <div class="col-span-10">
-    <WebVideo  src={options.src} />
+    <WebVideo src={options.src} />
   </div>
-  <div class="grid grid-cols-12 col-span-12 mt-14 mobile:mt-6 gap-2 mobile:gap-0">
+  <div
+    class="grid grid-cols-12 col-span-12 my-14 mobile:mt-6 gap-2 mobile:gap-0"
+  >
     <div class="col-span-2 mobile:col-span-12 mobile:order-3">
       <div
         class="mobile:pt-12 mobile:w-3/4 mobile:justify-between flex flex-col mobile:flex-row justify-end h-full text-xs leading-4"
       >
-        <div class="font-semibold font-[RobotoCondensed-Regular]">Main Tools</div>
+        <div class="font-semibold font-[RobotoCondensed-Regular]">
+          Main Tools
+        </div>
         <div>
           <div>Cinema 4D</div>
           <div>Marvelous design</div>

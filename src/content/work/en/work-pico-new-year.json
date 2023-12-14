@@ -21,9 +21,6 @@
       "src": "/video/music.mp4"
     },
     {
-      "type": "SpaceBlock"
-    },
-    {
       "type": "SwipeBlock",
       "picturePosition": "left",
       "id": "0",
