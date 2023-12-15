@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from "astro:content";
+import WebVideo from "../WebVideo.astro";
+
+// 数组取number,获得联合类型
+type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
+// 原信息类型
+type MetaTypes = CollectionEntry<"work">["data"]["meta"];
+
+interface Props {
+  options: Extract<ContentTypes, { type: "SummaryVideoBlock" }>;
+  meta?: MetaTypes;
+}
+
+const { options } = Astro.props;
+---
+
+<div
+  class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col"
+  class:list={[options.className || ""]}
+>
+  <div class="col-span-2"></div>
+  <div class="col-span-10">
+    <WebVideo src={options.src} />
+  </div>
+  <div
+    class="grid grid-cols-12 col-span-12 my-14 mobile:mt-6 gap-2 mobile:gap-0"
+  >
+    <div class="col-span-2 mobile:col-span-12 mobile:order-3">
+      <div
+        class="mobile:pt-12 mobile:w-3/4 mobile:justify-between flex flex-col mobile:flex-row justify-end h-full text-xs leading-4"
+      >
+        <div class="font-semibold font-[RobotoCondensed-Regular]">
+          Main Tools
+        </div>
+        <div>
+          {options.tools.map((tool) => <div>{tool}</div>)}
+        </div>
+      </div>
+    </div>
+    <div class="col-span-10 mobile:col-span-12">
+      <div class="w-[542px] leading-6 mobile:w-full text-[1rem]">
+        {options.description}
+      </div>
+    </div>
+  </div>
+</div>

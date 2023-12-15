@@ -3,6 +3,7 @@
 
 interface ImportMetaEnv {
   readonly API_TOKEN: string
+  readonly MODE: string
 }
 
 interface ImportMeta {

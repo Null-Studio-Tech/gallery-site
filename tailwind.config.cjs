@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue,json}'],
 	safelist: [
 		'col-span-12',
 		"!justify-start",
@@ -27,7 +27,7 @@ module.exports = {
 		'mobile:mt-18',
 		'mobile:!justify-start',
 		'mobile:pb-6'
-  ],
+	],
 	theme: {
 		screens: {
 			'laptop': { max: '1316px' },

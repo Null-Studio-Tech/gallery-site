@@ -30,6 +30,40 @@
             "properties": {
               "type": {
                 "type": "string",
+                "const": "SummaryVideoBlock"
+              },
+              "src": {
+                "type": "string"
+              },
+              "poster": {
+                "type": "string"
+              },
+              "tools": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "description": {
+                "type": "string"
+              },
+              "className": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "src",
+              "tools",
+              "description"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
                 "const": "TextBlock"
               },
               "content": {
@@ -148,9 +182,6 @@
                 "type": "string"
               },
               "cols": {
-                "type": "string"
-              },
-              "id": {
                 "type": "string"
               }
             },

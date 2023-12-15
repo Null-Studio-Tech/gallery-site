@@ -15,15 +15,20 @@
       "className": "!mb-11"
     },
     {
-      "type": "VideoBlock",
-      "title": "",
+      "type": "SummaryVideoBlock",
+      "tools": [
+        "Cinema 4D",
+        "Marvelous design",
+        "Octane",
+        "Substance Painter",
+        "After Effects"
+      ],
       "description": "The animation is inspired by my anxiety about environmental pollution, plastic products and chemical waste are rapidly occupying the world, I tried to present this false beauty in the short film, and hope everyone can take care of the environment.",
       "src": "/video/music.mp4"
     },
     {
       "type": "SwipeBlock",
       "picturePosition": "left",
-      "id": "0",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",
@@ -39,7 +44,6 @@
       "type": "SwipeBlock",
       "picturePosition": "left",
       "cols": "8",
-      "id": "1",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",
@@ -67,7 +71,6 @@
       "type": "SwipeBlock",
       "picturePosition": "left",
       "cols": "8",
-      "id": "2",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",

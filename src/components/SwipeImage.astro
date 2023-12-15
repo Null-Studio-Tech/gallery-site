@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  images: Array<string>;
+}
+
+const { images } = Astro.props;
+---
+
+<swipe-image>
+  <div class="swiper swiper-container">
+    <ul class="swiper-wrapper">
+      {
+        images.map((item) => (
+          <li class="swiper-slide">
+            <Image
+              src={item}
+              alt="image"
+              width="1600"
+              height="900"
+              widths={[1316, 600]}
+            />
+          </li>
+        ))
+      }
+    </ul>
+    <div
+      class="next-button absolute right-8 w-[3.625rem] hover:opacity-60 bottom-8 z-30 cursor-pointer h-[3.625rem] mobile:w-6 mobile:h-6 mobile:bottom-4 mobile:right-4"
+      class:list={[{ hidden: images.length <= 1 }]}
+    >
+    </div>
+    <div
+      class="absolute z-10 bottom-8 left-8 mobile:bottom-4 mobile:left-4 text-[3rem] mobile:text-[1.25rem] text-white"
+    >
+      <span class="num">1</span>/{images.length}
+    </div>
+  </div>
+</swipe-image>
+
+<style>
+  .next-button {
+    background-image: url("../assets/images/next.png");
+    background-size: 100% auto;
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import "swiper/css";
+
+  class SwipeImage extends HTMLElement {
+    constructor() {
+      super();
+      const containerEle = this.querySelector(
+        ".swiper-container",
+      ) as HTMLDivElement;
+      const swiper = new Swiper(containerEle, {
+        loop: true,
+      });
+      const button = this.querySelector(".next-button") as HTMLElement;
+      const text = this.querySelector(".num") as HTMLElement;
+      button.addEventListener("click", function () {
+        swiper.slideNext();
+      });
+      swiper.on("slideChange", function () {
+        text.innerText = `${swiper.realIndex + 1}`;
+      });
+    }
+  }
+
+  customElements.define("swipe-image", SwipeImage);
+</script>

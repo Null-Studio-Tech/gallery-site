@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import SummaryVideoBlock from "./SummaryVideoBlock.astro";
 import PictureBlock from "./PictureBlock.astro";
 import SwipeBlock from "./SwipeBlock.astro";
 import TextBlock from "./TextBlock.astro";
@@ -20,6 +21,9 @@ const { contents, meta } = Astro.props;
 <div class="pt-[8.75rem]">
   {
     contents.map((c) => {
+      if (c.type === "SummaryVideoBlock")
+        return <SummaryVideoBlock meta={meta} options={c} />;
+
       if (c.type === "PictureBlock")
         return <PictureBlock meta={meta} options={c} />;
 

@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import SwipeImage from "../SwipeImage.astro";
 
 // 数组取number,获得联合类型
 type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
@@ -13,70 +14,41 @@ interface Props {
 }
 
 const { options } = Astro.props;
-const images = options.srcset;
-const id = options.id
-
 ---
 
-<div class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col content-visibility contain-intrinsic-size"
+<div
+  class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col content-visibility contain-intrinsic-size"
   class:list={[options.className || ""]}
 >
-  {options.picturePosition === 'right' && <div class="mobile:pb-6" class:list={[ `col-span-${12 - Number(options.cols || 8)}`, {
-    "mobile:hidden": !options.description
-  }]}>{options.description}</div>}
+  {
+    options.picturePosition === "right" && (
+      <div
+        class="mobile:pb-6"
+        class:list={[
+          `col-span-${12 - Number(options.cols || 8)}`,
+          {
+            "mobile:hidden": !options.description,
+          },
+        ]}
+      >
+        {options.description}
+      </div>
+    )
+  }
   <div
     class="col-span-12 mobile:col-span-12"
-    class:list={[ `col-span-${options.cols || 12}`]}>
-    <div class="swiper swiper-container"  id={`swiper-container-${options.id}`} data-id={id}>
-      <ul class="swiper-wrapper" >
-        {
-          images.map((item) => (
-            <li class="swiper-slide">
-              <Image src={item} alt="image" width="1600" height="900" />
-            </li>
-          ))
-        }
-      </ul>
-      <div
-        id={`next-button-${options.id}`}
-        class="next-button absolute right-8 w-[3.625rem] hover:opacity-60 bottom-8 z-30 cursor-pointer h-[3.625rem] mobile:w-6 mobile:h-6 mobile:bottom-4 mobile:right-4"
-        class:list={[{ hidden: options.srcset.length <= 1 }]}
-      >
-      </div>
-      <div class="absolute z-10 bottom-8 left-8 mobile:bottom-4 mobile:left-4 text-[3rem] mobile:text-[1.25rem]  text-white">
-        <span class="num">1</span>/{options.srcset.length}
-      </div>
-    </div>
+    class:list={[`col-span-${options.cols || 12}`]}
+  >
+    <SwipeImage images={options.srcset} />
   </div>
-  {options.description && options.picturePosition !== 'right' && <div class="pl-7 mobile:p-0 mobile:pt-6" class:list={[ `col-span-${12 - Number(options.cols || 8)}`]}>{options.description}</div>}
-</div>
-<script>
-import Swiper from 'swiper';
-import 'swiper/css';
-window.addEventListener("load", function () {
-  const container = document.getElementsByClassName("swiper-container");
-  for (let i = 0; i < container.length; i++) {
-    const el = container[i] as HTMLElement;
-    const id = el.dataset['id'];
-    const swiper = new Swiper(id ? `#swiper-container-${id}` : '.swiper-container', {
-      loop: true
-    });
-    const button = el.querySelector(".next-button") as HTMLElement;
-    const text = el.querySelector(".num") as HTMLElement;
-    button.addEventListener("click", function () {
-      swiper.slideNext();
-    });
-    swiper.on('slideChange', function () {
-      text.innerText = `${swiper.realIndex + 1}`;
-    });
-  };
-
-});
-
-</script>
-<style>
-  .next-button {
-    background-image: url(../../assets/images/next.png);
-    background-size: 100% auto;
+  {
+    options.description && options.picturePosition !== "right" && (
+      <div
+        class="pl-7 mobile:p-0 mobile:pt-6"
+        class:list={[`col-span-${12 - Number(options.cols || 8)}`]}
+      >
+        {options.description}
+      </div>
+    )
   }
-</style>
+</div>

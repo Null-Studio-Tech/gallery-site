@@ -1,0 +1,27 @@
+---
+import FontExtraLight from "@/assets/fonts/RobotoCondensed-ExtraLight.ttf";
+import FontLight from "@/assets/fonts/RobotoCondensed-Light.ttf";
+import FontRegular from "@/assets/fonts/RobotoCondensed-Regular.ttf";
+import FontItalic from "@/assets/fonts/RobotoCondensed-ThinItalic.ttf";
+
+const locale = Astro.currentLocale as Locales;
+
+const fontStyle = `
+@font-face {font-family: Roboto;font-style: normal; src: url(${FontExtraLight});}
+@font-face {font-family: Roboto-ExtraLight; font-style: normal; src: url(${FontExtraLight});}
+@font-face {font-family: RobotoCondensed-Regular; font-style: normal; src: url(${FontRegular});}
+@font-face {font-family: Roboto-italic;font-style: normal;src: url(${FontItalic});}  
+`
+---
+{
+locale === "en"?
+(
+<link rel="prefetch" href={FontExtraLight} />
+<link rel="prefetch" href={FontLight} />
+<link rel="prefetch" href={FontRegular} />
+<link rel="prefetch" href={FontItalic} />
+<style set:text={fontStyle}>
+</style>
+):
+(<></>)
+}
