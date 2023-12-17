@@ -39,7 +39,7 @@ images.push(...options.srcset);
     />
     ))
   }
-  {options.description && options.picturePosition !== 'right' && <div class="pl-7 mobile:p-0 mobile:pt-6" class:list={[ `col-span-${12 - Number(options.cols || 8)}`]}>{options.description}</div>}
+  {options.description && options.picturePosition !== 'right' && <div class="pl-7 mobile:p-0 mobile:mt-[-8px]" class:list={[ `col-span-${12 - Number(options.cols || 8)}`]}>{options.description}</div>}
 </div>
 
 <style scoped>

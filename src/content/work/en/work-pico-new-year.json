@@ -7,7 +7,7 @@
   "contents": [
     {
       "type": "TextBlock",
-      "className": "!justify-start font-light text-[56px]",
+      "className": "!justify-start font-light text-[56px] mobile:text-[40px]",
       "content": "Trash May Rule The World"
     },
     {

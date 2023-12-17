@@ -14,7 +14,6 @@
       "type": "SwipeBlock",
       "picturePosition": "left",
       "className": "col-span-4",
-      "id": "0",
       "srcset": [
         "/images/detail/img09.jpg",
         "/images/detail/img02.jpg",

@@ -90,6 +90,9 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
         player.on("play", function () {
           isPlay = true;
         });
+        player.on("playing", function(){
+          isPlay = true;
+        });
         playButton.addEventListener("click", function () {
           // 监听视频播放开始
           playButton.style.display = "none";
