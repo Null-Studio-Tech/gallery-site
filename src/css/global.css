@@ -22,7 +22,7 @@
   src: url('../assets/fonts/RobotoCondensed-ThinItalic.ttf')
 } */
 
-@font-face {
+/* @font-face {
   font-family: SourceHanSansCN-ExtraLight;
   font-style: normal;
   src: url('../assets/fonts/SourceHanSansCN-ExtraLight.otf')
@@ -32,10 +32,9 @@
   font-family: SourceHanSansCN-Light;
   font-style: normal;
   src: url('../assets/fonts/SourceHanSansCN-Light.otf')
-}
+} */
 
-
-* {
+html[lang=en] {
   font-family: 'Roboto';
 }
 

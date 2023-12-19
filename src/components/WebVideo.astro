@@ -32,6 +32,8 @@ const { src } = Astro.props;
 
 <script>
   import { prefetch } from "astro:prefetch";
+  import videojs from "video.js";
+  import "video.js/dist/video-js.min.css";
 
   class WebVideo extends HTMLElement {
     constructor() {
@@ -41,25 +43,32 @@ const { src } = Astro.props;
       // 预加载
       if (source) prefetch(source, { with: "fetch" });
 
+
       const video = this.querySelector<HTMLMediaElement>("video");
       const playButton = this.querySelector<HTMLDivElement>(".play-button");
-
       if (!video) return;
       if (!playButton) return;
-
-      video.src = source;
+      const player = videojs(video, {
+        controls: false,
+        autoplay: true,
+        preload: "auto",
+        bufferedPercent: 5000,
+        muted: true, // 默认情况下将会消除任何音频。
+        loop: true,
+        src: source,
+      });
       // 预加载封面
-      video.addEventListener("loadedmetadata", function () {
+      player.on("loadedmetadata", function () {
         video.currentTime = 0;
-        video.pause();
+        player.pause();
       })
       playButton.addEventListener("click", function () {
-        video.play();
+        player.play();
         playButton.style.display = "none";
         video.controls = true;
       });
 
-      video.addEventListener("pause", function () {
+      player.on("pause", function () {
         video.controls = false;
         playButton.style.display = "flex";
       });
