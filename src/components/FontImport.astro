@@ -9,7 +9,7 @@ import SourceHanSansSCVF from "@/assets/fonts/SourceHanSansSC-VF.ttf";
 const locale = Astro.currentLocale as Locales;
 
 const fontStyle = `
-@font-face {font-family: Roboto;font-style: normal; src: url(${FontExtraLight});}
+@font-face {font-family: Roboto;font-style: normal; src: url(${FontLight});}
 @font-face {font-family: Roboto-ExtraLight; font-style: normal; src: url(${FontExtraLight});}
 @font-face {font-family: RobotoCondensed-Regular; font-style: normal; src: url(${FontRegular});}
 @font-face {font-family: Roboto-italic;font-style: normal;src: url(${FontItalic});}
@@ -28,6 +28,10 @@ html[lang=zh-CN] {
 {
 locale === "en"?
 (
+<link rel="prefetch" href={FontExtraLight} />
+<link rel="prefetch" href={FontLight} />
+<link rel="prefetch" href={FontRegular} />
+<link rel="prefetch" href={FontItalic} />
 <style set:text={fontStyle}>
 </style>
 ):
@@ -37,6 +41,7 @@ locale === "en"?
 {
   locale === "zh-CN"?
   (
+  <link rel="prefetch" href={SourceHanSansSCVF} />
   <style set:text={zhCNFontStyle}>
   </style>
   ):

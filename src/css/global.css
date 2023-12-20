@@ -81,3 +81,7 @@ video.playing::before {
 .content-visibility {
   content-visibility: auto;
 }
+
+.vjs-loading-spinner {
+  display: none !important;
+}
