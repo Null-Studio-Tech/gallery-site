@@ -8,8 +8,7 @@ const { src } = Astro.props;
 
 <web-video class="relative w-full flex flex-col" data-src={src}>
   <video
-    class="z-0 video h-full w-full object-cover object-center"
-    src={src}
+    class="video-js z-0 h-full w-full object-cover object-center"
     playsinline="true"
     webkit-playsinline="true"
     preload="preload"
@@ -20,14 +19,14 @@ const { src } = Astro.props;
     loop
   >
   </video>
-  <div
+  <!-- <div
     class="play-button w-full h-full absolute top-0 left-0 z-10 flex justify-center items-center cursor-pointer hover:opacity-60"
   >
     <div
       class="play-svg w-[5.625rem] h-[5.625rem] mobile:w-[2.75rem] mobile:h-[2.875rem]"
     >
     </div>
-  </div>
+  </div> -->
 </web-video>
 
 <script>
@@ -36,6 +35,7 @@ const { src } = Astro.props;
   import "video.js/dist/video-js.min.css";
 
   class WebVideo extends HTMLElement {
+    private player?: ReturnType<typeof videojs>;
     constructor() {
       super();
 
@@ -43,44 +43,30 @@ const { src } = Astro.props;
       // 预加载
       if (source) prefetch(source, { with: "fetch" });
 
-
-      const video = this.querySelector<HTMLMediaElement>("video");
-      const playButton = this.querySelector<HTMLDivElement>(".play-button");
+      const video = this.querySelector<HTMLMediaElement>(".video-js");
       if (!video) return;
-      if (!playButton) return;
-      const player = videojs(video, {
-        controls: false,
-        autoplay: true,
+      this.player = videojs(video, {
+        controls: true,
+        autoplay: false,
         preload: "auto",
-        bufferedPercent: 5000,
-        muted: true, // 默认情况下将会消除任何音频。
-        loop: true,
-        src: source,
+        aspectRatio: "16:9",
       });
-      // 预加载封面
-      player.on("loadedmetadata", function () {
-        video.currentTime = 0;
-        player.pause();
-      })
-      playButton.addEventListener("click", function () {
-        player.play();
-        playButton.style.display = "none";
-        video.controls = true;
-      });
-
-      player.on("pause", function () {
-        video.controls = false;
-        playButton.style.display = "flex";
-      });
+      this.player.src(source);
     }
   }
 
   customElements.define("web-video", WebVideo);
 </script>
 
-<style>
-  .play-svg {
-    background: url(../assets/images/video.svg) no-repeat center center/ 100%
-      auto;
+<style is:global>
+  web-video .video-js .vjs-big-play-button {
+    border: none !important;
+    color: transparent !important;
+    font-size: 0 !important;
+    width: 5.625rem;
+    height: 5.625rem;
+    background-color: transparent;
+    border: none;
+    background-image: url("../assets/images/video.svg");
   }
 </style>
