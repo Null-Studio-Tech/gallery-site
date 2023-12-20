@@ -28,6 +28,14 @@ const BASE_URL = import.meta.env.BASE_URL;
 		<style is:global>
 			@import "../css/global.css";
 		</style>
+		<script>
+			import Bowser from "bowser";
+			window.env = Bowser.parse(window.navigator.userAgent);
+			window.document.documentElement.setAttribute(
+				"data-browser",
+				window.env.browser.name || "unknown",
+			);
+		</script>
 	</head>
 	<body class="bg-white relative">
 		<slot />

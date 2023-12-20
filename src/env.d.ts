@@ -1,5 +1,6 @@
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
+/// <reference types="bowser"/>
 
 interface ImportMetaEnv {
   readonly API_TOKEN: string
@@ -16,7 +17,7 @@ declare global {
 }
 
 interface Window {
-
+  env: Bowser.Parser.ParsedResult
 }
 
 type Locales = 'en' | 'zh-CN'

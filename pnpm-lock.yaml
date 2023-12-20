@@ -17,6 +17,9 @@ dependencies:
   astro:
     specifier: ^3.6.0
     version: 3.6.0(@types/node@20.10.3)
+  bowser:
+    specifier: ^2.11.0
+    version: 2.11.0
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
@@ -1407,6 +1410,10 @@ packages:
       buffer: 6.0.3
       inherits: 2.0.4
       readable-stream: 3.6.2
+    dev: false
+
+  /bowser@2.11.0:
+    resolution: {integrity: sha512-AlcaJBi/pqqJBIQ8U9Mcpc9i8Aqxn88Skv5d+xBX006BY5u8N3mGLHa5Lgppa7L/HfwgwLgZ6NYs+Ag6uUmJRA==}
     dev: false
 
   /boxen@7.1.1:
