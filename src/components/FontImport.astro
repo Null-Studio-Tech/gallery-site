@@ -3,8 +3,7 @@ import FontExtraLight from "@/assets/fonts/RobotoCondensed-ExtraLight.ttf";
 import FontLight from "@/assets/fonts/RobotoCondensed-Light.ttf";
 import FontRegular from "@/assets/fonts/RobotoCondensed-Regular.ttf";
 import FontItalic from "@/assets/fonts/RobotoCondensed-ThinItalic.ttf";
-import zhCNFontExtraLight from "@/assets/fonts/SourceHanSansCN-ExtraLight.otf";
-import zhCNFontLight from "@/assets/fonts/SourceHanSansCN-Light.otf";
+import SourceHanSansSCVF from "@/assets/fonts/SourceHanSansSC-VF.ttf";
 
 
 const locale = Astro.currentLocale as Locales;
@@ -14,11 +13,16 @@ const fontStyle = `
 @font-face {font-family: Roboto-ExtraLight; font-style: normal; src: url(${FontExtraLight});}
 @font-face {font-family: RobotoCondensed-Regular; font-style: normal; src: url(${FontRegular});}
 @font-face {font-family: Roboto-italic;font-style: normal;src: url(${FontItalic});}
+html[lang=en] {
+  font-family: Roboto;
+}
 `
 
 const zhCNFontStyle = `
-@font-face {font-family: SourceHanSansCN-ExtraLight;font-style: normal;src: url(${zhCNFontExtraLight})}
-@font-face {font-family: SourceHanSansCN-Light;font-style: normal;src: url(${zhCNFontLight})}
+@font-face {font-family: SourceHanSansSC-VF;font-style: normal;src: url(${SourceHanSansSCVF})}
+html[lang=zh-CN] {
+  font-family: SourceHanSansSC-VF;
+}
 `
 ---
 {
