@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "zipBuild": "npm-run-all font build --serial",
+    "zipbuild": "npm-run-all font build --serial",
     "build": "cross-env MODE=pub astro build",
     "preview": "astro preview",
     "sync": "cross-env MODE=sync astro sync",
-    "font": "font-spider dist/zh-CN/**/*.html",
+    "font": "node fontmin",
     "astro": "astro"
   },
   "dependencies": {
