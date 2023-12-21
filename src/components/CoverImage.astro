@@ -1,4 +1,6 @@
 ---
+import { BackgroundPicture } from "astro-imagetools/components";
+
 interface Props {
   src: string;
 }
@@ -7,7 +9,7 @@ const { src } = Astro.props;
 ---
 
 <div class="image-wrap pb-[56.25%] mobile:pb-[75%]">
-  <img src={src} alt={src} />
+  <BackgroundPicture src={src} alt={src} />
 </div>
 
 <style>

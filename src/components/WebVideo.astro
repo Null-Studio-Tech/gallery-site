@@ -1,12 +1,17 @@
 ---
 interface Props {
   src: string;
+  aspectRatio: string;
 }
 
-const { src } = Astro.props;
+const { src, aspectRatio = "16:9" } = Astro.props;
 ---
 
-<web-video class="relative w-full flex flex-col" data-src={src}>
+<web-video
+  class="relative w-full flex flex-col"
+  data-src={src}
+  data-aspect-ratio={aspectRatio}
+>
   <video
     class="video-js z-0 h-full w-full object-cover object-center"
     playsinline="true"
@@ -40,6 +45,7 @@ const { src } = Astro.props;
       super();
 
       const source = this.dataset["src"] || "";
+      const aspectRatio = this.dataset["aspectRatio"] || "16:9";
       // 预加载
       if (source) prefetch(source, { with: "fetch" });
 
@@ -49,7 +55,7 @@ const { src } = Astro.props;
         controls: true,
         autoplay: false,
         preload: "auto",
-        aspectRatio: "16:9",
+        aspectRatio: aspectRatio,
       });
       this.player.src(source);
     }

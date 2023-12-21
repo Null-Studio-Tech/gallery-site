@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro-imagetools/components";
 
 interface Props {
   images: Array<string>;
@@ -12,15 +12,9 @@ const { images } = Astro.props;
   <div class="swiper swiper-container">
     <ul class="swiper-wrapper">
       {
-        images.map((item) => (
+        images.map((item, i) => (
           <li class="swiper-slide">
-            <Image
-              src={item}
-              alt="image"
-              width="1600"
-              height="900"
-              widths={[1316, 600]}
-            />
+            <Picture src={item} alt={`swipte-image-${i}`} />
           </li>
         ))
       }

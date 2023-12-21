@@ -1,6 +1,9 @@
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
 /// <reference types="bowser"/>
+/// <reference types="astro-imagetools"/>
+
+declare module "astro-imagetools/components"
 
 interface ImportMetaEnv {
   readonly API_TOKEN: string

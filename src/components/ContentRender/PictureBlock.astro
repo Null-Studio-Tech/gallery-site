@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { Image } from "astro:assets";
+import { Picture } from "astro-imagetools/components";
 
 // 数组取number,获得联合类型
 type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
@@ -16,35 +16,47 @@ const { options } = Astro.props;
 
 const images = [];
 images.push(...options.srcset);
-
 ---
 
 <div
   class="grid gap-2 mobile:!grid-cols-1 grid-cols-12 mobile:gap-8 content-visibility contain-intrinsic-size"
-  class:list={[options.className,{
-    "pr-1": options.description
-  }]}
-  >
-  {options.picturePosition === 'right' && <div class="mobile:pb-6" class:list={[ `col-span-${12 - Number(options.cols || 8)}`, {
-    "mobile:hidden": !options.description
-  }]}>{options.description}</div>}
+  class:list={[
+    options.className,
+    {
+      "pr-1": options.description,
+    },
+  ]}
+>
+  {
+    options.picturePosition === "right" && (
+      <div
+        class="mobile:pb-6"
+        class:list={[
+          `col-span-${12 - Number(options.cols || 8)}`,
+          {
+            "mobile:hidden": !options.description,
+          },
+        ]}
+      >
+        {options.description}
+      </div>
+    )
+  }
   {
     images.map((item) => (
-    <Image
-      src={item}
-      class:list={[ `col-span-${options.cols || 12}`]}
-      alt={`image:${options.description}`}
-      width="1600"
-      height="900"
-    />
+      <div class={`col-span-${options.cols || 12}`}>
+        <Picture src={item} alt={`image:${options.description || ""}`} />
+      </div>
     ))
   }
-  {options.description && options.picturePosition !== 'right' && <div class="pl-7 mobile:p-0 mobile:mt-[-8px]" class:list={[ `col-span-${12 - Number(options.cols || 8)}`]}>{options.description}</div>}
-</div>
-
-<style scoped>
-  .image-wrap img {
-    width: 100%;
-    height: auto;
+  {
+    options.description && options.picturePosition !== "right" && (
+      <div
+        class="pl-7 mobile:p-0 mobile:mt-[-8px]"
+        class:list={[`col-span-${12 - Number(options.cols || 8)}`]}
+      >
+        {options.description}
+      </div>
+    )
   }
-</style>
+</div>

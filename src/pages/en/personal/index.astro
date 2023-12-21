@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import PageLayout from "../../../layouts/PageLayout.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import CoverImage from "../../../components/CoverImage.astro";
+import { Picture } from "astro-imagetools/components";
 
 const locale = Astro.currentLocale as Locales;
 
@@ -25,7 +25,9 @@ const persionalList = pageCollections
 
 <PageLayout title="Null Studio Gallery" active="personal">
   <div class="pt-[15rem] mobile:pt-[6.25rem]">
-    <div class="hidden mobile:block text-[40px] font-[Roboto-ExtraLight] leading-none mb-7">
+    <div
+      class="hidden mobile:block text-[40px] font-[Roboto-ExtraLight] leading-none mb-7"
+    >
       Personal Works
     </div>
     {
@@ -36,14 +38,15 @@ const persionalList = pageCollections
             href={item.url}
           >
             <div class="text-xl">{item.title}</div>
-            <div class="max-w-[100%] whitespace-pre-wrap mobile:hidden text-[#666666]">{item.description}
+            <div class="max-w-[100%] whitespace-pre-wrap mobile:hidden text-[#666666]">
+              {item.description}
             </div>
             <div class="hidden cursor-pointer group-hover:flex absolute inset-0 items-center mobile:!hidden">
               <div class="w-[96px] h-[58px] transform animate-mode-forwards animate-highlight-normal bg-dark-active-normal" />
             </div>
           </a>
           <a href={item.url} class="col-span-7">
-            <CoverImage src={item.cover}/>
+            <Picture src={item.cover} alt={item.description || ""} />
           </a>
         </div>
       ))

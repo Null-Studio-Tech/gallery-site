@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/PageLayout.astro";
 import PageMeta from "@/data/work";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import CoverImage from "../../../components/CoverImage.astro";
+import { Picture } from "astro-imagetools/components";
 
 const BASE_URL = import.meta.env.BASE_URL;
 const locale = Astro.currentLocale as Locales;
@@ -42,12 +42,12 @@ const workList = pageCollections
       {
         workList.map((item) => (
           <div class="mb-4 mobile:mb-[1.625rem] relative content-visibility contain-intrinsic-size">
-            <a href={item.url}>
-              <CoverImage src={item.cover} />
+            <a href={item.url} class="block inset-0 relative z-0">
+              <Picture src={item.cover} alt={item.description || ""} />
             </a>
             <a
               href={item.url}
-              class="absolute mobile:static group  bottom-10 left-10 "
+              class="absolute mobile:static group bottom-10 left-10"
             >
               <div class="text-[1rem] mobile:hidden mb-2.5">{item.title}</div>
               <div class="text-[1.5rem] font-[Roboto-ExtraLight] mobile:text-black mobile:text-[1.25rem] mobile:mt-2 leading-7">

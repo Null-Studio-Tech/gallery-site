@@ -7,16 +7,14 @@ interface Props {
   poster?: string;
 }
 
-const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
+const { src, type = "mp4", poster } = Astro.props;
 ---
 
-<hls-video>
+<hls-video data-src={src}>
   <video
-    class="hls-video z-0 h-full w-full object-cover object-center"
+    class="hls-video w-full h-full object-cover z-0"
     playsinline="true"
     webkit-playsinline="true"
-    src={src}
-    data-src={src}
     muted
     preload="preload"
     x-webkit-airplay="allow"
@@ -40,17 +38,24 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
   </div>
 
   <script>
+    import { prefetch } from "astro:prefetch";
     import videojs from "video.js";
-    import "video.js/dist/video-js.min.css";
 
     class HlsVideo extends HTMLElement {
+      private player?: ReturnType<typeof videojs>;
+
       constructor() {
         super();
+
+        const source = this.dataset["src"] || "";
+
+        if (source) prefetch(source, { with: "fetch" });
+
         const video = this.querySelector(".hls-video") as HTMLVideoElement;
         const progress = this.querySelector(".progress") as HTMLDivElement;
         const playButton = this.querySelector(".play-button") as HTMLDivElement;
 
-        const player = videojs(video, {
+        this.player = videojs(video, {
           controls: false,
           autoplay: true,
           preload: "auto",
@@ -60,13 +65,13 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
           sources: [
             {
               type: "application/x-mpegURL",
-              src: video?.dataset["src"],
+              src: source,
             },
           ],
         });
         let index = 0;
 
-        player.on("progress", function () {
+        this.player.on("progress", function () {
           index += 1;
           if (index === 1) {
             progress.style.paddingRight = "6rem";
@@ -76,28 +81,17 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
             progress.style.transition = "none";
           }
         });
-        let isPlay = false;
-        player.on("loadedmetadata", function () {
+
+        this.player.ready(() => {
           progress.style.display = "none";
-          setTimeout(() => {
-            if (!isPlay && window.env.browser.name === "WeChat")
-              playButton.style.display = "block";
-          }, 100);
-          if (!video.autoplay) video.play();
+          if (window.env.browser.name === "WeChat")
+            playButton.style.display = "block";
         });
-        player.on("canplaythrough", function () {
-          video.play();
-        });
-        player.on("play", function () {
-          isPlay = true;
-        });
-        player.on("playing", function () {
-          isPlay = true;
-        });
-        playButton.addEventListener("click", function () {
+
+        playButton.addEventListener("click", () => {
           // 监听视频播放开始
           playButton.style.display = "none";
-          video.play();
+          if (this.player) this.player.play();
         });
       }
     }
@@ -106,13 +100,11 @@ const { src, controls = false, autoplay, type = "mp4", poster } = Astro.props;
   </script>
   <style>
     .hls-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      @apply w-full h-full object-cover;
     }
     .play-svg {
-      background: url(../assets/images/video.svg) no-repeat center center/ 100%
-        auto;
+      background: url("../assets/images/video.svg") no-repeat center center/
+        100% auto;
     }
   </style>
 </hls-video>
