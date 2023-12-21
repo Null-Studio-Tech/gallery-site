@@ -1,64 +1,59 @@
 import fs from "fs";
 import Fontmin from "fontmin";
+import rename from "gulp-rename";
 let set = new Set();
 
 //get all possible characters
 const scanFolder = (dir, done) => {
-    let results = [];
-    fs.readdir(dir, (err, list) => {
-        if (err) {
-            return done(err);
-        }
-        let i = 0;
-        (function iter() {
-            let file = list[i++];
-            if (!file) {
-                return done(null, results);
-            }
-            file = dir + '/' + file;
-            fs.stat(file, (err, stat) => {
-                if (stat && stat.isDirectory()) {
-                    scanFolder(file, (err, res) => {
-                        results = results.concat(res);
-                        iter();
-                    });
-                } else {
-                    results.push(file);
-                    iter();
-                }
-            });
-        })();
+  let results = [];
+  dir.forEach(path => {
+    const list = fs.readdirSync(path);
+    list.forEach((file) => {
+      file = path + '/' + file;
+      const stat = fs.statSync(file);
+      if (stat && stat.isDirectory()) {
+        const fileList = scanFolder([file]);
+        results.push(...fileList);
+      } else {
+        results.push(file);
+      }
     });
+  });
+  return results;
 };
 
 //get all possible characters
 const generateFinalHTML = finalString => {
-    console.log(finalString);
-    const fontmin = new Fontmin()
-        .src('src/assets/fonts/SourceHanSansSC-VF.ttf')
-        .dest('build/fonts/')
-        .use(Fontmin.glyph({
-            text: finalString,
-            hinting: false
-        }))
-        .use(Fontmin.ttf2woff({
-            deflate: true
-        }));
+  const fontmin = new Fontmin()
+    .src('src/assets/fonts/SourceHanSansSC-VF.ttf')
+    .use(rename('SourceHanSansSC-VF.min.ttf'))
+    .use(Fontmin.glyph({
+      text: finalString,
+      hinting: false
+    }))
+    .dest('src/assets/fonts')
 
 
-    fontmin.run((err) => {
-        if (err) {
-            throw err;
-        }
-    });
+  fontmin.run((err) => {
+    if (err) {
+      throw err;
+    }
+  });
 }
 
 //get all possible characters
-scanFolder("./src/data", (n, results) => {
-    results.forEach(file => {
-        const result = fs.readFileSync(file, 'utf8');
-        const currentSet = new Set(result)
-        set = new Set([...set, ...currentSet]);
-    });
-    generateFinalHTML(Array.from(set).join(""))
-})
+const init = (dir) => {
+  const results = scanFolder(dir);
+  results.forEach(file => {
+    const result = fs.readFileSync(file, 'utf8');
+    const currentSet = new Set(result)
+    set = new Set([...set, ...currentSet]);
+  });
+  generateFinalHTML(Array.from(set).join(""))
+}
+init(["src/data", "src/content"])
+// ["src/data", "src/content"].forEach(dir => {
+//   let results = [];
+//   console.log(dir)
+//   fs.readdirSync(dir)
+// })

@@ -1,11 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "../../../layouts/PageLayout.astro";
+import PageMeta from "@/data/personal";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import CoverImage from "../../../components/CoverImage.astro";
 
 const locale = Astro.currentLocale as Locales;
-
+const title =  PageMeta.title[locale]
 const pageCollections = await getCollection("personal");
 const persionalList = pageCollections
   .map((p) => {
@@ -26,7 +27,7 @@ const persionalList = pageCollections
 <PageLayout title="Null Studio Gallery" active="personal">
   <div class="pt-[15rem] mobile:pt-[6.25rem]">
     <div class="hidden mobile:block text-[40px] font-[Roboto-ExtraLight] leading-none mb-7">
-      Personal Works
+      { title }
     </div>
     {
       persionalList.map((item) => (

@@ -1,40 +1,41 @@
 ---
 import HomeLayout from "@/layouts/HomeLayout.astro";
 import HlsVideo from "@/components/HlsVideo.astro";
-
+import PageMeta from "@/data/index";
 const BASE_URL = import.meta.env.BASE_URL;
-const locale = Astro.currentLocale;
-
+const locale = Astro.currentLocale as Locales;
+const website1 =  PageMeta.website1[locale];
+const website2 =  PageMeta.website2[locale];
 const src = `${BASE_URL}hls/index.m3u8`;
 ---
 
 <HomeLayout title="Null Studio Gallery">
   <main class="w-screen h-screen bg-black overflow-hidden">
     <HlsVideo autoplay="autoplay" type="m3u8" src={src} />
-    <div class="relative max-w-[calc(1600px+8rem)] h-0 mx-auto">
+    <div class="relative max-w-[calc(1600px+8rem)] h-0">
       <a
         href={`${BASE_URL}${locale}/work`}
         class="next-button hover:opacity-60 absolute mobile:hidden right-16 w-[3.625rem] bottom-[50vh] translate-y-1/2 z-30 cursor-pointer h-[3.625rem]"
       ></a>
-      <div
-        class="absolute left-16 bottom-16 mobile:bottom-3 mobile:left-1/2 mobile:-translate-x-1/2"
-      >
-        <a
-          class="block text-white text-sm text-opacity-60"
-          href="https://beian.miit.gov.cn/"
-          target="_blank">京ICP备2023033337号-1</a
-        >
-        <a
-          class="block text-white text-sm text-opacity-60"
-          href="https://beian.miit.gov.cn/"
-          target="_blank">京ICP备2023033337号-2</a
-        >
-      </div>
     </div>
     <a
       href={`${BASE_URL}${locale}/work`}
       class="next-button-mobile hidden mobile:block fixed w-[3.625rem] z-30 cursor-pointer h-[3.625rem] right-1/2 translate-x-1/2 bottom-16"
     ></a>
+    <div
+      class="absolute left-16 bottom-16 mobile:bottom-3 mobile:left-1/2 mobile:-translate-x-1/2"
+    >
+      <a
+        class="block text-white text-sm text-opacity-60"
+        href="https://beian.miit.gov.cn/"
+        target="_blank">{website1}</a
+      >
+      <a
+        class="block text-white text-sm text-opacity-60"
+        href="https://beian.miit.gov.cn/"
+        target="_blank">{website2}</a
+      >
+    </div>
   </main>
 </HomeLayout>
 <style>

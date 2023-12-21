@@ -19,6 +19,7 @@ const SummaryVideoBlock = z.object({
   src: z.string(),
   poster: z.string().optional(),
   tools: z.string().array(),
+  title: z.string(),
   description: z.string(),
   className: z.string().optional()
 })

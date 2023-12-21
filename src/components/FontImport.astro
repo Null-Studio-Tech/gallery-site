@@ -3,9 +3,8 @@ import FontExtraLight from "@/assets/fonts/RobotoCondensed-ExtraLight.ttf";
 import FontLight from "@/assets/fonts/RobotoCondensed-Light.ttf";
 import FontRegular from "@/assets/fonts/RobotoCondensed-Regular.ttf";
 import FontItalic from "@/assets/fonts/RobotoCondensed-ThinItalic.ttf";
-import SourceHanSansSCVF from "@/assets/SourceHanSansSC-VF.ttf";
 
-
+const SourceHanSansSCVF = process.env.MODE === 'pub' ? await import("@/assets/fonts/SourceHanSansSC-VF.min.ttf") : await import("@/assets/fonts/SourceHanSansSC-VF.ttf");
 const locale = Astro.currentLocale as Locales;
 
 const fontStyle = `
@@ -19,7 +18,7 @@ html[lang=en] {
 `
 
 const zhCNFontStyle = `
-@font-face {font-family: SourceHanSansSC-VF;font-style: normal;src: url(${SourceHanSansSCVF})}
+@font-face {font-family: SourceHanSansSC-VF;font-style: normal;src: url(${SourceHanSansSCVF.default})}
 html[lang=zh-CN] {
   font-family: SourceHanSansSC-VF;
 }
@@ -35,15 +34,10 @@ locale === "en"?
 <style set:text={fontStyle}>
 </style>
 ):
-(<></>)
+(
+<link rel="prefetch" href={SourceHanSansSCVF.default} />
+<style set:text={zhCNFontStyle}>
+</style>
+)
 }
 
-{
-  locale === "zh-CN"?
-  (
-  <link rel="prefetch" href={SourceHanSansSCVF} />
-  <style set:text={zhCNFontStyle}>
-  </style>
-  ):
-  (<></>)
-  }
