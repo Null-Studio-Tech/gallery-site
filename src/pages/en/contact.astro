@@ -3,6 +3,11 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import thumbnailLarge from "@/assets/images/thumbnail_large.png";
 import instagramLogo from "@/assets/images/instagram-logo.png";
 import groupImg from "@/assets/images/behance@3x.png";
+import PageMeta from "@/data/contact";
+const locale = Astro.currentLocale as Locales;
+const email = PageMeta.email[locale];
+const social = PageMeta.social[locale];
+const title = PageMeta.title[locale];
 ---
 
 <PageLayout title="Null Studio Gallery" class="flex min-h-0" active="contact">
@@ -11,11 +16,11 @@ import groupImg from "@/assets/images/behance@3x.png";
     class="flex justify-start items-center mobile:block mobile:pt-[5.5rem] w-full flex-1 laptop:mb-[138px]"
   >
     <div class="flex flex-col mobile:mb-12 flex-1">
-      <div class="text-[2rem] mb-5 mobile:mb-[9px]">Email</div>
-      <div class="text-[1rem]">chen_gao_ding@163.com</div>
+      <div class="text-[2rem] mb-5 mobile:mb-[9px]">{ title }</div>
+      <div class="text-[1rem]">{ email }</div>
     </div>
     <div class="flex flex-col flex-1">
-      <div class="text-[2rem] mb-5 mobile:mb-4">Social</div>
+      <div class="text-[2rem] mb-5 mobile:mb-4">{ social }</div>
       <div class="flex">
         <a target="_blank" href="https://www.behance.net/chen_gao_ding"><img class="h-5 hover:opacity-60 cursor-pointer" src={groupImg.src} /></a>
         <a target="_blank" href="https://www.instagram.com/deane_chen"><img class="h-5 mx-3 hover:opacity-60 cursor-pointer" src={instagramLogo.src} /></a>

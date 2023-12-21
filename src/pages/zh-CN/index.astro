@@ -1,10 +1,11 @@
 ---
 import HomeLayout from "@/layouts/HomeLayout.astro";
 import HlsVideo from "@/components/HlsVideo.astro";
-
+import PageMeta from "@/data/index";
 const BASE_URL = import.meta.env.BASE_URL;
-const locale = Astro.currentLocale;
-
+const locale = Astro.currentLocale as Locales;
+const website1 =  PageMeta.website1[locale];
+const website2 =  PageMeta.website2[locale];
 const src = `${BASE_URL}hls/index.m3u8`;
 ---
 
@@ -27,12 +28,12 @@ const src = `${BASE_URL}hls/index.m3u8`;
       <a
         class="block text-white text-sm text-opacity-60"
         href="https://beian.miit.gov.cn/"
-        target="_blank">京ICP备2023033337号-1</a
+        target="_blank">{website1}</a
       >
       <a
         class="block text-white text-sm text-opacity-60"
         href="https://beian.miit.gov.cn/"
-        target="_blank">京ICP备2023033337号-2</a
+        target="_blank">{website2}</a
       >
     </div>
   </main>
