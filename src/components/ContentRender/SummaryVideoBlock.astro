@@ -7,6 +7,7 @@ type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
 // 原信息类型
 type MetaTypes = CollectionEntry<"work">["data"]["meta"];
 
+const locale = Astro.currentLocale as Locales;
 interface Props {
   options: Extract<ContentTypes, { type: "SummaryVideoBlock" }>;
   meta?: MetaTypes;
@@ -30,8 +31,8 @@ const { options } = Astro.props;
       <div
         class="mobile:pt-12 mobile:w-3/4 mobile:justify-between flex flex-col mobile:flex-row justify-end h-full text-xs leading-4"
       >
-        <div class="font-semibold font-[RobotoCondensed-Regular] mb-0.5">
-          Main Tools
+        <div class:list={["font-semibold mb-0.5", {"font-[RobotoCondensed-Regular]": locale === "en"}]}>
+          {options.title}
         </div>
         <div>
           {options.tools.map((tool) => <div>{tool}</div>)}

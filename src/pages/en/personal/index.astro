@@ -1,11 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "../../../layouts/PageLayout.astro";
+import PageMeta from "@/data/personal";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { Picture } from "astro-imagetools/components";
 
 const locale = Astro.currentLocale as Locales;
-
+const title = PageMeta.title[locale];
 const pageCollections = await getCollection("personal");
 const persionalList = pageCollections
   .map((p) => {
@@ -28,7 +29,7 @@ const persionalList = pageCollections
     <div
       class="hidden mobile:block text-[40px] font-[Roboto-ExtraLight] leading-none mb-7"
     >
-      Personal Works
+      {title}
     </div>
     {
       persionalList.map((item) => (

@@ -2,9 +2,11 @@
 import { getCollection } from "astro:content";
 import PageLayout from "../../../layouts/PageLayout.astro";
 import { Picture } from "astro-imagetools/components";
+import PageMeta from "@/data/personal";
 import { getRelativeLocaleUrl } from "astro:i18n";
-const locale = Astro.currentLocale as Locales;
 
+const locale = Astro.currentLocale as Locales;
+const title = PageMeta.title[locale];
 const pageCollections = await getCollection("personal");
 const persionalList = pageCollections
   .map((p) => {
@@ -24,14 +26,16 @@ const persionalList = pageCollections
 
 <PageLayout title="Null Studio Gallery" active="personal">
   <div class="pt-[15rem] mobile:pt-[6.25rem]">
-    <div class="hidden mobile:block text-[40px] leading-none mb-7">
-      个人创作
+    <div
+      class="hidden mobile:block text-[40px] font-[Roboto-ExtraLight] leading-none mb-7"
+    >
+      {title}
     </div>
     {
       persionalList.map((item) => (
-        <div class="grid mobile:gap-0 grid-cols-12 mb-9 mobile:mb-0 last:mb-0 mobile:flex-col-reverse mobile:flex mobile:justify-end">
+        <div class="grid content-visibility contain-intrinsic-size gap-2 mobile:gap-0 grid-cols-12 mb-9 mobile:mb-0 last:mb-0 mobile:flex-col-reverse mobile:flex mobile:justify-end">
           <a
-            class="group col-span-5 relative min-w-[96px] w-fit min-h-[58px] mobile:min-h-[42px] mobile:mt-0.5 h-fit flex-1 pr-6"
+            class="group col-span-5 relative min-w-[96px] w-fit min-h-[58px] mobile:min-h-[48px] mobile:mt-2 h-fit flex-1 pr-6"
             href={item.url}
           >
             <div class="text-xl">{item.title}</div>
