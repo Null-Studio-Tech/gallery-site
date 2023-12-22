@@ -26,6 +26,9 @@ dependencies:
   astro-imagetools:
     specifier: ^0.9.0
     version: 0.9.0(astro@3.6.0)
+  astro-seo:
+    specifier: ^0.8.0
+    version: 0.8.0
   bowser:
     specifier: ^2.11.0
     version: 2.11.0
@@ -1966,6 +1969,10 @@ packages:
       potrace: 2.1.8
     optionalDependencies:
       imagetools-core: 3.0.2
+    dev: false
+
+  /astro-seo@0.8.0:
+    resolution: {integrity: sha512-7gq6lhibCM8FuzZIJlbLLWP5EJ9KL2/4XqeFrAg9O6ZK2xMFxJ5ubKf+a0VJwwTu8W8Xr421CmpiXu6Hq7n/7Q==}
     dev: false
 
   /astro@3.6.0(@types/node@20.10.3):

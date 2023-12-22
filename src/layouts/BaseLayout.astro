@@ -1,13 +1,15 @@
 ---
 // import { ViewTransitions, fade } from "astro:transitions";
+import { SEO } from "astro-seo";
 import FontImport from "@/components/FontImport.astro";
 
 interface Props {
 	title: string;
+	description?: string;
 }
 
 const locale = Astro.currentLocale;
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const BASE_URL = import.meta.env.BASE_URL;
 ---
 
@@ -20,7 +22,11 @@ const BASE_URL = import.meta.env.BASE_URL;
 			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
 		/>
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<SEO
+			title={title}
+			description={description || "GaoDing Design Work Gallery"}
+			titleDefault="GaoDing Gallery"
+		/>
 		<!-- <ViewTransitions /> -->
 		<FontImport />
 		<style is:global>
