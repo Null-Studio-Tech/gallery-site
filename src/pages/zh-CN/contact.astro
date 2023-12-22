@@ -10,29 +10,45 @@ const email = PageMeta.email[locale];
 const social = PageMeta.social[locale];
 const title = PageMeta.title[locale];
 const work = PageMeta.work[locale];
-
 ---
 
-<PageLayout title="Null Studio Gallery" class="flex min-h-0" active="contact">
+<PageLayout title="GaoDing | Contact" class="flex min-h-0" active="contact">
   <!-- <main>11111</main> -->
   <div
     class="flex justify-start items-center mobile:block mobile:pt-[5.5rem] w-full flex-1 laptop:mb-[138px]"
   >
     <div class="flex flex-col mobile:mb-12 flex-1">
-      <div class="text-[2rem] mb-5 mobile:mb-[9px]">{ title }</div>
-      <div class="text-[1rem]">{ email }</div>
+      <div class="text-[2rem] mb-5 mobile:mb-[9px]">{title}</div>
+      <div class="text-[1rem]">{email}</div>
     </div>
-      <div class="flex flex-col mobile:mb-12 flex-1">
-      <div class="text-[2rem] mb-5 mobile:mb-4">{ social }</div>
+    <div class="flex flex-col mobile:mb-12 flex-1">
+      <div class="text-[2rem] mb-5 mobile:mb-4">{social}</div>
       <div class="flex">
-        <a target="_blank" href="https://www.behance.net/chen_gao_ding"><img class="h-5 hover:opacity-60 cursor-pointer" src={groupImg.src} /></a>
-        <a target="_blank" href="https://www.instagram.com/deane_chen"><img class="h-5 mx-3 hover:opacity-60 cursor-pointer" src={instagramLogo.src} /></a>
-          <a target="_blank" href="https://www.xiaohongshu.com/user/profile/5d0aff960000000016039936?xhsshare=WeixinSession&appuid=5d0aff960000000016039936&apptime=1701142324"><img class="h-5 hover:opacity-60 cursor-pointer" src={thumbnailLarge.src} /></a>
+        <a target="_blank" href="https://www.behance.net/chen_gao_ding"
+          ><img
+            class="h-5 hover:opacity-60 cursor-pointer"
+            src={groupImg.src}
+          /></a
+        >
+        <a target="_blank" href="https://www.instagram.com/deane_chen"
+          ><img
+            class="h-5 mx-3 hover:opacity-60 cursor-pointer"
+            src={instagramLogo.src}
+          /></a
+        >
+        <a
+          target="_blank"
+          href="https://www.xiaohongshu.com/user/profile/5d0aff960000000016039936?xhsshare=WeixinSession&appuid=5d0aff960000000016039936&apptime=1701142324"
+          ><img
+            class="h-5 hover:opacity-60 cursor-pointer"
+            src={thumbnailLarge.src}
+          /></a
+        >
       </div>
     </div>
     <div class="flex flex-col flex-1">
       <div class="text-[2rem] mb-5 mobile:mb-4">
-        { work }
+        {work}
       </div>
       <div class="h-5"><img class="h-full" src={logoGraphic.src} /></div>
     </div>

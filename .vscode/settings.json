@@ -4,6 +4,8 @@
     "astro",
     "astrojs",
     "Bowser",
+    "favicons",
+    "imagetools",
     "srcset",
     "tailwindcss"
   ],

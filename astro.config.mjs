@@ -22,9 +22,10 @@ export default defineConfig({
   integrations: [tailwind(), vue(), astroImageTools, favicons({
     masterPicture: "./src/assets/favicon.svg",
     emitAssets: true,
-    appName: "GaoDing Gallery",
+    appName: "GaoDing",
     appShortName: "GaoDing",
     appDescription: "GaoDing Design Work Gallery",
-    developerName: "Null Studio"
+    developerName: "Null Studio",
+    faviconsDarkMode: false
   })]
 });
