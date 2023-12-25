@@ -47,7 +47,7 @@ const workList = pageCollections
             </a>
             <a
               href={item.url}
-              class="absolute mobile:static group bottom-10 left-10"
+              class="absolute mobile:static z-10 group bottom-10 left-10"
             >
               <div class="text-[1rem] mobile:hidden mb-2.5">{item.title}</div>
               <div class="text-[1.5rem] font-[Roboto-ExtraLight] mobile:text-black mobile:text-[1.25rem] mobile:mt-2 leading-7">
@@ -59,7 +59,7 @@ const workList = pageCollections
             </a>
             <a
               href={item.url}
-              class="absolute bottom-9 right-10 right-button hover:opacity-60 mobile:hidden"
+              class="absolute bottom-9 z-10 right-10 right-button hover:opacity-60 mobile:hidden"
             />
           </div>
         ))
