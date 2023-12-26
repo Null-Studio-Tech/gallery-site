@@ -10,7 +10,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} barColor="#000">
   <LaptopHeader theme="dark" />
   <MobileHeader theme="light" />
   <slot />

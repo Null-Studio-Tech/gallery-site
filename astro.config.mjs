@@ -26,6 +26,7 @@ export default defineConfig({
     appShortName: "GaoDing",
     appDescription: "GaoDing Design Work Gallery",
     developerName: "Null Studio",
-    faviconsDarkMode: false
+    faviconsDarkMode: false,
+    background: '#000'
   })]
 });

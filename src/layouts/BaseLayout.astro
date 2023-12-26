@@ -6,10 +6,12 @@ import FontImport from "@/components/FontImport.astro";
 interface Props {
 	title: string;
 	description?: string;
+	// iphone 顶部栏颜色
+	barColor?: string;
 }
 
 const locale = Astro.currentLocale;
-const { title, description } = Astro.props;
+const { title, description, barColor = "#fff" } = Astro.props;
 const BASE_URL = import.meta.env.BASE_URL;
 ---
 
@@ -21,6 +23,10 @@ const BASE_URL = import.meta.env.BASE_URL;
 			name="viewport"
 			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
 		/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="theme-color" content={barColor} />
+		<meta name="apple-mobile-web-app-status-bar-style" content={barColor} />
 		<meta name="generator" content={Astro.generator} />
 		<SEO
 			title={title}
