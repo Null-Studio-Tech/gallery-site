@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "Bytedance",
+    "description": "PICO Video App Brand Concept Animation",
+    "cover": "/P2_SaharaaBrandAnimation/workPage_cover.jpg"
+  },
+  "contents": [
+      {
+      "type": "TextBlock",
+      "className": "!justify-start font-light text-[56px] mobile:text-[40px]",
+      "content": "PICO Video App Brand Concept Animation"
+    },
+    {
+      "type": "SpaceBlock",
+      "className": "!mb-11"
+    },
+    {
+      "type": "SummaryVideoBlock",
+      "title": "Main Tools",
+      "tools": [
+        "Houdini",
+        "Redshift",
+        "After Effects"
+      ],
+      "description": "Brand concept video created for Pico VR interactive video streaming app. It employs the interaction between hands and surreal elements to convey the product characteristics of VR interactive video. The majority of the animation production is based on Houdini, with various types of dynamics simulations being experimented. The hand animations were rigged and animated using Blender.",
+      "aspectRatio": "16:9",
+      "poster": "/P2_SaharaaBrandAnimation/cover_main.jpg",
+      "src": "/P2_SaharaaBrandAnimation/video_main.mp4"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "12",
+      "srcset": [
+        "/P2_SaharaaBrandAnimation/image_01.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "12",
+      "srcset": [
+        "/P2_SaharaaBrandAnimation/image_02.jpg",
+        "/P2_SaharaaBrandAnimation/image_03.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "12",
+      "srcset": [
+        "/P2_SaharaaBrandAnimation/image_04.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "8",
+      "srcset": [
+        "/P2_SaharaaBrandAnimation/image_05.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "/P2_SaharaaBrandAnimation/image_06.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "12",
+      "srcset": [
+        "/P2_SaharaaBrandAnimation/image_07.jpg",
+        "/P2_SaharaaBrandAnimation/image_08.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "TextBlock",
+      "className": "font-light mt-24 mb-24 text-[1.5rem] mobile:mb-8 mobile:mt-18 mobile:!justify-start",
+      "content": "Some making of"
+    },
+    {
+      "type": "VideoBlock",
+      "aspectRatio": "16:9",
+      "poster": "/P2_SaharaaBrandAnimation/cover_01.jpg",
+      "src": "/P2_SaharaaBrandAnimation/video_01.mp4",
+      "description": "",
+      "position": "left",
+      "cols": "8"
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "VideoBlock",
+      "aspectRatio": "16:9",
+      "poster": "/P2_SaharaaBrandAnimation/cover_02.jpg",
+      "src": "/P2_SaharaaBrandAnimation/video_02.mp4",
+      "description": "",
+      "position": "right",
+      "cols": "8"
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "VideoBlock",
+      "aspectRatio": "16:9",
+      "poster": "/P2_SaharaaBrandAnimation/cover_03.jpg",
+      "src": "/P2_SaharaaBrandAnimation/video_03.mp4",
+      "description": "",
+      "position": "left",
+      "cols": "8"
+    }
+  ]
+}

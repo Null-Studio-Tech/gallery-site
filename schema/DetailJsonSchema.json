@@ -47,6 +47,9 @@
                   "type": "string"
                 }
               },
+              "aspectRatio": {
+                "type": "string"
+              },
               "description": {
                 "type": "string"
               },
@@ -93,7 +96,13 @@
               "src": {
                 "type": "string"
               },
-              "title": {
+              "aspectRatio": {
+                "type": "string"
+              },
+              "cols": {
+                "type": "string"
+              },
+              "position": {
                 "type": "string"
               },
               "description": {

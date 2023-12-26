@@ -12,8 +12,8 @@ interface Props {
   options: Extract<ContentTypes, { type: "SummaryVideoBlock" }>;
   meta?: MetaTypes;
 }
-
 const { options } = Astro.props;
+
 ---
 
 <div
@@ -22,7 +22,7 @@ const { options } = Astro.props;
 >
   <div class="col-span-2"></div>
   <div class="col-span-10">
-    <WebVideo src={options.src} />
+    <WebVideo poster={options.poster} aspectRatio={options.aspectRatio} src={options.src} />
   </div>
   <div
     class="grid grid-cols-12 col-span-12 my-16 mobile:mt-6 gap-2 mobile:gap-0"

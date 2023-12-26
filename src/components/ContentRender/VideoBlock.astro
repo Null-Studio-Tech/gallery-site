@@ -6,21 +6,47 @@ import WebVideo from "../WebVideo.astro";
 type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
 // 原信息类型
 type MetaTypes = CollectionEntry<"work">["data"]["meta"];
-const locale = Astro.currentLocale as Locales;
+
 interface Props {
   options: Extract<ContentTypes, { type: "VideoBlock" }>;
   meta?: MetaTypes;
 }
-
 const { options } = Astro.props;
----
 
+---
 <div
-  class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col"
+  class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col content-visibility contain-intrinsic-size"
   class:list={[options.className || ""]}
 >
-  <div class="col-span-2"></div>
-  <div class="col-span-10">
-    <WebVideo src={options.src} />
+  {
+    options.position === "right" && (
+      <div
+        class="mobile:pb-6"
+        class:list={[
+          `col-span-${12 - Number(options.cols || 8)}`,
+          {
+            "mobile:hidden": !options.description,
+          },
+        ]}
+      >
+        {options.description}
+      </div>
+    )
+  }
+  <div
+    class="mobile:col-span-12"
+    class:list={[`col-span-${options.cols || 12}`]}
+  >
+    <WebVideo poster={options.poster} aspectRatio={options.aspectRatio} src={options.src} />
   </div>
+  {
+    options.description && options.position !== "right" && (
+      <div
+        class="pl-7 mobile:p-0 mobile:pt-6"
+        class:list={[`col-span-${12 - Number(options.cols || 8)}`]}
+      >
+        {options.description}
+      </div>
+    )
+  }
 </div>

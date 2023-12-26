@@ -21,6 +21,7 @@ const SummaryVideoBlock = z.object({
   tools: z.string().array(),
   title: z.string(),
   description: z.string(),
+  aspectRatio: z.string(),
   className: z.string().optional()
 })
 
@@ -35,10 +36,12 @@ const TextBlock = z.object({
 const VideoBlock = z.object({
   type: z.literal("VideoBlock"),
   src: z.string(),
-  title: z.string().optional(),
-  description: z.string().optional(),
   poster: z.string().optional(),
-  className: z.string().optional()
+  aspectRatio: z.string(),
+  description: z.string(),
+  className: z.string().optional(),
+  position: z.enum(["left", "right", "top", "bottom"]),
+  cols: z.string().optional()
 })
 
 // 图片块

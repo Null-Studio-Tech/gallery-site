@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "title": "字节跳动",
+    "description": "PICO 4 系列硬件产品三维视觉开发",
+    "cover": "/P3_Pico4ProductMotionDesignDev/workPage_cover.jpg"
+  },
+  "contents": [
+      {
+      "type": "TextBlock",
+      "className": "!justify-start font-light text-[56px] mobile:text-[40px]",
+      "content": "PICO 4 系列硬件产品三维视觉开发"
+    },
+    {
+      "type": "SpaceBlock",
+      "className": "!mb-11"
+    },
+    {
+      "type": "SummaryVideoBlock",
+      "title": "Main Tools",
+      "tools": [
+        "Cinema 4D",
+        "Marvelous design",
+        "Octane",
+        "Substance Painter",
+        "After Effects"
+      ],
+      "description": "为PICO的VR产品PICO 4 系列做了硬件产品的三维视觉开发，并针对产品的工业设计特征，制作了部分功能动画，该三维视觉应用于PICO的各类产品宣发场景以及官方网站。",
+      "aspectRatio": "16:9",
+      "poster": "/P3_Pico4ProductMotionDesignDev/cover_main.jpg",
+      "src": "/P3_Pico4ProductMotionDesignDev/video_main.mp4"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "12",
+      "srcset": [
+        "/P3_Pico4ProductMotionDesignDev/image_01.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "/P3_Pico4ProductMotionDesignDev/image_02.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "VideoBlock",
+      "aspectRatio": "16:9",
+      "poster": "/P3_Pico4ProductMotionDesignDev/cover_01.jpg",
+      "src": "/P3_Pico4ProductMotionDesignDev/video_01.mp4",
+      "description": "震感手柄原理解释动画",
+      "position": "right",
+      "cols": "8"
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "/P3_Pico4ProductMotionDesignDev/image_03.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "VideoBlock",
+      "aspectRatio": "16:9",
+      "poster": "/P3_Pico4ProductMotionDesignDev/cover_02.jpg",
+      "src": "/P3_Pico4ProductMotionDesignDev/video_02.mp4",
+      "description": "",
+      "position": "right",
+      "cols": "8"
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "VideoBlock",
+      "aspectRatio": "16:9",
+      "poster": "/P3_Pico4ProductMotionDesignDev/cover_03.jpg",
+      "src": "/P3_Pico4ProductMotionDesignDev/video_03.mp4",
+      "description": "",
+      "position": "left",
+      "cols": "8"
+    },
+    {
+      "type": "TextBlock",
+      "className": "font-light mt-24 mb-24 text-[1.5rem] mobile:mb-8 mobile:mt-18 mobile:!justify-start",
+      "content": "早期构图测试"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "8",
+      "srcset": [
+        "/P3_Pico4ProductMotionDesignDev/image_04.jpg",
+        "/P3_Pico4ProductMotionDesignDev/image_05.jpg",
+        "/P3_Pico4ProductMotionDesignDev/image_06.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "/P3_Pico4ProductMotionDesignDev/image_07.jpg",
+        "/P3_Pico4ProductMotionDesignDev/image_08.jpg",
+        "/P3_Pico4ProductMotionDesignDev/image_09.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "TextBlock",
+      "className": "font-light mt-24 mb-24 text-[1.5rem] mobile:mb-8 mobile:mt-18 mobile:!justify-start",
+      "content": "一些制作过程"
+    },
+    {
+      "type": "VideoBlock",
+      "aspectRatio": "16:9",
+      "poster": "/P3_Pico4ProductMotionDesignDev/cover_04.jpg",
+      "src": "/P3_Pico4ProductMotionDesignDev/video_04.mp4",
+      "description": "",
+      "position": "left",
+      "cols": "6"
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "VideoBlock",
+      "aspectRatio": "16:9",
+      "poster": "/P3_Pico4ProductMotionDesignDev/cover_05.jpg",
+      "src": "/P3_Pico4ProductMotionDesignDev/video_05.mp4",
+      "description": "",
+      "position": "right",
+      "cols": "10"
+    }
+  ]
+}
