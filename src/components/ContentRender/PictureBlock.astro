@@ -1,21 +1,19 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { Picture } from "astro-imagetools/components";
-
-// 数组取number,获得联合类型
-type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
-// 原信息类型
-type MetaTypes = CollectionEntry<"work">["data"]["meta"];
+import type { ContentUnionType, MetaOptions, PathOptions } from "./BlockType";
+import BasePicture from "../BasePicture.astro";
+import { getPublicSourcePath } from "@/utils/url";
 
 interface Props {
-  options: Extract<ContentTypes, { type: "PictureBlock" }>;
-  meta?: MetaTypes;
+  options: Extract<ContentUnionType, { type: "PictureBlock" }>;
+  meta?: MetaOptions;
+  path: PathOptions;
 }
 
-const { options } = Astro.props;
+const { options, meta, path } = Astro.props;
 
-const images = [];
-images.push(...options.srcset);
+const images = options.srcset.map((src) =>
+  getPublicSourcePath([path.collection, ...path.paths], src),
+);
 ---
 
 <div
@@ -45,7 +43,7 @@ images.push(...options.srcset);
   {
     images.map((item) => (
       <div class={`col-span-${options.cols || 12}`}>
-        <Picture src={item} alt={`image:${options.description || ""}`} />
+        <BasePicture src={item} alt={`image:${options.description || ""}`} />
       </div>
     ))
   }

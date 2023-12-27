@@ -1,19 +1,23 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { ContentUnionType, MetaOptions, PathOptions } from "./BlockType";
 import WebVideo from "../WebVideo.astro";
-
-// 数组取number,获得联合类型
-type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
-// 原信息类型
-type MetaTypes = CollectionEntry<"work">["data"]["meta"];
+import { getPublicSourcePath } from "@/utils/url";
 
 const locale = Astro.currentLocale as Locales;
 interface Props {
-  options: Extract<ContentTypes, { type: "SummaryVideoBlock" }>;
-  meta?: MetaTypes;
+  options: Extract<ContentUnionType, { type: "SummaryVideoBlock" }>;
+  meta?: MetaOptions;
+  path: PathOptions;
 }
-const { options } = Astro.props;
-
+const { options, path } = Astro.props;
+const videoSrc = getPublicSourcePath(
+  [path.collection, ...path.paths],
+  options.src,
+);
+const postSrc = getPublicSourcePath(
+  [path.collection, ...path.paths],
+  options.poster || "",
+);
 ---
 
 <div
@@ -22,7 +26,11 @@ const { options } = Astro.props;
 >
   <div class="col-span-2"></div>
   <div class="col-span-10">
-    <WebVideo poster={options.poster} aspectRatio={options.aspectRatio} src={options.src} />
+    <WebVideo
+      poster={postSrc}
+      aspectRatio={options.aspectRatio}
+      src={videoSrc}
+    />
   </div>
   <div
     class="grid grid-cols-12 col-span-12 my-16 mobile:mt-6 gap-2 mobile:gap-0"
@@ -31,7 +39,12 @@ const { options } = Astro.props;
       <div
         class="mobile:pt-12 mobile:w-3/4 mobile:justify-between flex flex-col mobile:flex-row justify-end h-full text-xs leading-4"
       >
-        <div class:list={["font-semibold mb-0.5", {"font-[RobotoCondensed-Regular]": locale === "en"}]}>
+        <div
+          class:list={[
+            "font-semibold mb-0.5",
+            { "font-[RobotoCondensed-Regular]": locale === "en" },
+          ]}
+        >
           {options.title}
         </div>
         <div>

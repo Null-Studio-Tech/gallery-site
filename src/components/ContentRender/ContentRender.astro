@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { ContentOptions, MetaOptions, PathOptions } from "./BlockType";
 import SummaryVideoBlock from "./SummaryVideoBlock.astro";
 import PictureBlock from "./PictureBlock.astro";
 import SwipeBlock from "./SwipeBlock.astro";
@@ -10,35 +10,38 @@ import SpaceBlock from "./SpaceBlock.astro";
 
 interface Props {
   // 内容集合类型
-  contents: CollectionEntry<"work">["data"]["contents"];
+  contents: ContentOptions;
   // 原信息类型
-  meta?: CollectionEntry<"work">["data"]["meta"];
+  meta?: MetaOptions;
+  // 路径信息
+  path: PathOptions;
 }
 
-const { contents, meta } = Astro.props;
+const { contents, meta, path } = Astro.props;
 ---
 
 <div class="pt-[8.75rem]">
   {
     contents.map((c) => {
       if (c.type === "SummaryVideoBlock")
-        return <SummaryVideoBlock meta={meta} options={c} />;
+        return <SummaryVideoBlock meta={meta} options={c} path={path} />;
 
       if (c.type === "PictureBlock")
-        return <PictureBlock meta={meta} options={c} />;
+        return <PictureBlock meta={meta} options={c} path={path} />;
 
       if (c.type === "SwipeBlock")
-        return <SwipeBlock meta={meta} options={c} />;
+        return <SwipeBlock meta={meta} options={c} path={path} />;
 
       if (c.type === "VideoBlock")
-        return <VideoBlock meta={meta} options={c} />;
+        return <VideoBlock meta={meta} options={c} path={path} />;
 
-      if (c.type === "TextBlock") return <TextBlock meta={meta} options={c} />;
+      if (c.type === "TextBlock")
+        return <TextBlock meta={meta} options={c} path={path} />;
 
       if (c.type === "SpaceBlock")
-        return <SpaceBlock meta={meta} options={c} />;
+        return <SpaceBlock meta={meta} options={c} path={path} />;
 
-      return <EmptyBlock meta={meta} options={c} />;
+      return <EmptyBlock meta={meta} options={c} path={path} />;
     })
   }
 </div>

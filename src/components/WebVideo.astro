@@ -1,9 +1,9 @@
 ---
+import { getPublicSourcePath } from "@/utils/url";
 interface Props {
   src: string;
   aspectRatio: string;
   poster?: string;
-
 }
 
 const { src, aspectRatio = "16:9", poster = "" } = Astro.props;
@@ -12,7 +12,8 @@ const { src, aspectRatio = "16:9", poster = "" } = Astro.props;
 <web-video
   class="relative w-full flex flex-col"
   data-src={src}
-  data-aspect-ratio={aspectRatio},
+  data-aspect-ratio={aspectRatio}
+  ,
   data-poster={poster}
 >
   <video
@@ -60,7 +61,7 @@ const { src, aspectRatio = "16:9", poster = "" } = Astro.props;
         autoplay: false,
         preload: "auto",
         aspectRatio: aspectRatio,
-        poster
+        poster,
       });
       this.player.src(source);
     }
@@ -79,9 +80,9 @@ const { src, aspectRatio = "16:9", poster = "" } = Astro.props;
     background-color: transparent !important;
     transform: translate(-50%, -50%);
     border: none;
-    background-image: url("../assets/images/video.svg")!important;
+    background-image: url("../assets/images/video.svg") !important;
   }
   web-video .video-js .vjs-big-play-button:hover {
-    opacity: .6;
+    opacity: 0.6;
   }
 </style>

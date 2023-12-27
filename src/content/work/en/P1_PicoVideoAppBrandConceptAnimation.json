@@ -2,10 +2,10 @@
   "meta": {
     "title": "Bytedance",
     "description": "PICO Video App Brand Concept Animation",
-    "cover": "/P1_PicoVideoAppBrandConceptAnimation/workPage_cover.jpg"
+    "cover": "workPage_cover.jpg"
   },
   "contents": [
-      {
+    {
       "type": "TextBlock",
       "className": "!justify-start font-light text-[56px] mobile:text-[40px]",
       "content": "PICO Video App Brand Concept Animation"
@@ -26,15 +26,15 @@
       ],
       "description": "Brand concept video created for Pico VR interactive video streaming app. It employs the interaction between hands and surreal elements to convey the product characteristics of VR interactive video. The majority of the animation production is based on Houdini, with various types of dynamics simulations being experimented. The hand animations were rigged and animated using Blender.",
       "aspectRatio": "16:9",
-      "poster": "/P1_PicoVideoAppBrandConceptAnimation/cover_main.jpg",
-      "src": "/P1_PicoVideoAppBrandConceptAnimation/video_main.mp4"
+      "poster": "cover_main.jpg",
+      "src": "video_main.mp4"
     },
     {
       "type": "PictureBlock",
       "picturePosition": "right",
       "cols": "12",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/image_01.jpg"
+        "image_01.jpg"
       ]
     },
     {
@@ -44,9 +44,9 @@
       "type": "SwipeBlock",
       "picturePosition": "left",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/image_02.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_03.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_04.jpg"
+        "image_02.jpg",
+        "image_03.jpg",
+        "image_04.jpg"
       ]
     },
     {
@@ -57,9 +57,9 @@
       "picturePosition": "left",
       "cols": "8",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/image_05.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_06.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_07.jpg"
+        "image_05.jpg",
+        "image_06.jpg",
+        "image_07.jpg"
       ],
       "description": "The inspiration for the melting clock animation comes from Salvador Dalí's classic work 'The Persistence of Memory'. The production method is based on Houdini's FLIP Fluids simulation."
     },
@@ -71,8 +71,8 @@
       "picturePosition": "right",
       "cols": "8",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/image_08.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_09.jpg"
+        "image_08.jpg",
+        "image_09.jpg"
       ],
       "description": ""
     },
@@ -84,8 +84,8 @@
       "picturePosition": "right",
       "cols": "12",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/image_10.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_11.jpg"
+        "image_10.jpg",
+        "image_11.jpg"
       ],
       "description": ""
     },
@@ -97,10 +97,10 @@
       "picturePosition": "left",
       "cols": "6",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/gif_01.gif",
-        "/P1_PicoVideoAppBrandConceptAnimation/gif_02.gif",
-        "/P1_PicoVideoAppBrandConceptAnimation/gif_03.gif",
-        "/P1_PicoVideoAppBrandConceptAnimation/gif_04.gif"
+        "gif_01.gif",
+        "gif_02.gif",
+        "gif_03.gif",
+        "gif_04.gif"
       ]
     },
     {
@@ -111,8 +111,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P1_PicoVideoAppBrandConceptAnimation/cover_01.jpg",
-      "src": "/P1_PicoVideoAppBrandConceptAnimation/video_01.mp4",
+      "poster": "cover_01.jpg",
+      "src": "video_01.mp4",
       "description": "",
       "position": "left",
       "cols": "8"
@@ -123,8 +123,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P1_PicoVideoAppBrandConceptAnimation/cover_02.jpg",
-      "src": "/P1_PicoVideoAppBrandConceptAnimation/video_02.mp4",
+      "poster": "cover_02.jpg",
+      "src": "video_02.mp4",
       "description": "The animation of the blooming flowers is created using Houdini Vellum Simulation.",
       "position": "right",
       "cols": "8"
@@ -135,8 +135,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P1_PicoVideoAppBrandConceptAnimation/cover_03.jpg",
-      "src": "/P1_PicoVideoAppBrandConceptAnimation/video_03.mp4",
+      "poster": "cover_03.jpg",
+      "src": "video_03.mp4",
       "description": "rigging and animation of the hand using Blender.",
       "position": "left",
       "cols": "8"

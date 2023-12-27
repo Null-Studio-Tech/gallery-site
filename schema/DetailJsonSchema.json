@@ -38,19 +38,19 @@
               "poster": {
                 "type": "string"
               },
-              "title": {
-                "type": "string"
-              },
               "tools": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "aspectRatio": {
+              "title": {
                 "type": "string"
               },
               "description": {
+                "type": "string"
+              },
+              "aspectRatio": {
                 "type": "string"
               },
               "className": {
@@ -59,10 +59,11 @@
             },
             "required": [
               "type",
-              "title",
               "src",
               "tools",
-              "description"
+              "title",
+              "description",
+              "aspectRatio"
             ],
             "additionalProperties": false
           },
@@ -96,28 +97,37 @@
               "src": {
                 "type": "string"
               },
+              "poster": {
+                "type": "string"
+              },
               "aspectRatio": {
-                "type": "string"
-              },
-              "cols": {
-                "type": "string"
-              },
-              "position": {
                 "type": "string"
               },
               "description": {
                 "type": "string"
               },
-              "poster": {
+              "className": {
                 "type": "string"
               },
-              "className": {
+              "position": {
+                "type": "string",
+                "enum": [
+                  "left",
+                  "right",
+                  "top",
+                  "bottom"
+                ]
+              },
+              "cols": {
                 "type": "string"
               }
             },
             "required": [
               "type",
-              "src"
+              "src",
+              "aspectRatio",
+              "description",
+              "position"
             ],
             "additionalProperties": false
           },

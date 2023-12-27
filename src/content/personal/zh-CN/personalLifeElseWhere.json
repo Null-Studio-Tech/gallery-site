@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "title": "无处安生",
+    "description": "希望唤起人类对环境的关心",
+    "cover": "cover3.jpg"
+  },
+  "contents": [
+    {
+      "type": "TextBlock",
+      "content": "测试文本"
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "description": "图片测试",
+      "srcset": [
+        "cover1.jpg"
+      ],
+      "picturePosition": "right",
+      "cols": "8"
+    }
+  ]
+}

@@ -1,20 +1,20 @@
 ---
-import type { CollectionEntry } from "astro:content";
-
-// 原信息类型
-type MetaTypes = CollectionEntry<"work">["data"]["meta"];
+import type { MetaOptions, PathOptions } from "./BlockType";
 
 interface Props {
   options: unknown;
-  meta?: MetaTypes;
+  meta?: MetaOptions;
+  path: PathOptions;
 }
 
-const { options, meta } = Astro.props;
+const { options, meta, path } = Astro.props;
 const metaInfo = JSON.stringify(meta, null, 2);
 const optionsInfo = JSON.stringify(options, null, 2);
+const pathInfo = JSON.stringify(path, null, 2);
 ---
 
 <div class="col-span-12">
   <pre>{metaInfo}</pre>
   <pre>{optionsInfo}</pre>
+  <pre>{pathInfo}</pre>
 </div>

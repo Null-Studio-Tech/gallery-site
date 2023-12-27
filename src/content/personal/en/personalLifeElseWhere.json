@@ -2,7 +2,7 @@
   "meta": {
     "title": "Life Else Where",
     "description": "hope everyone can take care of the environment",
-    "cover": "/images/personal/cover3.jpg"
+    "cover": "cover3.jpg"
   },
   "contents": [
     {
@@ -13,7 +13,7 @@
       "type": "PictureBlock",
       "description": "this is test 1",
       "srcset": [
-        "/images/personal/cover1.jpg"
+        "cover1.jpg"
       ],
       "picturePosition": "right"
     }

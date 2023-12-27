@@ -2,10 +2,10 @@
   "meta": {
     "title": "字节跳动",
     "description": "Saharaa.ai 品牌动画",
-    "cover": "/P2_SaharaaBrandAnimation/workPage_cover.jpg"
+    "cover": "workPage_cover.jpg"
   },
   "contents": [
-      {
+    {
       "type": "TextBlock",
       "className": "!justify-start font-light text-[56px] mobile:text-[40px]",
       "content": "Saharaa.ai 品牌动画"
@@ -24,15 +24,15 @@
       ],
       "description": "Saharaa.ai是专业AI数据服务平台，提供全球范围内可访问且可定制的数据标注服务。为传达其品牌的前沿科技属性，我在短片中将神经网络的视觉表达与太空、沙漠的视觉形象结合在一起。",
       "aspectRatio": "16:9",
-      "poster": "/P2_SaharaaBrandAnimation/cover_main.jpg",
-      "src": "/P2_SaharaaBrandAnimation/video_main.mp4"
+      "poster": "cover_main.jpg",
+      "src": "video_main.mp4"
     },
     {
       "type": "PictureBlock",
       "picturePosition": "left",
       "cols": "12",
       "srcset": [
-        "/P2_SaharaaBrandAnimation/image_01.jpg"
+        "image_01.jpg"
       ]
     },
     {
@@ -43,8 +43,8 @@
       "picturePosition": "right",
       "cols": "12",
       "srcset": [
-        "/P2_SaharaaBrandAnimation/image_02.jpg",
-        "/P2_SaharaaBrandAnimation/image_03.jpg"
+        "image_02.jpg",
+        "image_03.jpg"
       ],
       "description": ""
     },
@@ -56,7 +56,7 @@
       "picturePosition": "left",
       "cols": "12",
       "srcset": [
-        "/P2_SaharaaBrandAnimation/image_04.jpg"
+        "image_04.jpg"
       ]
     },
     {
@@ -67,7 +67,7 @@
       "picturePosition": "right",
       "cols": "8",
       "srcset": [
-        "/P2_SaharaaBrandAnimation/image_05.jpg"
+        "image_05.jpg"
       ]
     },
     {
@@ -78,7 +78,7 @@
       "picturePosition": "left",
       "cols": "8",
       "srcset": [
-        "/P2_SaharaaBrandAnimation/image_06.jpg"
+        "image_06.jpg"
       ]
     },
     {
@@ -89,8 +89,8 @@
       "picturePosition": "right",
       "cols": "12",
       "srcset": [
-        "/P2_SaharaaBrandAnimation/image_07.jpg",
-        "/P2_SaharaaBrandAnimation/image_08.jpg"
+        "image_07.jpg",
+        "image_08.jpg"
       ],
       "description": ""
     },
@@ -102,8 +102,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P2_SaharaaBrandAnimation/cover_01.jpg",
-      "src": "/P2_SaharaaBrandAnimation/video_01.mp4",
+      "poster": "cover_01.jpg",
+      "src": "video_01.mp4",
       "description": "",
       "position": "left",
       "cols": "8"
@@ -114,8 +114,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P2_SaharaaBrandAnimation/cover_02.jpg",
-      "src": "/P2_SaharaaBrandAnimation/video_02.mp4",
+      "poster": "cover_02.jpg",
+      "src": "video_02.mp4",
       "description": "",
       "position": "right",
       "cols": "8"
@@ -126,8 +126,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P2_SaharaaBrandAnimation/cover_03.jpg",
-      "src": "/P2_SaharaaBrandAnimation/video_03.mp4",
+      "poster": "cover_03.jpg",
+      "src": "video_03.mp4",
       "description": "",
       "position": "left",
       "cols": "8"

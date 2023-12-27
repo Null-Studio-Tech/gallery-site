@@ -4,6 +4,7 @@ import { getCollection, getEntry } from "astro:content";
 import PageLayout from "../../../layouts/PageLayout.astro";
 import ContentRender from "@/components/ContentRender/ContentRender.astro";
 import { Debug } from "astro:components";
+import type { PathOptions } from "@/components/ContentRender/BlockType";
 
 const isDev = import.meta.env.DEV;
 
@@ -19,6 +20,7 @@ export const getStaticPaths = (async () => {
         props: {
           id: p.id,
           lang: lang,
+          paths: slug,
           collection: p.collection,
         },
       };
@@ -28,6 +30,11 @@ export const getStaticPaths = (async () => {
 
 const props = Astro.props;
 const page = await getEntry("work", props.id);
+const pathInfo: PathOptions = {
+  lang: props.lang as Locales,
+  paths: props.paths,
+  collection: props.collection,
+};
 ---
 
 <PageLayout title={`GaoDing | ${page.data.meta.title}`} active="work">
@@ -39,5 +46,9 @@ const page = await getEntry("work", props.id);
       </>
     )
   }
-  <ContentRender contents={page.data.contents} />
+  <ContentRender
+    meta={page.data.meta}
+    contents={page.data.contents}
+    path={pathInfo}
+  />
 </PageLayout>

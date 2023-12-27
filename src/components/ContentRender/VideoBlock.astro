@@ -1,19 +1,25 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { ContentUnionType, MetaOptions, PathOptions } from "./BlockType";
 import WebVideo from "../WebVideo.astro";
-
-// 数组取number,获得联合类型
-type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
-// 原信息类型
-type MetaTypes = CollectionEntry<"work">["data"]["meta"];
+import { getPublicSourcePath } from "@/utils/url";
 
 interface Props {
-  options: Extract<ContentTypes, { type: "VideoBlock" }>;
-  meta?: MetaTypes;
+  options: Extract<ContentUnionType, { type: "VideoBlock" }>;
+  meta?: MetaOptions;
+  path: PathOptions;
 }
-const { options } = Astro.props;
+const { options, path } = Astro.props;
 
+const videoSrc = getPublicSourcePath(
+  [path.collection, ...path.paths],
+  options.src,
+);
+const postSrc = getPublicSourcePath(
+  [path.collection, ...path.paths],
+  options.poster || "",
+);
 ---
+
 <div
   class="grid grid-cols-12 gap-x-2 mobile:flex mobile:gap-0 mobile:flex-col content-visibility contain-intrinsic-size"
   class:list={[options.className || ""]}
@@ -37,7 +43,11 @@ const { options } = Astro.props;
     class="mobile:col-span-12"
     class:list={[`col-span-${options.cols || 12}`]}
   >
-    <WebVideo poster={options.poster} aspectRatio={options.aspectRatio} src={options.src} />
+    <WebVideo
+      poster={postSrc}
+      aspectRatio={options.aspectRatio}
+      src={videoSrc}
+    />
   </div>
   {
     options.description && options.position !== "right" && (

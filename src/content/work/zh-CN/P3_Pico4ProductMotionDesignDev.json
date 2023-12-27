@@ -2,10 +2,10 @@
   "meta": {
     "title": "字节跳动",
     "description": "PICO 4 系列硬件产品三维视觉开发",
-    "cover": "/P3_Pico4ProductMotionDesignDev/workPage_cover.jpg"
+    "cover": "workPage_cover.jpg"
   },
   "contents": [
-      {
+    {
       "type": "TextBlock",
       "className": "!justify-start font-light text-[56px] mobile:text-[40px]",
       "content": "PICO 4 系列硬件产品三维视觉开发"
@@ -26,15 +26,15 @@
       ],
       "description": "为PICO的VR产品PICO 4 系列做了硬件产品的三维视觉开发，并针对产品的工业设计特征，制作了部分功能动画，该三维视觉应用于PICO的各类产品宣发场景以及官方网站。",
       "aspectRatio": "16:9",
-      "poster": "/P3_Pico4ProductMotionDesignDev/cover_main.jpg",
-      "src": "/P3_Pico4ProductMotionDesignDev/video_main.mp4"
+      "poster": "cover_main.jpg",
+      "src": "video_main.mp4"
     },
     {
       "type": "PictureBlock",
       "picturePosition": "right",
       "cols": "12",
       "srcset": [
-        "/P3_Pico4ProductMotionDesignDev/image_01.jpg"
+        "image_01.jpg"
       ]
     },
     {
@@ -45,7 +45,7 @@
       "picturePosition": "left",
       "cols": "10",
       "srcset": [
-        "/P3_Pico4ProductMotionDesignDev/image_02.jpg"
+        "image_02.jpg"
       ]
     },
     {
@@ -54,8 +54,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P3_Pico4ProductMotionDesignDev/cover_01.jpg",
-      "src": "/P3_Pico4ProductMotionDesignDev/video_01.mp4",
+      "poster": "cover_01.jpg",
+      "src": "video_01.mp4",
       "description": "震感手柄原理解释动画",
       "position": "right",
       "cols": "8"
@@ -68,7 +68,7 @@
       "picturePosition": "left",
       "cols": "10",
       "srcset": [
-        "/P3_Pico4ProductMotionDesignDev/image_03.jpg"
+        "image_03.jpg"
       ]
     },
     {
@@ -77,8 +77,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P3_Pico4ProductMotionDesignDev/cover_02.jpg",
-      "src": "/P3_Pico4ProductMotionDesignDev/video_02.mp4",
+      "poster": "cover_02.jpg",
+      "src": "video_02.mp4",
       "description": "",
       "position": "right",
       "cols": "8"
@@ -89,8 +89,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P3_Pico4ProductMotionDesignDev/cover_03.jpg",
-      "src": "/P3_Pico4ProductMotionDesignDev/video_03.mp4",
+      "poster": "cover_03.jpg",
+      "src": "video_03.mp4",
       "description": "",
       "position": "left",
       "cols": "8"
@@ -105,9 +105,9 @@
       "picturePosition": "right",
       "cols": "8",
       "srcset": [
-        "/P3_Pico4ProductMotionDesignDev/image_04.jpg",
-        "/P3_Pico4ProductMotionDesignDev/image_05.jpg",
-        "/P3_Pico4ProductMotionDesignDev/image_06.jpg"
+        "image_04.jpg",
+        "image_05.jpg",
+        "image_06.jpg"
       ],
       "description": ""
     },
@@ -119,9 +119,9 @@
       "picturePosition": "left",
       "cols": "8",
       "srcset": [
-        "/P3_Pico4ProductMotionDesignDev/image_07.jpg",
-        "/P3_Pico4ProductMotionDesignDev/image_08.jpg",
-        "/P3_Pico4ProductMotionDesignDev/image_09.jpg"
+        "image_07.jpg",
+        "image_08.jpg",
+        "image_09.jpg"
       ],
       "description": ""
     },
@@ -133,8 +133,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P3_Pico4ProductMotionDesignDev/cover_04.jpg",
-      "src": "/P3_Pico4ProductMotionDesignDev/video_04.mp4",
+      "poster": "cover_04.jpg",
+      "src": "video_04.mp4",
       "description": "",
       "position": "left",
       "cols": "6"
@@ -145,8 +145,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P3_Pico4ProductMotionDesignDev/cover_05.jpg",
-      "src": "/P3_Pico4ProductMotionDesignDev/video_05.mp4",
+      "poster": "cover_05.jpg",
+      "src": "video_05.mp4",
       "description": "",
       "position": "right",
       "cols": "10"

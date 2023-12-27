@@ -2,10 +2,10 @@
   "meta": {
     "title": "字节跳动",
     "description": "PICO 互动剧场品牌概念动画",
-    "cover": "/P1_PicoVideoAppBrandConceptAnimation/workPage_cover.jpg"
+    "cover": "workPage_cover.jpg"
   },
   "contents": [
-      {
+    {
       "type": "TextBlock",
       "className": "!justify-start font-light text-[56px] mobile:text-[40px]",
       "content": "PICO 互动剧场品牌概念动画"
@@ -26,15 +26,15 @@
       ],
       "description": "这是给pico vr互动影视app制作的品牌概念视频，使用手与超现实元素的互动来传达vr互动影视的产品特征，动画的制作大部分基于houdini来完成，尝试了多种类型的动力学模拟，手部动画使用blender进行绑定并制作动画。",
       "aspectRatio": "16:9",
-      "poster": "/P1_PicoVideoAppBrandConceptAnimation/cover_main.jpg",
-      "src": "/P1_PicoVideoAppBrandConceptAnimation/video_main.mp4"
+      "poster": "cover_main.jpg",
+      "src": "video_main.mp4"
     },
     {
       "type": "PictureBlock",
       "picturePosition": "right",
       "cols": "12",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/image_01.jpg"
+        "image_01.jpg"
       ]
     },
     {
@@ -44,9 +44,9 @@
       "type": "SwipeBlock",
       "picturePosition": "left",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/image_02.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_03.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_04.jpg"
+        "image_02.jpg",
+        "image_03.jpg",
+        "image_04.jpg"
       ]
     },
     {
@@ -57,9 +57,9 @@
       "picturePosition": "left",
       "cols": "8",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/image_05.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_06.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_07.jpg"
+        "image_05.jpg",
+        "image_06.jpg",
+        "image_07.jpg"
       ],
       "description": "时钟融化动画的灵感来自于达利的经典作品《记忆的永恒》，制作方法基于Houdini Flip Fluids。"
     },
@@ -71,8 +71,8 @@
       "picturePosition": "right",
       "cols": "8",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/image_08.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_09.jpg"
+        "image_08.jpg",
+        "image_09.jpg"
       ],
       "description": ""
     },
@@ -84,8 +84,8 @@
       "picturePosition": "right",
       "cols": "12",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/image_10.jpg",
-        "/P1_PicoVideoAppBrandConceptAnimation/image_11.jpg"
+        "image_10.jpg",
+        "image_11.jpg"
       ],
       "description": ""
     },
@@ -97,10 +97,10 @@
       "picturePosition": "left",
       "cols": "6",
       "srcset": [
-        "/P1_PicoVideoAppBrandConceptAnimation/gif_01.gif",
-        "/P1_PicoVideoAppBrandConceptAnimation/gif_02.gif",
-        "/P1_PicoVideoAppBrandConceptAnimation/gif_03.gif",
-        "/P1_PicoVideoAppBrandConceptAnimation/gif_04.gif"
+        "gif_01.gif",
+        "gif_02.gif",
+        "gif_03.gif",
+        "gif_04.gif"
       ]
     },
     {
@@ -111,8 +111,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P1_PicoVideoAppBrandConceptAnimation/cover_01.jpg",
-      "src": "/P1_PicoVideoAppBrandConceptAnimation/video_01.mp4",
+      "poster": "cover_01.jpg",
+      "src": "video_01.mp4",
       "description": "",
       "position": "left",
       "cols": "8"
@@ -123,8 +123,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P1_PicoVideoAppBrandConceptAnimation/cover_02.jpg",
-      "src": "/P1_PicoVideoAppBrandConceptAnimation/video_02.mp4",
+      "poster": "cover_02.jpg",
+      "src": "video_02.mp4",
       "description": "花朵绽放动画制作基于Houdini Vellum模拟。",
       "position": "right",
       "cols": "8"
@@ -135,8 +135,8 @@
     {
       "type": "VideoBlock",
       "aspectRatio": "16:9",
-      "poster": "/P1_PicoVideoAppBrandConceptAnimation/cover_03.jpg",
-      "src": "/P1_PicoVideoAppBrandConceptAnimation/video_03.mp4",
+      "poster": "cover_03.jpg",
+      "src": "video_03.mp4",
       "description": "使用blender完成手的绑定与动画。",
       "position": "left",
       "cols": "8"

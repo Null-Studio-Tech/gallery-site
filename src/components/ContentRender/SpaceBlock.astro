@@ -1,14 +1,10 @@
 ---
-import type { CollectionEntry } from "astro:content";
-
-// 数组取number,获得联合类型
-type ContentTypes = CollectionEntry<"work">["data"]["contents"][number];
-// 原信息类型
-type MetaTypes = CollectionEntry<"work">["data"]["meta"];
+import type { ContentUnionType, MetaOptions, PathOptions } from "./BlockType";
 
 interface Props {
-  options: Extract<ContentTypes, { type: "SpaceBlock" }>;
-  meta?: MetaTypes;
+  options: Extract<ContentUnionType, { type: "SpaceBlock" }>;
+  meta?: MetaOptions;
+  path: PathOptions;
 }
 const { options } = Astro.props;
 ---

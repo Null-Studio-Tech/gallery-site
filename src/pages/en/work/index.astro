@@ -3,9 +3,9 @@ import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/PageLayout.astro";
 import PageMeta from "@/data/work";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { Picture } from "astro-imagetools/components";
+import BasePicture from "@/components/BasePicture.astro";
+import { getPublicSourcePath } from "@/utils/url";
 
-const BASE_URL = import.meta.env.BASE_URL;
 const locale = Astro.currentLocale as Locales;
 const HOME_URL = getRelativeLocaleUrl(locale, "/", { normalizeLocale: false });
 
@@ -13,8 +13,10 @@ const pageCollections = await getCollection("work");
 const workList = pageCollections
   .map((p) => {
     const [lang, ...slug] = p.id.split("/");
+    const { cover } = p.data.meta;
     return {
       ...p.data.meta,
+      cover: getPublicSourcePath([p.collection, ...slug], cover),
       lang: lang,
       slug: slug.join("/"),
       collection: p.collection,
@@ -43,7 +45,7 @@ const workList = pageCollections
         workList.map((item) => (
           <div class="mb-4 mobile:mb-[1.625rem] relative content-visibility contain-intrinsic-size">
             <a href={item.url} class="block inset-0 relative z-0">
-              <Picture src={item.cover} alt={item.description || ""} />
+              <BasePicture src={item.cover} alt={item.description || ""} />
             </a>
             <a
               href={item.url}
