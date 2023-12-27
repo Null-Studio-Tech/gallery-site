@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "title": "腾讯",
+    "description": "PICO 2022中国新年动态视觉",
+    "cover": "workPage_cover.jpg"
+  },
+  "contents": [
+    {
+      "type": "TextBlock",
+      "className": "!justify-start font-light text-[56px] mobile:text-[40px]",
+      "content": "PICO 2022中国新年动态视觉"
+    },
+    {
+      "type": "SpaceBlock",
+      "className": "!mb-11"
+    },
+    {
+      "type": "SummaryVideoBlock",
+      "title": "Main Tools",
+      "tools": [
+        "Blender",
+        "Houdini",
+        "Marvelous design",
+        "Substance Painter",
+        "After Effects"
+      ],
+      "description": "基于blender的NPR (Non-Photorealistic Rendering) 能力，为PICO vr产品制作了中国新年主题视觉，科技产品与手绘风格的结合非常有趣又充满挑战，项目中采用程序化水彩材质配合手绘贴图的方式来试图还原人们对于中国新年的视觉印象和喜悦的视觉氛围。",
+      "aspectRatio": "16:9",
+      "poster": "cover_main.jpg",
+      "src": "video_main.mp4"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "image_01.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "8",
+      "srcset": [
+        "image_02.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "image_03.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "image_04.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "image_05.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "10",
+      "srcset": [
+        "image_06.jpg",
+        "image_07.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "TextBlock",
+      "className": "font-light mt-24 mb-24 text-[1.5rem] mobile:mb-8 mobile:mt-18 mobile:!justify-start",
+      "content": "一些制作过程"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "image_08.gif"
+      ],
+      "description": "使用houdini完成风格化烟花的制作。"
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "10",
+      "srcset": [
+        "image_09.gif"
+      ],
+      "description": "使用Marvellous Designer完成服装制作和动力学模拟。"
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "image_10.gif"
+      ],
+      "description": ""
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "VideoBlock",
+      "aspectRatio": "16:9",
+      "poster": "cover_01.jpg",
+      "src": "video_01.mp4",
+      "description": "",
+      "position": "left",
+      "cols": "10"
+    }
+  ]
+}

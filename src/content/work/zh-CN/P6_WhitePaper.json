@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "title": "腾讯",
+    "description": "2020腾讯娱乐白皮书盛典开场动画",
+    "cover": "workPage_cover.jpg"
+  },
+  "contents": [
+    {
+      "type": "TextBlock",
+      "className": "!justify-start font-light text-[56px] mobile:text-[40px]",
+      "content": "2020腾讯娱乐白皮书盛典开场动画"
+    },
+    {
+      "type": "SpaceBlock",
+      "className": "!mb-11"
+    },
+    {
+      "type": "SummaryVideoBlock",
+      "title": "Main Tools",
+      "tools": [
+        "Cinema 4D",
+        "Arnold",
+        "After Effects"
+      ],
+      "description": "腾讯娱乐白皮书，是基于腾讯大数据能力的权威产业报告，在中国娱乐产业具有广泛影响力。非常荣幸能为腾讯娱乐白皮书颁奖典礼制作开场动画。我制作了一部风格化三渲二动画，来描绘中国娱乐产业在新冠疫情下的生存与复苏，并试图表达我们对未来的希望。",
+      "aspectRatio": "16:9",
+      "poster": "cover_main.jpg",
+      "src": "video_main.mp4"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "10",
+      "srcset": [
+        "image_01.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "6",
+      "srcset": [
+        "image_02.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "image_03.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "6",
+      "srcset": [
+        "image_04.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "10",
+      "srcset": [
+        "image_05.jpg",
+        "image_06.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "image_07.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "12",
+      "srcset": [
+        "image_08.jpg",
+        "image_09.jpg"
+      ],
+      "description": ""
+    }
+    ,
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "12",
+      "srcset": [
+        "image_10.jpg",
+        "image_11.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "12",
+      "srcset": [
+        "image_12.jpg",
+        "image_13.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "TextBlock",
+      "className": "font-light mt-24 mb-24 text-[1.5rem] mobile:mb-8 mobile:mt-18 mobile:!justify-start",
+      "content": "一些制作过程"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "gif_01.gif"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "6",
+      "srcset": [
+        "gif_02.gif"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },{
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "gif_03.gif"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },{
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "gif_04.gif"
+      ]
+    }
+  ]
+}

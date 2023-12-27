@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "title": "Tencent",
+    "description": "Tencent Entertainment White Paper Awards 2020 Opener",
+    "cover": "workPage_cover.jpg"
+  },
+  "contents": [
+    {
+      "type": "TextBlock",
+      "className": "!justify-start font-light text-[56px] mobile:text-[40px]",
+      "content": "Tencent Entertainment White Paper Awards 2020 Opener"
+    },
+    {
+      "type": "SpaceBlock",
+      "className": "!mb-11"
+    },
+    {
+      "type": "SummaryVideoBlock",
+      "title": "Main Tools",
+      "tools": [
+        "Cinema 4D",
+        "Arnold",
+        "After Effects"
+      ],
+      "description": "Tencent Entertainment White Paper, based on various data, is authoritative in Chinese entertainment industry. I’m very honored to make this short animation opener for Tencent Entertainment White Paper Awards. I made a toon shading style animation to demonstrate Chinese entertainment industry recovery process under th COVID-19 epidemic, tried to express our hope for the future.",
+      "aspectRatio": "16:9",
+      "poster": "cover_main.jpg",
+      "src": "video_main.mp4"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "10",
+      "srcset": [
+        "image_01.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "6",
+      "srcset": [
+        "image_02.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "image_03.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "6",
+      "srcset": [
+        "image_04.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "10",
+      "srcset": [
+        "image_05.jpg",
+        "image_06.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "image_07.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "12",
+      "srcset": [
+        "image_08.jpg",
+        "image_09.jpg"
+      ],
+      "description": ""
+    }
+    ,
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "12",
+      "srcset": [
+        "image_10.jpg",
+        "image_11.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "12",
+      "srcset": [
+        "image_12.jpg",
+        "image_13.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "TextBlock",
+      "className": "font-light mt-24 mb-24 text-[1.5rem] mobile:mb-8 mobile:mt-18 mobile:!justify-start",
+      "content": "Some making of"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "gif_01.gif"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "6",
+      "srcset": [
+        "gif_02.gif"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },{
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "gif_03.gif"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },{
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "gif_04.gif"
+      ]
+    }
+  ]
+}

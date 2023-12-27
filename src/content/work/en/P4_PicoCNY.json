@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "title": "Tencent",
+    "description": "PICO Video App Brand Concept Animation",
+    "cover": "workPage_cover.jpg"
+  },
+  "contents": [
+    {
+      "type": "TextBlock",
+      "className": "!justify-start font-light text-[56px] mobile:text-[40px]",
+      "content": "PICO Video App Brand Concept Animation"
+    },
+    {
+      "type": "SpaceBlock",
+      "className": "!mb-11"
+    },
+    {
+      "type": "SummaryVideoBlock",
+      "title": "Main Tools",
+      "tools": [
+        "Blender",
+        "Houdini",
+        "Marvelous design",
+        "Substance Painter",
+        "After Effects"
+      ],
+      "description": "Brand concept video created for Pico VR interactive video streaming app. It employs the interaction between hands and surreal elements to convey the product characteristics of VR interactive video. The majority of the animation production is based on Houdini, with various types of dynamics simulations being experimented. The hand animations were rigged and animated using Blender.",
+      "aspectRatio": "16:9",
+      "poster": "cover_main.jpg",
+      "src": "video_main.mp4"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "image_01.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "8",
+      "srcset": [
+        "image_02.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "8",
+      "srcset": [
+        "image_03.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "image_04.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "image_05.jpg"
+      ]
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "SwipeBlock",
+      "picturePosition": "right",
+      "cols": "10",
+      "srcset": [
+        "image_06.jpg",
+        "image_07.jpg"
+      ],
+      "description": ""
+    },
+    {
+      "type": "TextBlock",
+      "className": "font-light mt-24 mb-24 text-[1.5rem] mobile:mb-8 mobile:mt-18 mobile:!justify-start",
+      "content": "Some making of"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "image_08.gif"
+      ],
+      "description": "ompleted the creation of stylized fireworks using Houdini."
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "right",
+      "cols": "10",
+      "srcset": [
+        "image_09.gif"
+      ],
+      "description": "Completed garment creation and dynamics simulation using Marvelous Designer."
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "PictureBlock",
+      "picturePosition": "left",
+      "cols": "10",
+      "srcset": [
+        "image_10.gif"
+      ],
+      "description": ""
+    },
+    {
+      "type": "SpaceBlock"
+    },
+    {
+      "type": "VideoBlock",
+      "aspectRatio": "16:9",
+      "poster": "cover_01.jpg",
+      "src": "video_01.mp4",
+      "description": "",
+      "position": "left",
+      "cols": "10"
+    }
+  ]
+}

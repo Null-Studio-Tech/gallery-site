@@ -35,7 +35,7 @@ const imageList = options.srcset.map((src) =>
     )
   }
   <div
-    class="col-span-12 mobile:col-span-12"
+    class="mobile:col-span-12"
     class:list={[`col-span-${options.cols || 12}`]}
   >
     <SwipeImage images={imageList} />
